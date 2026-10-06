@@ -4,6 +4,8 @@ import './style.css';
 import TYPES from './types.json';
 import LEGENDARY from './legendary.json';
 import MAP_STYLE from './map-style.json';
+import SOURCES from './sources.json';
+import SPECIALS from './specials.json';
 
 const $ = (s) => document.querySelector(s);
 const esc = (s) => String(s).replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
@@ -27,7 +29,9 @@ const PHOTO_SIZE = 1024;     // longest side of a saved photo in pixels
 const REACH_BUZZ = [70, 50, 70, 50, 220];  // vibration when a card is in reach: short, short, long
 // The map is tilted and the buildings have height. The player is below the middle of the screen,
 // because a tilted map shows more ground ahead than behind.
-const MAP_VIEW = { zoom: 15.6, pitch: 55, padding: { top: 260 } };
+const VIEW_3D = { zoom: 15.6, pitch: 55, padding: { top: 260 } };
+// The flat view looks straight down. Tall buildings cannot cover a place there.
+const VIEW_2D = { zoom: 15, pitch: 0, padding: { top: 0 } };
 
 const ABOUT = `
   <p>Varje bänk, utsiktsplats, runsten och fyr på kartan är ett kort. Gå inom 30 m från den verkliga platsen och fotografera den för att få kortet.</p>
@@ -60,7 +64,7 @@ const DECK_SIZE = 3;
 
 // cards: id -> {t: type index or -1 for legendary, n: name, la, lo, at: ms, foot, nohint, wd}
 // discarded: id -> {hinted}. A card that you collect again gives no cards to spend.
-let state = { cards: {}, coins: 0, hints: [], deck: [], discarded: {}, seen: false };
+let state = { cards: {}, coins: 0, hints: [], deck: [], discarded: {}, seen: false, flat: false };
 let meta = null;
 let levelOf = [];
 let map = null;
@@ -68,6 +72,7 @@ let me = null;       // last position {la, lo, t, kmh}
 let track = [];      // samples at least TRACK_STEP apart: {la, lo, kmh, d: metres from the start}
 let reach = [];      // places inside their collect radius, nearest first
 let follow = true;
+let turning = false;  // the map moves to another view; the move that follows the player waits
 const cells = new Map();
 const markers = new Map();
 const buzzed = new Set();  // ids that already gave the "in reach" vibration
@@ -121,9 +126,14 @@ const ownedTypes = () => new Set(Object.values(state.cards).map((c) => c.t));
 const setDone = (set, owned) => set.types.every((t) => owned.has(t));
 const hintPrice = (lv) => (lv === 2 ? (perk('bargain') ? 4 : 5) : (perk('bargain') ? 12 : 15));
 const cardLevel = (c) => (c.t < 0 ? LEGEND : levelOf[c.t]);
-const typeName = (c) => (c.t < 0 ? 'Legendarisk plats' : TYPES[c.t].name);
-const cardName = (c) => c.n || (c.t < 0 ? '' : `${TYPES[c.t].name} utan namn`);
-const thing = (f) => (f.t < 0 ? f.n : `${TYPES[f.t].def}${f.n ? ` ${f.n}` : ''}`);
+// A variant gives a card a more exact name than its type: a place of worship is a church, a mosque or a synagogue.
+// c.v is the position in the `variants` list of the type, from 1. A variant is [tag value, name, definite form, image key].
+const variant = (c) => (c.v ? TYPES[c.t].variants.values[c.v - 1] : null);
+const typeName = (c) => (c.t < 0 ? 'Legendarisk plats' : variant(c)?.[1] || TYPES[c.t].name);
+// The card image: public/cards/<key>.webp. A variant can have its own image.
+const artKey = (c) => (c.t < 0 ? 'legendary' : variant(c)?.[3] || TYPES[c.t].icon);
+const cardName = (c) => c.n || (c.t < 0 ? '' : `${typeName(c)} utan namn`);
+const thing = (f) => (f.t < 0 ? f.n : `${variant(f)?.[2] || TYPES[f.t].def}${f.n ? ` ${f.n}` : ''}`);
 const iconUrl = (t) => `./icons/${t < 0 ? 'legendary' : TYPES[t].icon}.svg`;
 const iconStyle = (t) => `-webkit-mask-image:url(${iconUrl(t)});mask-image:url(${iconUrl(t)})`;
 
@@ -143,6 +153,8 @@ async function collect(f, photo) {
   const again = state.discarded[f.id];
   const before = ownedTypes();
   const card = { t: f.t, n: f.n || '', la: f.la, lo: f.lo, wd: f.wd || '', at: Date.now(), foot: onFoot() };
+  if (f.url) card.url = f.url;
+  if (f.v) card.v = f.v;
   if (f.t < 0) card.land = f.land;
   if (f.lv === 2 || f.lv === 3) card.nohint = !again?.hinted && !state.hints.some((h) => h.id === f.id);
   let gain = 0;
@@ -193,7 +205,14 @@ function cellAt(cx, cy) {
     // A missing file is an empty cell. A failed request is tried again at the next position.
     fetch(`./cells/${key}.json`).then((r) => (r.ok ? r.json().catch(() => []) : []), () => null).then((rows) => {
       if (!rows) return cells.delete(key);
-      cells.set(key, rows.map(([id, la, lo, t, n, wd, r]) => ({ id, la, lo, t, n: n || '', wd: wd || '', r: r || 0 })));
+      // A card in specials.json has its own name, image and link, and no Wikipedia text.
+      cells.set(key, rows.map(([id, la, lo, t, n, wd, r, url, v]) => ({
+        id, la, lo, t, n: SPECIALS[id]?.name || n || '', wd: SPECIALS[id] ? '' : wd || '', r: r || 0, url: url || '', v: v || 0,
+      })));
+      // A card from before the variants gets its variant here.
+      for (const f of cells.get(key)) {
+        if (f.v && state.cards[f.id] && !state.cards[f.id].v) { state.cards[f.id].v = f.v; save(); }
+      }
       refresh();
       drawDev();
     });
@@ -268,7 +287,7 @@ function initMap(la, lo) {
     container: 'map',
     style: MAP_STYLE,
     center: [lo, la],
-    ...MAP_VIEW,
+    ...(state.flat ? VIEW_2D : VIEW_3D),
     dragRotate: false,
     pitchWithRotate: false,
     attributionControl: false,
@@ -276,6 +295,7 @@ function initMap(la, lo) {
   map.addControl(new maplibregl.AttributionControl({ compact: true }), 'top-right');
   map.touchZoomRotate.disableRotation();
   map.on('dragstart', () => { follow = false; $('#btn-center').classList.add('show'); });
+  map.on('moveend', (e) => { if (e.turn) turning = false; });
   map.on('load', () => {
     // The attribution starts closed, because the open text covers the HUD.
     $('.maplibregl-ctrl-attrib').classList.remove('maplibregl-compact-show');
@@ -289,12 +309,28 @@ function initMap(la, lo) {
     } });
     map.addSource('collected', { type: 'geojson', data: points([]) });
     map.addLayer({ id: 'collected', type: 'symbol', source: 'collected', layout: { 'icon-image': ['get', 'icon'], 'icon-allow-overlap': true } });
+    drawView();
     drawCollected();
     refresh();
   });
   map.on('click', 'collected', (e) => showCard(e.features[0].properties.id));
   map.on('mouseenter', 'collected', () => { map.getCanvas().style.cursor = 'pointer'; });
   map.on('mouseleave', 'collected', () => { map.getCanvas().style.cursor = ''; });
+}
+
+// An animated move to a view. The move that follows the player would stop the animation halfway, so it waits.
+// The `turn` mark comes back in the `moveend` event of this animation only, not in that of an earlier move.
+function turnTo(view) {
+  turning = true;
+  map.easeTo({ ...view, duration: 900 }, { turn: true });
+}
+
+// The 2D view has flat buildings at all zoom levels. The button shows the view that a tap gives.
+function drawView() {
+  $('#btn-view').textContent = state.flat ? '3D' : '2D';
+  map.setLayoutProperty('building', 'visibility', state.flat ? 'none' : 'visible');
+  map.setLayerZoomRange('building-flat', 12, state.flat ? 24 : 14);
+  map.touchPitch[state.flat ? 'disable' : 'enable']();
 }
 
 let playerMarker = null;
@@ -306,7 +342,7 @@ function drawPlayer(view) {
   }
   playerMarker.setLngLat([me.lo, me.la]);
   map.getSource('view')?.setData(circle(me.la, me.lo, view));
-  if (follow) map.easeTo({ center: [me.lo, me.la], duration: 500 });
+  if (follow && !turning) map.easeTo({ center: [me.lo, me.la], duration: 500 });
 }
 
 // A place that the player can still collect: a marker in the colour of its level.
@@ -406,7 +442,9 @@ function drawReach() {
   }
   $('#reach').className = `lv-${LEVELS[f.lv]}`;
   $('#reach .ic').style.cssText = iconStyle(f.t);
-  $('#reach-text').textContent = `Fotografera ${thing(f)} för att få kortet.${reach.length > 1 ? ` ${reach.length - 1} till här.` : ''}`;
+  $('#reach-text').textContent = `Fotografera ${thing(f)} för att få kortet.`;
+  $('#btn-more').classList.toggle('hidden', reach.length < 2);
+  $('#btn-more').textContent = `${reach.length - 1} till här`;
 }
 
 function toast(html, ms = 3500) {
@@ -476,6 +514,20 @@ function takePhoto(source, width, height) {
 }
 
 $('#btn-photo').addEventListener('click', () => reach[0] && openCamera(reach[0]));
+// The chooser lists all places in reach. A tap on a place opens the camera for it.
+let choices = [];
+$('#btn-more').addEventListener('click', () => {
+  choices = reach;
+  $('#choose-list').innerHTML = choices.map((f, i) => `<button class="line lv-${LEVELS[f.lv]}" data-choice="${i}">
+    <span><i class="ic" style="${iconStyle(f.t)}"></i> <b>${esc(typeName(f))}</b> ${esc(f.n || '')}</span><span class="dim">${Math.round(f.d)} m</span></button>`).join('');
+  $('#choose').classList.add('show');
+});
+$('#choose-list').addEventListener('click', (e) => {
+  const b = e.target.closest('[data-choice]');
+  if (!b) return;
+  $('#choose').classList.remove('show');
+  openCamera(choices[+b.dataset.choice]);
+});
 $('#btn-cam-cancel').addEventListener('click', closeCamera);
 $('#btn-shutter').addEventListener('click', () => {
   const video = $('#cam-video');
@@ -497,19 +549,27 @@ $('#cam-file').addEventListener('change', async (e) => {
 function cardHtml(id, gain) {
   const c = state.cards[id];
   const lv = cardLevel(c);
+  // The id is an OSM id, or the id of a source in sources.json, a dot and the id in that source.
   const oid = id.replace(/^L/, '');
-  const osm = { n: 'node', w: 'way', r: 'relation' }[oid[0]];
-  const name = cardName(c);
+  const source = SOURCES.find((src) => id.startsWith(`${src.id}.`));
+  const origin = source
+    ? `<a href="${esc(source.about)}" target="_blank" rel="noopener">${esc(source.label)}</a>`
+    : `<a href="https://www.openstreetmap.org/${{ n: 'node', w: 'way', r: 'relation' }[oid[0]]}/${oid.slice(1)}" target="_blank" rel="noopener">OpenStreetMap</a>`;
+  const special = SPECIALS[id];
+  const link = special ? [special.link, special.label] : [c.url || '', 'Om platsen'];
+  const more = /^https:\/\//.test(link[0]) ? ` · <a href="${esc(link[0])}" target="_blank" rel="noopener">${esc(link[1])}</a>` : '';
+  const name = special?.name || cardName(c);
   const date = day(c.at);
   return `<div class="card lv-${LEVELS[lv]}${gain === undefined ? '' : ' flipped noanim'}"><div class="card-inner">
     <div class="card-face card-front">
       <div class="card-level">${LEVEL_NAME[lv]}</div>
-      <div class="card-art"><i class="ic" style="${iconStyle(c.t)}"></i></div>
+      <div class="card-art${special ? ' photo' : ''}"><span class="card-badge"><i class="ic" style="${iconStyle(c.t)}"></i></span>
+        <img src="./cards/${special ? esc(special.image) : `${artKey(c)}.webp`}" alt="" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()"></div>
       <div class="card-type">${esc(c.t < 0 ? c.land : typeName(c))}</div>
       <div class="card-name">${esc(name)}</div>
       <div class="card-marks">${c.foot ? '<span>Till fots eller cykel</span>' : ''}${c.nohint ? '<span>Hittat utan ledtråd</span>' : ''}${gain ? `<span class="gain">+${gain} att spendera</span>` : ''}</div>
       <div class="card-journal"></div>
-      <div class="card-foot">${date} · <a href="https://www.openstreetmap.org/${osm}/${oid.slice(1)}" target="_blank" rel="noopener">OpenStreetMap</a></div>
+      <div class="card-foot">${date} · ${origin}${more}</div>
       <div class="card-tip">Tryck på kortet för att se din bild</div>
     </div>
     <div class="card-face card-back"><img alt="Din bild"><div class="card-caption">${esc(name)}<br>${date}</div></div>
@@ -540,7 +600,7 @@ async function showCard(id, gain) {
     <div class="row"><button class="primary close">${fresh ? 'Behåll' : 'Stäng'}</button><button data-discard="${esc(id)}">Släng</button></div>`;
   el.classList.add('show');
   const card = el.querySelector('.card');
-  journal(card.querySelector('.card-journal'), state.cards[id].wd);
+  journal(card.querySelector('.card-journal'), SPECIALS[id] ? '' : state.cards[id].wd);
   const photo = await idb('photos', 'readonly', (s) => s.get(id));
   if (!card.isConnected) return;
   if (photo) {
@@ -606,7 +666,7 @@ function drawAlbum() {
       <h2>${esc(TYPES[openType].name)}</h2>
       <p class="dim">${LEVEL_NAME[levelOf[openType]]} · ${meta.counts[openType].toLocaleString('sv-SE')} i Sverige · du har ${list.length}</p>
       <div class="list">${list.map(([id, c]) => `<button class="line" data-card="${esc(id)}">
-        <span>${esc(cardName(c))}</span>
+        <span>${esc(SPECIALS[id]?.name || cardName(c))}</span>
         <span class="dim">${c.foot ? '👣 ' : ''}${c.nohint ? '★ ' : ''}${day(c.at)}</span></button>`).join('')}</div>`;
   } else if (tab === 'cards') {
     const have = new Map();
@@ -635,7 +695,7 @@ function drawAlbum() {
   } else {
     body.innerHTML = `<h2>Landmark Cards</h2>${ABOUT}
       <p class="dim" id="about-storage"></p>
-      <p class="dim">Kortdata: © OpenStreetMaps bidragsgivare, hämtad ${esc(meta.built)}.</p>
+      <p class="dim">Kortdata: © OpenStreetMaps bidragsgivare, hämtad ${esc(meta.built)}. Fler platser och namn: ${SOURCES.map((src) => esc(src.label)).join(', ')}.</p>
       <div class="row"><button id="btn-export">Exportera album</button><button id="btn-import">Importera album</button></div>
       <p class="dim">Exportfilen är en ZIP-fil med korten och bilderna.</p>`;
     Promise.all([idb('photos', 'readonly', (s) => s.count()), navigator.storage?.estimate?.()]).then(([n, est]) => {
@@ -689,7 +749,13 @@ $('#btn-sets').addEventListener('click', () => openAlbum('sets'));
 $('#btn-center').addEventListener('click', () => {
   follow = true;
   $('#btn-center').classList.remove('show');
-  if (me) map.easeTo({ center: [me.lo, me.la], ...MAP_VIEW });
+  if (me) turnTo({ center: [me.lo, me.la], ...(state.flat ? VIEW_2D : VIEW_3D) });
+});
+$('#btn-view').addEventListener('click', () => {
+  state.flat = !state.flat;
+  save();
+  drawView();
+  turnTo({ ...(follow && me ? { center: [me.lo, me.la] } : {}), ...(state.flat ? VIEW_2D : VIEW_3D) });
 });
 
 // ---------- album file ----------
@@ -846,7 +912,7 @@ function drawDev() {
       for (let y = y0; y <= y1; y++) {
         for (const f of cellAt(x, y)) {
           const lv = levelOf[f.t];
-          if (devLevels.has(lv) && !state.cards[f.id]) features.push(point(f, { color: LEVEL_COLOR[lv], label: `${LEVEL_NAME[lv]}: ${TYPES[f.t].name} ${f.n}` }));
+          if (devLevels.has(lv) && !state.cards[f.id]) features.push(point(f, { color: LEVEL_COLOR[lv], label: `${LEVEL_NAME[lv]}: ${typeName(f)} ${f.n}` }));
         }
       }
     }

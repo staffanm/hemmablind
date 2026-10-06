@@ -25,10 +25,11 @@
   </div>
   <div id="hud-hints"></div>
   <div id="toasts"></div>
+  <button id="btn-view" aria-label="Byt mellan 2D och 3D">2D</button>
   <button id="btn-center" aria-label="Centrera kartan på din position">◎</button>
   <div id="reach" class="hidden">
     <i class="ic"></i><span id="reach-text"></span>
-    <button id="btn-photo" class="primary">Kamera</button>
+    <div id="reach-buttons"><button id="btn-photo" class="primary">Kamera</button><button id="btn-more"></button></div>
   </div>
   <div id="dev" class="hidden">
     <div><span>Tryck för att</span>
@@ -75,6 +76,15 @@
       <button class="close" aria-label="Stäng">✕</button>
     </div>
     <div id="album-body"></div>
+  </div>
+</div>
+
+<div id="choose" class="screen">
+  <div class="panel">
+    <h2>Kort inom räckhåll</h2>
+    <p class="dim">Välj platsen som du vill fotografera.</p>
+    <div id="choose-list" class="list"></div>
+    <div class="row"><button class="close">Stäng</button></div>
   </div>
 </div>
 

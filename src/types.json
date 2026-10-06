@@ -2,7 +2,8 @@
   {"k": "amenity", "v": "bench", "name": "Bänk", "def": "bänken", "icon": "bench"},
   {"k": "amenity", "v": "shelter", "name": "Vindskydd", "def": "vindskyddet", "icon": "shelter"},
   {"k": "amenity", "v": "post_box", "name": "Brevlåda", "def": "brevlådan", "icon": "post_box"},
-  {"k": "amenity", "v": "place_of_worship", "name": "Gudshus", "def": "gudshuset", "icon": "place_of_worship"},
+  {"k": "amenity", "v": "place_of_worship", "name": "Helgedom", "def": "helgedomen", "icon": "place_of_worship",
+   "variants": {"tag": "religion", "values": [["christian", "Kyrka", "kyrkan", "church"], ["muslim", "Moské", "moskén", "mosque"], ["jewish", "Synagoga", "synagogan", "synagogue"], ["buddhist", "Tempel", "templet", "temple"], ["hindu", "Tempel", "templet", "temple"], ["sikh", "Tempel", "templet", "temple"]]}},
   {"k": "amenity", "v": "bbq", "name": "Grillplats", "def": "grillplatsen", "icon": "bbq"},
   {"k": "amenity", "v": "fountain", "name": "Fontän", "def": "fontänen", "icon": "fountain"},
   {"k": "amenity", "v": "drinking_water", "name": "Dricksvattenkran", "def": "dricksvattenkranen", "icon": "drinking_water"},
@@ -84,5 +85,7 @@
   {"k": "waterway", "v": "rapids", "name": "Fors", "def": "forsen", "icon": "rapids"},
   {"k": "waterway", "v": "fish_pass", "name": "Fisktrappa", "def": "fisktrappan", "icon": "fish_pass"},
   {"k": "geological", "v": "giants_kettle", "name": "Jättegryta", "def": "jättegrytan", "icon": "giants_kettle"},
-  {"k": "geological", "v": "glacial_erratic", "name": "Flyttblock", "def": "flyttblocket", "icon": "glacial_erratic"}
+  {"k": "geological", "v": "glacial_erratic", "name": "Flyttblock", "def": "flyttblocket", "icon": "glacial_erratic"},
+  {"k": "highway", "v": "bus_stop", "name": "Busshållplats", "def": "busshållplatsen", "icon": "bus_stop"},
+  {"k": "leisure", "v": "pitch", "name": "Bollplan", "def": "bollplanen", "icon": "pitch"}
 ]

@@ -7,7 +7,7 @@ The UI is in Swedish. The card text comes from Swedish Wikipedia, or from Englis
 
 ## Rules
 
-- 86 card types in four levels, from the count of the tag in Sweden: common (more than 10,000), uncommon (2,000 to 10,000), rare (300 to 2,000), epic (fewer than 300).
+- 88 card types in four levels, from the count of the tag in Sweden: common (more than 10,000), uncommon (2,000 to 10,000), rare (300 to 2,000), epic (fewer than 300).
 - 25 legendary places, one in each province (`src/legendary.json`). The collect radius is 100 m.
 - Common and uncommon places show within 300 m. A hint for a rare card costs 5 common cards. A hint for an epic card costs 15.
 - No collection above 25 km/h. A card counts double when the last 500 m of the track are below 25 km/h.
@@ -19,8 +19,8 @@ The UI is in Swedish. The card text comes from Swedish Wikipedia, or from Englis
 - A player can discard a card and collect it again at the same place. The second time gives no cards to spend. A perk goes away when its set is no longer complete.
 - The title screen shows at the first visit only. The About tab of the album has the same text.
 - A legendary place is not also a normal card. The cell build leaves out the feature with the same OSM id.
-- Epic cards lie at least 2,000 m apart, so that one walk does not give two of them. In a group, the build keeps the card with a Wikipedia article, then the card with a name.
-- The map uses the game's own style (`src/map-style.json`) on the vector tiles of OpenFreeMap. The view is tilted and the buildings have height.
+- The density rule: a card has at most N cards of its type within a distance, itself included. Common: 3 within 300 m. Uncommon: 2 within 500 m. Rare: 1 within 1,000 m. Epic: 1 of all epic types within 2,000 m. In a crowd, the build keeps the card with a Wikipedia article, then the card with a name.
+- The map uses the game's own style (`src/map-style.json`) on the vector tiles of OpenFreeMap. The view is tilted and the buildings have height. The 2D button gives a flat view from above.
 - The album export is a ZIP file without compression: `album.json` and one JPEG for each photo in `photos/`. The import replaces the album and the photos.
 
 ## Development
@@ -46,7 +46,7 @@ Get the extract first:
 
 A cell is 0.1 degrees of longitude by 0.05 degrees of latitude, about 5.5 km. The game loads the cell of the player and its 8 neighbours.
 `public/cells/meta.json` holds the count of each type in the extract. The game computes the levels from these counts.
-The build asks Wikidata which epic cards have a Wikipedia article. It keeps the answers in `build/data/sitelinks.json`.
+The build asks Wikidata which cards have a Wikipedia article. It keeps the answers in `build/data/sitelinks.json`.
 
 ## Deploy
 
@@ -60,14 +60,39 @@ One-time server setup: `deploy/setup-server.sh` (nginx site and TLS certificate)
 
 The cell files in `public/cells/` are in the repository, because the GitHub Action does not build them.
 
+## Card images
+
+A card shows an illustration of its type, and the map shows the icon. `art/BRIEF.md` is the brief for the 93 illustrations, and `art/README.md` says how they were made.
+`npm run art` copies the masters in `art/cards/` to `public/cards/` as 512 pixel WebP files (needs Pillow). A card without an image shows its icon.
+
+## Extra sources
+
+`src/sources.json` lists open data of municipalities and agencies. The cell build downloads each source as GeoJSON and merges it with the OSM cards.
+A source place within `match` metres of an OSM card of the same type gives its name and link to that card. A source place without an OSM card becomes a new card.
+
+A source has these fields:
+
+- `id`: the prefix of the card ids, and the file name in `build/data/sources/`
+- `label` and `about`: the name and the page of the publisher, for the card and the About tab
+- `url`: a request that returns GeoJSON in EPSG:4326, for example a WFS `GetFeature` request
+- `type`: the OSM tag of the card type
+- `fields`: the properties that hold the id, the name and the link of a place
+- `match`: the largest distance in metres to an OSM card of the same place
+
+Remove a file in `build/data/sources/` to download that source again.
+
 ## Files
 
 - `index.html`: page markup
 - `src/main.js`: game logic, map and screens
 - `src/style.css`: styles
-- `src/types.json`: the 86 card types (OSM tag, Swedish name, definite form, icon)
+- `src/types.json`: the 88 card types (OSM tag, Swedish name, definite form, icon). Add a new type at the end, because an album stores the index of the type. A type can have `variants`: the value of one more tag gives the card a more exact name, as `religion` does for a place of worship. Add a new variant at the end of its list.
 - `src/legendary.json`: the 25 legendary places
 - `src/map-style.json`: the MapLibre style of the map
+- `src/sources.json`: the extra sources of the cell build
+- `src/specials.json`: cards with their own name, image and link, by OSM id. The cell build never removes them.
+- `art/`: the card illustrations: brief, references, masters and scripts
+- `scripts/export-art.py`: copies the card illustrations to `public/cards/`
 - `scripts/build-cells.py`: writes the cell files from an OSM extract
 - `public/icons/`: one SVG icon for each type
 - `public/manifest.webmanifest`: PWA manifest

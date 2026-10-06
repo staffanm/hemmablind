@@ -51,11 +51,16 @@ a { color: var(--accent); }
 #toasts { margin-top: auto; display: flex; flex-direction: column; gap: .3rem; align-items: center; }
 .toast { background: var(--bg); border-radius: 12px; padding: .5rem .9rem; box-shadow: 0 4px 14px #0006; display: flex; gap: .45rem; align-items: center; max-width: 100%; animation: rise .25s ease-out; }
 @keyframes rise { from { transform: translateY(14px); opacity: 0; } }
-#btn-center { align-self: flex-end; width: 44px; height: 44px; padding: 0; border-radius: 50%; font-size: 1.3rem; background: var(--bg); display: none; }
+#btn-center, #btn-view { align-self: flex-end; width: 44px; height: 44px; padding: 0; border-radius: 50%; font-size: 1.3rem; background: var(--bg); box-shadow: 0 2px 8px #0005; }
+#btn-view { font-size: .85rem; font-weight: 800; }
+#btn-center { display: none; }
 #btn-center.show { display: block; }
 #reach { display: flex; align-items: center; gap: .6rem; background: var(--bg); border: 2px solid var(--lv); border-radius: 14px; padding: .6rem .7rem; font-weight: 600; box-shadow: 0 4px 18px #0008; animation: rise .25s ease-out; }
 #reach .ic { width: 1.9rem; height: 1.9rem; color: var(--lv); }
 #reach span { flex: 1; }
+#reach-buttons { display: flex; flex-direction: column; gap: .35rem; }
+#btn-more { padding: .3rem .6rem; font-size: .85rem; white-space: nowrap; }
+.line .ic { color: var(--lv); vertical-align: -.2em; }
 #dev { align-self: center; background: var(--bg); border-radius: 12px; padding: .4rem .6rem; display: flex; flex-direction: column; gap: .3rem; font-size: .8rem; pointer-events: auto; }
 #dev div { display: flex; flex-wrap: wrap; gap: .3rem; align-items: center; }
 #dev button { padding: .2rem .55rem; }
@@ -119,6 +124,14 @@ p { margin: .5rem 0; }
 .card-level { font-size: .8rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #fff; }
 .card-art { width: 7rem; height: 7rem; margin: .8rem auto; border-radius: 50%; background: #ffffff14; border: 2px solid var(--lv); display: grid; place-items: center; }
 .card-art .ic { width: 3.6rem; height: 3.6rem; color: #fff; }
+/* With a card image, the art is a parchment panel and the map icon is a small badge on its corner. */
+.card-art img { display: none; }
+.card-art.has-img { position: relative; width: 11.5rem; height: 11.5rem; border-radius: 18px; background: #efe6cd; }
+.card-art.has-img img { display: block; width: 100%; height: 100%; object-fit: contain; padding: .3rem; }
+.card-art.photo.has-img img { object-fit: cover; padding: 0; border-radius: 16px; }
+.card-art.has-img .card-badge { position: absolute; right: -.6rem; bottom: -.6rem; width: 2.5rem; height: 2.5rem; border-radius: 50%; background: var(--lv); border: 2px solid #fff; display: grid; place-items: center; }
+.card-art.has-img .ic { width: 1.4rem; height: 1.4rem; }
+.lv-legendary .card-art.has-img .ic { color: #23190a; }
 .card-type { color: var(--dim); font-size: .85rem; text-transform: uppercase; letter-spacing: .08em; }
 .card-name { font-size: 1.25rem; font-weight: 700; margin: .1rem 0 .5rem; }
 .card-marks { display: flex; flex-wrap: wrap; gap: .3rem; justify-content: center; }

@@ -1,0 +1,11 @@
+[
+  {
+    "id": "huddinge-lekplatser",
+    "label": "Huddinge kommun",
+    "about": "https://www.huddinge.se/bostad-och-miljo/kartor-oppna-geodata-och-mattjanster/oppna-geodata",
+    "url": "https://gd-huddinge.sokigohosting.com/public-maps/Oppnadata/KSF?token=7f76920a28154b588684ef2b1b51531c&SERVICE=WFS&VERSION=1.1.0&REQUEST=GetFeature&TYPENAME=qgs%3ALekplatser&SRSNAME=EPSG%3A4326&OUTPUTFORMAT=application%2Fgeo%2Bjson",
+    "type": "leisure=playground",
+    "fields": {"id": "idnr", "name": "lekplatser", "link": "url"},
+    "match": 100
+  }
+]
