@@ -74,6 +74,8 @@ let reach = [];      // places inside their collect radius, nearest first
 let follow = true;
 let turning = false;  // the map moves to another view; the move that follows the player waits
 const cells = new Map();
+const loading = new Set();  // keys of the cells that are on their way
+let noticed = false;        // the notice about an empty map shows one time
 const markers = new Map();
 const buzzed = new Set();  // ids that already gave the "in reach" vibration
 
@@ -203,8 +205,10 @@ function cellAt(cx, cy) {
   const key = `${cx}_${cy}`;
   if (!cells.has(key)) {
     cells.set(key, []);
+    loading.add(key);
     // A missing file is an empty cell. A failed request is tried again at the next position.
     fetch(`./cells/${key}.json`).then((r) => (r.ok ? r.json().catch(() => []) : []), () => null).then((rows) => {
+      loading.delete(key);
       if (!rows) return cells.delete(key);
       // A card in specials.json has its own link, and no Wikipedia text. It can also have its own name and image.
       cells.set(key, rows.map(([id, la, lo, t, n, wd, r, url, v]) => ({
@@ -275,6 +279,11 @@ function refresh() {
     for (const h of state.hints) if (!show.has(h.id)) show.set(h.id, { ...h, t: -2, d: dist(me.la, me.lo, h.la, h.lo) });
   }
   reach.sort((a, b) => a.d - b.d);
+  // At the start, tell the player when the map has no card to walk to.
+  if (!noticed && !loading.size) {
+    noticed = true;
+    if (![...show.values()].some((f) => f.lv < LEGEND)) toast(`Det finns inga kort inom ${view} m avstånd – promenera en bit för att få syn på några`, 10000);
+  }
   drawMarkers(show);
   drawPlayer(view);
   drawReach();
