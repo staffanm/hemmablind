@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="theme-color" content="#16302b">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Landmark Cards">
+<title>Landmark Cards</title>
+<meta name="description" content="Walk to real places from OpenStreetMap and collect them as cards. Common cards pay for hints to rare ones.">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="./favicon.svg">
+<link rel="apple-touch-icon" href="./apple-touch-icon.png">
+</head>
+<body>
+<div id="map"></div>
+
+<div id="hud" class="hidden">
+  <div id="hud-top">
+    <span class="chip" id="hud-coins" title="Common cards to spend on hints"></span>
+    <span class="chip" id="hud-cards" title="Cards in the album"></span>
+    <span class="chip" id="hud-speed"></span>
+  </div>
+  <div id="hud-hints"></div>
+  <div id="toasts"></div>
+  <button id="btn-center" aria-label="Center the map on your position">◎</button>
+  <div id="sim" class="hidden">
+    <span>Simulation: tap the map to move</span>
+    <button data-kmh="5" class="on">Walk</button><button data-kmh="18">Bike</button><button data-kmh="50">Car</button>
+  </div>
+  <div id="bar">
+    <button id="btn-hint">Hint</button>
+    <button id="btn-album">Album</button>
+    <button id="btn-sets">Sets</button>
+  </div>
+</div>
+
+<div id="title" class="screen show">
+  <div class="panel">
+    <h1>Landmark Cards</h1>
+    <p>Each bench, viewpoint, runestone and lighthouse on the map is a card. Walk within 30 m of the real place to collect it.</p>
+    <p>Common places show on the map. Rare places stay hidden. Spend common cards on a hint, or find the rare ones by chance.</p>
+    <p>Cards that you reach on foot or by bike count double. You cannot collect above 25 km/h.</p>
+    <p id="title-error" class="error"></p>
+    <div class="row"><button id="btn-start" class="primary">Start</button></div>
+  </div>
+</div>
+
+<div id="hint" class="screen">
+  <div class="panel">
+    <h2>Buy a hint</h2>
+    <p>A hint shows the direction and the distance to the nearest hidden card.</p>
+    <p id="hint-balance"></p>
+    <div class="row">
+      <button id="btn-hint-rare" class="lv-rare"></button>
+      <button id="btn-hint-epic" class="lv-epic"></button>
+    </div>
+    <div class="row"><button class="close">Close</button></div>
+  </div>
+</div>
+
+<div id="album" class="screen">
+  <div class="panel wide">
+    <div class="tabs">
+      <button data-tab="cards" class="on">Cards</button>
+      <button data-tab="sets">Sets</button>
+      <button data-tab="legendary">Legendary</button>
+      <button class="close" aria-label="Close">✕</button>
+    </div>
+    <div id="album-body"></div>
+  </div>
+</div>
+
+<div id="reveal" class="screen"></div>
+
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>
