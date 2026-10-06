@@ -25,6 +25,72 @@
       "number": 5,
       "file": "logo-5.png",
       "prompt": "Create a square 1024x1024 app icon as a flat digital spot-color drawing. SOLID COLORS ONLY, completely smooth uniformly colored regions, with no texture, grain, noise, mottling, gradient or lighting anywhere. Bold warm brown ink contours, gently imperfect hand-shaped curves, playful exaggerated proportions. No simulated paper or paint. Every fill region is a single exact RGB color from the hex colors below. Opaque uniform background edge to edge, sharp square canvas corners. Strong simple motif that works at 32 pixels, centered entirely inside the central 80% square, ample empty margin on every side. No words, letters, numbers, watermark, border, shadows, shine, reflection, gloss or 3D. Only one icon, no mockup.\nOne magnifying glass: thick #efe6cd circular rim with #4a3b22 outlines, #efe6cd lens, short thick #e8b021 handle angled down-right. One large #9c3b2a Swedish house fills the lens, with #4a3b22 roof and outlines, one #efe6cd window and one #efe6cd door. Background #16302b. Whole motif occupies 62% width and 68% height. No chimney, window panes or door knob."
+    },
+    {
+      "number": 6,
+      "file": "logo-6.png",
+      "prompt": "Use case: precise-object-edit, logo-brand.\nEdit this upright three-card icon into a clean production flat spot-color icon. Keep EXACTLY THREE cards, the symmetric upright fan, central front card completely visible, rounded hill, continuous broad light S-path to summit, and two secondary small trees. Preserve every motif and composition. Change only color treatment and safety margin. Remove ALL gradient, shading, texture, grain, noise and mottling everywhere. Each background/fill region must be completely uniform. Use ONLY #16302b for full square background and trees, #efe6cd for cards and wide path, #afd08a for hill, #4a3b22 for bold slightly handmade warm brown contours. No other color except antialiasing directly on shape boundaries. Do not shade parchment or green hill. Uniform digital flat fills like simple vector art. Reduce whole fan proportionally and center it with its longest edge 740 pixels on a 1024 x 1024 opaque RGB square. All cards must be fully inside x142..882,y142..882. Path must remain wide, light and legible at 32 pixels. No text, letters, numbers, suits, hands, fingers, new objects, shadows or 3D.",
+      "generation_prompt": "Use case: logo-brand.\nAsset type: Hemmablind square app icon, variant 6, 1024 x 1024.\nGenerate one NEW drawing. Input image 1 is a motif reference only: art/cards/hill.png, its rounded hill and winding uphill route. Input image 2 is a style reference only: art/logo/logo-3.png, its parchment card, bold warm ink, flat colors and simple handmade curves. Do not retain its lighthouse.\nComposition: EXACTLY THREE parchment collector cards fanned upright in a symmetric hand of cards, no human hand. Central card faces the viewer perfectly upright and is in front, with its whole rounded rectangular silhouette visible. Two cards are behind it, one rotated left about 18 degrees, the other rotated right about 18 degrees, showing only blank parchment corner/edge strips, no separate illustrations. The fan reads as three distinct cards. Whole fan centered within x=142..882 and y=142..882 on a 1024 square, never crossing that area; clear background margin all round. Front card approximately 470 pixels wide by 640 high, behind cards make fan about 740 pixels wide.\nFront card content: one large simplified ROUND GREEN HILL rising from a broad gently curved base to a rounded summit, not a mountain peak. A VERY BROAD, LIGHT PARCHMENT S-CURVING PATH leads continuously from the base, winds twice up the face, and reaches the summit. Path is the main feature and must survive a 32-pixel icon: about 65 pixels wide at base, 35 at summit, clear open curves and no dark outline around the path. Hill occupies most of the card picture. Only TWO small deep green evergreen tree silhouettes at the hill's side, secondary to path. No rocks, grass strokes, shrubs, scenery, sun, circular medallion or miniature details.\nStyle: chunky slightly imperfect hand-drawn warm brown ink #4a3b22 outlines, 18-22 pixels on cards; simple smooth flat spot-color fills. EXACT palette: solid deep green #16302b background edge to edge, parchment #efe6cd cards and path, forest green #afd08a hill, warm ink #4a3b22; an optional tiny gold #e8b021 strip on a rear card only. At most four colors plus ink. Completely uniform fills, no texture, grain, noise, dithering, shading, gradients, highlights, gloss, shadows, 3D or photographic effects. Square opaque background with sharp canvas corners. No text, letters, numbers, suits, hands, fingers, playing-card symbols, logos or watermark. Only one icon, no presentation layout.",
+      "reference_images": [
+        "../cards/hill.png",
+        "logo-3.png"
+      ],
+      "refinement_reference": "sources/logo-6-generated.png",
+      "source": "sources/logo-6-refined.png",
+      "export": {
+        "palette": [
+          "#16302b",
+          "#efe6cd",
+          "#afd08a",
+          "#4a3b22"
+        ],
+        "dithering": false,
+        "motif_longest_edge": 740
+      }
+    },
+    {
+      "number": 7,
+      "file": "logo-7.png",
+      "prompt": "Use case: precise-object-edit, logo-brand.\nRefine this image of THREE leaning collector cards into flat spot-color app icon artwork. Preserve the asymmetric fan leaning right, front hill card at right-hand end and tilted clockwise, its full visible rounded outline, TWO separate partly hidden rear cards on the left, rounded green hill, broad continuous LIGHT winding uphill S-path, and two small secondary trees. Change only color treatment and safety margin. Remove ALL gradients, shading, texture, grain, noise and mottling. Every colored region must be one exact uniform fill: #16302b full square background and trees, #efe6cd cards and path, #afd08a hill, #4a3b22 slightly handmade bold warm ink contours. No other colors except boundary antialiasing. Keep the front hill card proportionally larger than the one in a symmetric fan, and the path very wide so hill and winding light route read at 32 pixels. Center whole fan, proportionally fit longest edge to 740 pixels on 1024 x 1024 opaque square, within x142..882,y142..882. Keep all card corners visible and circle safe. No words, letters, numbers, suits, hands, fingers, new objects, shadows, lighting, gloss or 3D.",
+      "generation_prompt": "Use case: logo-brand.\nAsset type: Hemmablind app icon, variant 7, square 1024 x 1024.\nGenerate one NEW icon. Reference image 1 (hill.png) supplies only the rounded green hill and winding route motif. Reference image 2 (logo-3.png) supplies the simple parchment collector card and warm handmade ink style; replace the lighthouse completely.\nCOMPOSITION: a noticeably ASYMMETRIC hand of EXACTLY THREE overlapping portrait collector cards, the whole fan leaning right. A large hill card is the RIGHTMOST end card and is fully visible IN FRONT, tilted 12 degrees CLOCKWISE. Its large rounded rectangle is about 530 pixels wide and 660 tall before tilt. Behind its LEFT edge are TWO DISTINCT blank parchment cards, successively rotated left; each is mostly hidden, exposing only a separate rounded top corner and narrow side strip. The three cards must look like a fanned hand of collector cards, no human hand. The foreground card must NOT be upright or centered between equal rear wings. All three silhouettes fit centrally within x=142..882 and y=142..882 including ink, with empty background margin on all sides. Preserve front card's entire silhouette. This composition should devote more of the canvas to the hill card than the upright symmetric alternative.\nFRONT PICTURE: one big rounded #afd08a green hill with a broad curved bottom and rounded summit. One VERY BROAD LIGHT #efe6cd parchment S-shaped path winds up its face from the base to the summit, with two easy curves. Path has no dark outline and is at least 75 pixels wide near base and 40 near top; viewer must see cards, green hill AND a light winding path at 32 pixels. TWO small #16302b evergreen silhouettes at opposite hill edges only, much smaller than path. Do not add grass, rocks or other details. Leave a visible parchment border between hill picture and card's outline.\nFLAT SPOT COLOR ART: EXACT solid #16302b background, #efe6cd parchment cards and path, #afd08a hill, #4a3b22 bold hand-drawn ink outlines (18-22 pixels), optional #e8b021 tiny rear edge strip. Completely flat vector-like uniform RGB fills with subtly imperfect handmade curves. Background is ONE uniform exact color from edge to edge. Each colored area has ONE exact fill color throughout. No lighting, shading, gradient, texture, grain, mottling, paint, paper fibers, noise, dithering, shadows, highlights, shine, gloss, depth or 3D. Do not imitate paper texture. No text, letters, numbers, pips, suit symbols, hands, fingers, photographic detail, watermark or extra icons. Opaque square canvas with sharp corners, no frame or presentation.",
+      "reference_images": [
+        "../cards/hill.png",
+        "logo-3.png"
+      ],
+      "refinement_reference": "sources/logo-7-generated.png",
+      "source": "sources/logo-7-refined.png",
+      "export": {
+        "palette": [
+          "#16302b",
+          "#efe6cd",
+          "#afd08a",
+          "#4a3b22"
+        ],
+        "dithering": false,
+        "motif_longest_edge": 740
+      }
+    },
+    {
+      "number": 8,
+      "file": "logo-8.png",
+      "prompt": "Use case: precise-object-edit, logo-brand.\nRefine this close-view collector-card icon into clean flat spot-color artwork. Preserve EXACTLY THREE cards: the large counterclockwise tilted front card, only TWO small rear top corners (no broad side wings), full rounded front outline, rounded green hill, continuous very broad light S-shaped route from base to summit, two secondary small evergreen silhouettes. Change only color treatment and safe margin. Remove ALL gradients, shading, texture, grain, noise and mottling. Every area must be one exact uniform fill: #16302b background and trees, #efe6cd cards and wide light path, #afd08a hill, #4a3b22 bold warm handmade ink contours. No other colors except antialiasing directly at boundaries. Keep front hill card dominating composition and path widest of these variants so cards, hill AND light winding route read at 32 pixels. Proportionally center motif with longest edge 780 pixels on a 1024 x 1024 opaque square, all cards inside x122..902,y122..902, with entire motif inside a full circle crop. Background one solid exact dark green throughout, no shading on parchment or hill. No words, letters, numbers, suits, hands, fingers, new objects, shadows, lighting, gloss or 3D.",
+      "generation_prompt": "Use case: logo-brand.\nAsset type: Hemmablind app icon, variant 8, 1024 x 1024 opaque square.\nGenerate a NEW flat-color drawing. Image 1 (hill.png) is the rounded hill and winding path MOTIF REFERENCE. Image 2 (logo-3.png) is the parchment collector card and dark warm handmade outline STYLE REFERENCE. Do not copy the lighthouse.\nCLOSE VIEW COMPOSITION: EXACTLY THREE collector cards, but one LARGE front hill card dominates almost the whole central safe square, tilted just 7 degrees COUNTERCLOCKWISE. This front card is about 570 pixels wide and 700 high before tilt. The two rear cards are almost entirely hidden: show ONLY TWO SMALL DISTINCT PARCHMENT CORNERS, one peeking upper left and one upper right. They may have very short edge strips but MUST NOT show broad side wings, large blank rear faces or their bottom corners. Treat this as a close view of the front card, composition clearly different from a wide fan. The hill card's entire rounded outline must be visible and all three cards must stay inside central x=112..912 and y=112..912, ample margins for circle crop. No human hand.\nPICTURE ON FRONT CARD: a large rounded forest green hill, recognizable as a hill with broad gently curved base and round summit. The light winding PATH is the hero: a VERY BROAD parchment S-shaped route with two open easy bends, starting at hill base and reaching summit. Path has no brown outline. Width roughly 90 pixels near base and at least 45 near summit on 1024 canvas. It must remain a visibly winding light route at 32 x 32. Only TWO tiny secondary deep green evergreen silhouettes on the sides. A thick parchment card border surrounds the hill. No mountain peak, rocks, grass, distant landscape, sky circle, medallion or extra detail.\nSOLID SPOT COLORS ONLY: deep green #16302b UNIFORM background gives strongest contrast against parchment #efe6cd cards and route; forest green #afd08a hill; dark warm brown #4a3b22 outlines, bold 18-22-pixel outer card contour with slightly imperfect hand-shaped curves. Four colors total. Flat vector-like icon; no paper texture, paint texture, grain, noise, mottling, dithering, shading, gradient, lighting, highlights, shadows, gloss or 3D anywhere. Every area has one uniform exact color. Opaque background fills entire square with sharp canvas corners. No words, letters, numbers, suits, pips, hands, fingers, watermark, border around canvas, presentation layout or extra icons.",
+      "reference_images": [
+        "../cards/hill.png",
+        "logo-3.png"
+      ],
+      "refinement_reference": "sources/logo-8-generated.png",
+      "source": "sources/logo-8-refined.png",
+      "export": {
+        "palette": [
+          "#16302b",
+          "#efe6cd",
+          "#afd08a",
+          "#4a3b22"
+        ],
+        "dithering": false,
+        "motif_longest_edge": 780
+      }
     }
   ],
   "export": {
@@ -37,5 +103,19 @@
     "palette": "Requested spot colors; no dithering; antialiasing only at shape edges.",
     "layout": "Preserve generated motif; center and fit its longest edge to 740 pixels inside the 1024 pixel canvas.",
     "note": "Repeated built-in generations retained unwanted grain; palette-constrained export removes it without redrawing the motifs."
+  },
+  "export_second_round": {
+    "format": "PNG",
+    "size": [
+      1024,
+      1024
+    ],
+    "mode": "RGB",
+    "palette": "Deep green, parchment, forest green and warm ink; no dithering; antialiasing only at shape edges.",
+    "layout": "Preserve generated shapes, center motif, longest edge 740 px for 6 and 7; 780 px for close view 8.",
+    "note": "Built-in generation and a built-in refinement per variant. Fixed-palette export removes residual source shading as required by the brief.",
+    "script": "export-second-round.py",
+    "check_sheet": "logos-check-2.png",
+    "inspection_loupe": "small-sizes-check-2.png"
   }
 }

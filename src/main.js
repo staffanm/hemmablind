@@ -35,8 +35,8 @@ const VIEW_2D = { zoom: 15, pitch: 0, padding: { top: 0 } };
 
 const ABOUT = `
   <p>Varje bänk, utsiktsplats, runsten och fyr på kartan är ett kort. Gå inom 30 m från den verkliga platsen och fotografera den för att få kortet.</p>
-  <p>Vanliga platser syns på kartan. Sällsynta platser är dolda. Köp en ledtråd för vanliga kort, eller hitta de sällsynta av en slump.</p>
-  <p>Kort som du når till fots eller med cykel räknas dubbelt. Du kan inte samla kort i mer än 25 km/h.</p>
+  <p>På kartan ser du bara de kort som finns inom 300 m från dig. De sällsynta korten är dolda på kartan och syns när du är inom 30 m ifrån. Men du kan använda dina vanliga kort för att köpa en ledtråd till var de närmaste finns.</p>
+  <p>Du kan inte fotografera eller få ett kort medan du åker bil. Om du istället promenerar eller cyklar hela vägen till kortet räknas det som två när du köper ledtrådar.</p>
   <p>Dina bilder stannar på den här telefonen. Tryck på ett kort för att se bilden.</p>`;
 
 const PERKS = {

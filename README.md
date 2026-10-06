@@ -68,7 +68,7 @@ An album belongs to one web address, so an album from `landmarkcards.tomtebo.org
 A card shows an illustration of its type, and the map shows the icon. `art/BRIEF.md` is the brief for the 93 illustrations, and `art/README.md` says how they were made.
 `npm run art` copies the masters in `art/cards/` to `public/cards/` as 512 pixel WebP files (needs Pillow). A card without an image shows its icon.
 
-The logo is `art/logo/logo-2.png`, one of five proposals in `art/logo/`. `npm run art` also makes the app icons in `public/` from it.
+The logo is `art/logo/logo-7-mirror.png`: a hand of three cards, with the hill and its path on the front card. It is proposal 7 from codex, mirrored and rotated by hand. `art/logo/` holds all proposals and the two briefs. `npm run art` also makes the app icons in `public/` from it.
 
 ## Extra sources
 

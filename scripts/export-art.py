@@ -7,9 +7,14 @@ from PIL import Image
 root = Path(__file__).resolve().parent.parent
 out = root / 'public/cards'
 out.mkdir(parents=True, exist_ok=True)
-logo = Image.open(root / 'art/logo/logo-2.png').convert('RGB')
+logo = Image.open(root / 'art/logo/logo-7-mirror.png').convert('RGB')
 for name, size in (('icon-512.png', 512), ('icon-192.png', 192), ('apple-touch-icon.png', 180), ('favicon-32.png', 32)):
     logo.resize((size, size), Image.LANCZOS).save(root / 'public' / name, optimize=True)
+# Android cuts a circle out of a maskable icon. The logo is 76 percent of this icon, on its own background colour,
+# so that the three cards stay inside the safe circle (80 percent of the width).
+maskable = Image.new('RGB', (512, 512), logo.getpixel((0, 0)))
+maskable.paste(logo.resize((390, 390), Image.LANCZOS), (61, 61))
+maskable.save(root / 'public/icon-maskable-512.png', optimize=True)
 
 total = 0
 for src in sorted((root / 'art/cards').glob('*.png')):
