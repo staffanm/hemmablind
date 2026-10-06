@@ -1,0 +1,6013 @@
+{
+  "schema_version": 1,
+  "pillow_version": "12.1.1",
+  "expected_count": 93,
+  "actual_count": 93,
+  "passed_count": 93,
+  "unexpected_files": [],
+  "all_passed": true,
+  "rune_inscription": {
+    "passed": true,
+    "checks": {
+      "exact_text": true,
+      "exact_order": true,
+      "rune_count": true,
+      "six_two_dot_dividers": true,
+      "source_matches": true,
+      "all_strokes_present_no_added_red_marks": true
+    },
+    "text": "\u16d8\u16c5\u16be : \u16a2\u16c5\u16be\u16c1\u16c5 : \u16cb\u16c1\u16b4 : \u16d8\u16c5\u16be : \u16d8\u16a2\u16cb\u16cf\u16c1 : \u16a2\u16c5\u16be\u16c1\u16c5 : \u16cb\u16c1\u16b4",
+    "rune_count": 27,
+    "divider_count": 6,
+    "red_stroke_pixels": 13963,
+    "glyphs": [
+      {
+        "index": 0,
+        "character": "\u16d8",
+        "codepoint": "U+16D8"
+      },
+      {
+        "index": 1,
+        "character": "\u16c5",
+        "codepoint": "U+16C5"
+      },
+      {
+        "index": 2,
+        "character": "\u16be",
+        "codepoint": "U+16BE"
+      },
+      {
+        "index": 3,
+        "character": ":",
+        "codepoint": "U+003A"
+      },
+      {
+        "index": 4,
+        "character": "\u16a2",
+        "codepoint": "U+16A2"
+      },
+      {
+        "index": 5,
+        "character": "\u16c5",
+        "codepoint": "U+16C5"
+      },
+      {
+        "index": 6,
+        "character": "\u16be",
+        "codepoint": "U+16BE"
+      },
+      {
+        "index": 7,
+        "character": "\u16c1",
+        "codepoint": "U+16C1"
+      },
+      {
+        "index": 8,
+        "character": "\u16c5",
+        "codepoint": "U+16C5"
+      },
+      {
+        "index": 9,
+        "character": ":",
+        "codepoint": "U+003A"
+      },
+      {
+        "index": 10,
+        "character": "\u16cb",
+        "codepoint": "U+16CB"
+      },
+      {
+        "index": 11,
+        "character": "\u16c1",
+        "codepoint": "U+16C1"
+      },
+      {
+        "index": 12,
+        "character": "\u16b4",
+        "codepoint": "U+16B4"
+      },
+      {
+        "index": 13,
+        "character": ":",
+        "codepoint": "U+003A"
+      },
+      {
+        "index": 14,
+        "character": "\u16d8",
+        "codepoint": "U+16D8"
+      },
+      {
+        "index": 15,
+        "character": "\u16c5",
+        "codepoint": "U+16C5"
+      },
+      {
+        "index": 16,
+        "character": "\u16be",
+        "codepoint": "U+16BE"
+      },
+      {
+        "index": 17,
+        "character": ":",
+        "codepoint": "U+003A"
+      },
+      {
+        "index": 18,
+        "character": "\u16d8",
+        "codepoint": "U+16D8"
+      },
+      {
+        "index": 19,
+        "character": "\u16a2",
+        "codepoint": "U+16A2"
+      },
+      {
+        "index": 20,
+        "character": "\u16cb",
+        "codepoint": "U+16CB"
+      },
+      {
+        "index": 21,
+        "character": "\u16cf",
+        "codepoint": "U+16CF"
+      },
+      {
+        "index": 22,
+        "character": "\u16c1",
+        "codepoint": "U+16C1"
+      },
+      {
+        "index": 23,
+        "character": ":",
+        "codepoint": "U+003A"
+      },
+      {
+        "index": 24,
+        "character": "\u16a2",
+        "codepoint": "U+16A2"
+      },
+      {
+        "index": 25,
+        "character": "\u16c5",
+        "codepoint": "U+16C5"
+      },
+      {
+        "index": 26,
+        "character": "\u16be",
+        "codepoint": "U+16BE"
+      },
+      {
+        "index": 27,
+        "character": "\u16c1",
+        "codepoint": "U+16C1"
+      },
+      {
+        "index": 28,
+        "character": "\u16c5",
+        "codepoint": "U+16C5"
+      },
+      {
+        "index": 29,
+        "character": ":",
+        "codepoint": "U+003A"
+      },
+      {
+        "index": 30,
+        "character": "\u16cb",
+        "codepoint": "U+16CB"
+      },
+      {
+        "index": 31,
+        "character": "\u16c1",
+        "codepoint": "U+16C1"
+      },
+      {
+        "index": 32,
+        "character": "\u16b4",
+        "codepoint": "U+16B4"
+      }
+    ]
+  },
+  "alpha_band_definition": "Euclidean radius 3 around the alpha >=128 silhouette boundary; opaque means alpha=255. Bounding box uses alpha=255; minimum margins also check every nonzero-alpha pixel.",
+  "images": [
+    {
+      "key": "bench",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 324519,
+      "opaque_fraction": 0.30948543548583984,
+      "nonzero_fraction": 0.32622814178466797,
+      "bounding_box": [
+        72,
+        232,
+        952,
+        791
+      ],
+      "nonzero_bounding_box": [
+        72,
+        232,
+        952,
+        791
+      ],
+      "sha256": "29d4d2de19f9c7cfc88f5fb044b7c63c834d828e758a18512078e54035f0130f",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9a9a94",
+        "a0673a",
+        "cfe3a2",
+        "e8b021"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        232,
+        72,
+        233
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 17556,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "shelter",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 334253,
+      "opaque_fraction": 0.3187685012817383,
+      "nonzero_fraction": 0.3255729675292969,
+      "bounding_box": [
+        72,
+        207,
+        952,
+        817
+      ],
+      "nonzero_bounding_box": [
+        72,
+        206,
+        952,
+        817
+      ],
+      "sha256": "95d775a2c45fa1e1674a8ae66e66b7e6983d14a42ce9d793b9858cbcd5297847",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9a9a94",
+        "a0673a",
+        "cfe3a2",
+        "dcc9a1"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        207,
+        72,
+        207
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 7135,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "post_box",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 304640,
+      "opaque_fraction": 0.29052734375,
+      "nonzero_fraction": 0.2984743118286133,
+      "bounding_box": [
+        168,
+        72,
+        856,
+        952
+      ],
+      "nonzero_bounding_box": [
+        168,
+        72,
+        856,
+        952
+      ],
+      "sha256": "89c58d8d34e5521fc3fe0f8e8534adc6258bfdde7ffa4263697cdbcdbe4179f5",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "79c7d8",
+        "9a9a94",
+        "cfe3a2",
+        "e8b021"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        168,
+        72,
+        168,
+        72
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 8333,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "place_of_worship",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 361156,
+      "opaque_fraction": 0.3444252014160156,
+      "nonzero_fraction": 0.3511819839477539,
+      "bounding_box": [
+        72,
+        149,
+        952,
+        874
+      ],
+      "nonzero_bounding_box": [
+        72,
+        149,
+        952,
+        874
+      ],
+      "sha256": "e1ca968bcbe90f4a104c7d166c418d4491820aeb650d28762fcebe76f42abbcf",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9a9a94",
+        "9c3b2a",
+        "a0673a",
+        "cfe3a2",
+        "f7f3e6"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        149,
+        72,
+        150
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 7085,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "church",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 320402,
+      "opaque_fraction": 0.3055591583251953,
+      "nonzero_fraction": 0.31322765350341797,
+      "bounding_box": [
+        92,
+        72,
+        931,
+        952
+      ],
+      "nonzero_bounding_box": [
+        92,
+        72,
+        931,
+        952
+      ],
+      "sha256": "2ca68ba90d94c02988265adab84be0bc869fe3e3a8d89229b9cf283147762d50",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9a9a94",
+        "a0673a",
+        "cfe3a2",
+        "dcc9a1",
+        "e8b021",
+        "f7f3e6"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        92,
+        72,
+        93,
+        72
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 8041,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "mosque",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 329395,
+      "opaque_fraction": 0.3141355514526367,
+      "nonzero_fraction": 0.3237171173095703,
+      "bounding_box": [
+        72,
+        85,
+        952,
+        938
+      ],
+      "nonzero_bounding_box": [
+        72,
+        85,
+        952,
+        938
+      ],
+      "sha256": "b9e2d653c4a580881786ea0e3c0835687fec9c3ce74eedc3bcf07dd4d1e8bb22",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9a9a94",
+        "a0673a",
+        "cfe3a2",
+        "dcc9a1",
+        "e8b021",
+        "f7f3e6"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        85,
+        72,
+        86
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 10047,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "synagogue",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 433449,
+      "opaque_fraction": 0.41336917877197266,
+      "nonzero_fraction": 0.4214630126953125,
+      "bounding_box": [
+        72,
+        157,
+        952,
+        867
+      ],
+      "nonzero_bounding_box": [
+        72,
+        157,
+        952,
+        867
+      ],
+      "sha256": "8aba9b9f478c3792a405748e645e3c3a7fc1a20298f6a2db6a6f6f01ba218850",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9a9a94",
+        "9c3b2a",
+        "a0673a",
+        "cfe3a2",
+        "dcc9a1",
+        "e8b021",
+        "f7f3e6"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        157,
+        72,
+        157
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 8487,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "temple",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 386315,
+      "opaque_fraction": 0.36841869354248047,
+      "nonzero_fraction": 0.37920284271240234,
+      "bounding_box": [
+        72,
+        84,
+        952,
+        939
+      ],
+      "nonzero_bounding_box": [
+        72,
+        84,
+        952,
+        939
+      ],
+      "sha256": "8b93bb267419d72e7e8e5cc85502c6458cbe94b0f9f86245f70a736b4011c3a1",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9a9a94",
+        "9c3b2a",
+        "a0673a",
+        "cfe3a2",
+        "dcc9a1",
+        "e8b021",
+        "f7f3e6"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        84,
+        72,
+        85
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 11308,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "bbq",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 384705,
+      "opaque_fraction": 0.3668832778930664,
+      "nonzero_fraction": 0.38547229766845703,
+      "bounding_box": [
+        72,
+        114,
+        952,
+        909
+      ],
+      "nonzero_bounding_box": [
+        72,
+        114,
+        952,
+        909
+      ],
+      "sha256": "681b2cd282ce1512089f7d13d26087402ca54d81cd6ee3a20fd0004d155a0f9a",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9a9a94",
+        "9c3b2a",
+        "a0673a",
+        "cfe3a2",
+        "dcc9a1"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        114,
+        72,
+        115
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 19492,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "fountain",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 311666,
+      "opaque_fraction": 0.2972278594970703,
+      "nonzero_fraction": 0.31004905700683594,
+      "bounding_box": [
+        72,
+        101,
+        952,
+        922
+      ],
+      "nonzero_bounding_box": [
+        72,
+        101,
+        952,
+        922
+      ],
+      "sha256": "3788f049210db565500c39d53a468593eb8eb6182870efd551760b8db8bc3ceb",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "79c7d8",
+        "9a9a94",
+        "a0673a",
+        "cfe3a2"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        101,
+        72,
+        102
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 13444,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "drinking_water",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 289183,
+      "opaque_fraction": 0.2757863998413086,
+      "nonzero_fraction": 0.28620147705078125,
+      "bounding_box": [
+        109,
+        72,
+        915,
+        952
+      ],
+      "nonzero_bounding_box": [
+        109,
+        72,
+        915,
+        952
+      ],
+      "sha256": "d95b9be3ff6ba15a63270cd98a993f886f2c1d126e76e2cbc7b0c4eba86aec55",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9a9a94",
+        "cfe3a2",
+        "f7f3e6"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        109,
+        72,
+        109,
+        72
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 10921,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "clock",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 276390,
+      "opaque_fraction": 0.26358604431152344,
+      "nonzero_fraction": 0.27277183532714844,
+      "bounding_box": [
+        174,
+        54,
+        850,
+        970
+      ],
+      "nonzero_bounding_box": [
+        174,
+        54,
+        850,
+        970
+      ],
+      "sha256": "b4ed88cd9767c196d2933a1e74ff7833c58bee29ac89a4540148a1f80bd4bbe2",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9a9a94",
+        "a0673a",
+        "cfe3a2",
+        "dcc9a1",
+        "e8b021",
+        "f7f3e6"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        174,
+        54,
+        174,
+        54
+      ],
+      "span_fraction": 0.89453125,
+      "half_transparent_pixels": 9632,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "information",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 466080,
+      "opaque_fraction": 0.444488525390625,
+      "nonzero_fraction": 0.4543495178222656,
+      "bounding_box": [
+        72,
+        91,
+        952,
+        932
+      ],
+      "nonzero_bounding_box": [
+        72,
+        91,
+        952,
+        932
+      ],
+      "sha256": "03befbc955a30f7592b3d2264400b49a41b59b8b0da8413c95592eb35955ad1e",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "79c7d8",
+        "9a9a94",
+        "a0673a",
+        "cfe3a2",
+        "dcc9a1",
+        "f7f3e6"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        91,
+        72,
+        92
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 10340,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "artwork",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 299663,
+      "opaque_fraction": 0.2857809066772461,
+      "nonzero_fraction": 0.2979745864868164,
+      "bounding_box": [
+        72,
+        76,
+        952,
+        947
+      ],
+      "nonzero_bounding_box": [
+        72,
+        76,
+        952,
+        947
+      ],
+      "sha256": "c1ab8220fa463c2beebe663120f61cbbc5f4d23288a657699987c16582786559",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9a9a94",
+        "cfe3a2"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        76,
+        72,
+        77
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 12786,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "picnic_site",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 332679,
+      "opaque_fraction": 0.31726741790771484,
+      "nonzero_fraction": 0.32843780517578125,
+      "bounding_box": [
+        72,
+        80,
+        952,
+        944
+      ],
+      "nonzero_bounding_box": [
+        72,
+        80,
+        952,
+        944
+      ],
+      "sha256": "a553be52cb278146990df16d42495f0646ef5234ab6e9ba9bf7bd3439da4a868",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9a9a94",
+        "a0673a",
+        "cfe3a2"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        80,
+        72,
+        80
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 11713,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "viewpoint",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 317798,
+      "opaque_fraction": 0.30307579040527344,
+      "nonzero_fraction": 0.3122444152832031,
+      "bounding_box": [
+        72,
+        219,
+        952,
+        805
+      ],
+      "nonzero_bounding_box": [
+        72,
+        219,
+        952,
+        805
+      ],
+      "sha256": "8f402b34949ecfed62268208286ca900216845a95dc12a28c913ba66f9219d9a",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "79c7d8",
+        "9a9a94",
+        "a0673a",
+        "cfe3a2"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        219,
+        72,
+        219
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 9614,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "attraction",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 378473,
+      "opaque_fraction": 0.36093997955322266,
+      "nonzero_fraction": 0.3705148696899414,
+      "bounding_box": [
+        72,
+        224,
+        952,
+        799
+      ],
+      "nonzero_bounding_box": [
+        72,
+        224,
+        952,
+        799
+      ],
+      "sha256": "35a5e198e91a3e35033aba5b160af22361e5fc1cfce136e5825bd6c0a8427dc7",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9a9a94",
+        "a0673a",
+        "cfe3a2",
+        "dcc9a1",
+        "f7f3e6"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        224,
+        72,
+        225
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 10040,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "museum",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 419779,
+      "opaque_fraction": 0.4003324508666992,
+      "nonzero_fraction": 0.40721702575683594,
+      "bounding_box": [
+        72,
+        145,
+        952,
+        878
+      ],
+      "nonzero_bounding_box": [
+        72,
+        145,
+        952,
+        878
+      ],
+      "sha256": "1eade5db9eb885495c451f59ea66863037d042e30e334f803d9f70f2d45b061d",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9a9a94",
+        "a0673a",
+        "cfe3a2",
+        "dcc9a1",
+        "f7f3e6"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        145,
+        72,
+        146
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 7219,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "wilderness_hut",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 406732,
+      "opaque_fraction": 0.3878898620605469,
+      "nonzero_fraction": 0.39641761779785156,
+      "bounding_box": [
+        72,
+        139,
+        952,
+        884
+      ],
+      "nonzero_bounding_box": [
+        72,
+        139,
+        952,
+        884
+      ],
+      "sha256": "0e069d5b845bfb72213dcece877e342b7365d24bee1439c9f5b0b152bfe2c6aa",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9a9a94",
+        "a0673a",
+        "cfe3a2",
+        "dcc9a1",
+        "e8b021",
+        "f7f3e6"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        139,
+        72,
+        140
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 8942,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "alpine_hut",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 382322,
+      "opaque_fraction": 0.3646106719970703,
+      "nonzero_fraction": 0.37165355682373047,
+      "bounding_box": [
+        72,
+        161,
+        952,
+        863
+      ],
+      "nonzero_bounding_box": [
+        72,
+        161,
+        952,
+        863
+      ],
+      "sha256": "9ab29e33f0a9df3cb7fe49ada2d174c1340ea0578afc33fa77a5dc7c97d5795d",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "79c7d8",
+        "9a9a94",
+        "9c3b2a",
+        "a0673a",
+        "cfe3a2",
+        "dcc9a1",
+        "f7f3e6"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        161,
+        72,
+        161
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 7385,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "lean_to",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 347359,
+      "opaque_fraction": 0.3312673568725586,
+      "nonzero_fraction": 0.33901023864746094,
+      "bounding_box": [
+        73,
+        203,
+        952,
+        820
+      ],
+      "nonzero_bounding_box": [
+        72,
+        203,
+        952,
+        820
+      ],
+      "sha256": "6be10ec25fe2232e793262fee87cabbf8471ea9ea41936e75fd241899a79abf2",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9a9a94",
+        "a0673a",
+        "cfe3a2"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        73,
+        203,
+        72,
+        204
+      ],
+      "span_fraction": 0.8583984375,
+      "half_transparent_pixels": 8119,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "archaeological_site",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 343783,
+      "opaque_fraction": 0.32785701751708984,
+      "nonzero_fraction": 0.3366127014160156,
+      "bounding_box": [
+        72,
+        213,
+        952,
+        810
+      ],
+      "nonzero_bounding_box": [
+        72,
+        213,
+        952,
+        810
+      ],
+      "sha256": "35f2f5fbf1852785aab6e98d2b763cc5ece692a86215b4af456bf4b89b134ce7",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9a9a94",
+        "9c3b2a",
+        "a0673a",
+        "cfe3a2",
+        "dcc9a1"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        213,
+        72,
+        214
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 9181,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "ruins",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 361500,
+      "opaque_fraction": 0.3447532653808594,
+      "nonzero_fraction": 0.3549356460571289,
+      "bounding_box": [
+        72,
+        148,
+        952,
+        875
+      ],
+      "nonzero_bounding_box": [
+        72,
+        148,
+        952,
+        875
+      ],
+      "sha256": "1915939d840fd8a4f81869a19be3db893567b871a380c00520cc6badec4bf695",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9a9a94",
+        "a0673a",
+        "cfe3a2",
+        "f7f3e6"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        148,
+        72,
+        149
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 10677,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "memorial",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 428599,
+      "opaque_fraction": 0.40874385833740234,
+      "nonzero_fraction": 0.41590309143066406,
+      "bounding_box": [
+        72,
+        136,
+        952,
+        887
+      ],
+      "nonzero_bounding_box": [
+        72,
+        136,
+        952,
+        887
+      ],
+      "sha256": "37d8a71a7aee9f8ff05f1a01219c381cff0c8a16d21032bc496e6394cee95835",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9a9a94",
+        "9c3b2a",
+        "a0673a",
+        "cfe3a2",
+        "dcc9a1",
+        "e8b021"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        136,
+        72,
+        137
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 7507,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "boundary_stone",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 354301,
+      "opaque_fraction": 0.3378877639770508,
+      "nonzero_fraction": 0.34459590911865234,
+      "bounding_box": [
+        72,
+        179,
+        952,
+        845
+      ],
+      "nonzero_bounding_box": [
+        72,
+        179,
+        952,
+        845
+      ],
+      "sha256": "3a088e053a028b1db1005f0a71d41e35c9356a06259155adcecc3ffb373dcc1c",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9a9a94",
+        "cfe3a2"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        179,
+        72,
+        179
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 7034,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "rune_stone",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 430054,
+      "opaque_fraction": 0.41013145446777344,
+      "nonzero_fraction": 0.4178943634033203,
+      "bounding_box": [
+        99,
+        72,
+        925,
+        952
+      ],
+      "nonzero_bounding_box": [
+        99,
+        72,
+        925,
+        952
+      ],
+      "sha256": "6a0cb4bb56b1ae881acaac3b5317cf2f80cda6b69b27f1d7ae25986b7c40a056",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9a9a94",
+        "9c3b2a",
+        "a0673a",
+        "cfe3a2",
+        "f7f3e6"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        99,
+        72,
+        99,
+        72
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 8140,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "castle",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 396689,
+      "opaque_fraction": 0.3783121109008789,
+      "nonzero_fraction": 0.39037132263183594,
+      "bounding_box": [
+        72,
+        108,
+        952,
+        916
+      ],
+      "nonzero_bounding_box": [
+        72,
+        108,
+        952,
+        916
+      ],
+      "sha256": "fffb2bb56bfa4100df289787de989b5c62c49aaf9cca733de8146fda62c14d52",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9a9a94",
+        "9c3b2a",
+        "a0673a",
+        "cfe3a2",
+        "dcc9a1",
+        "e8b021",
+        "f7f3e6"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        108,
+        72,
+        108
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 12645,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "mine",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 388358,
+      "opaque_fraction": 0.37036705017089844,
+      "nonzero_fraction": 0.37700557708740234,
+      "bounding_box": [
+        72,
+        198,
+        952,
+        825
+      ],
+      "nonzero_bounding_box": [
+        72,
+        198,
+        952,
+        825
+      ],
+      "sha256": "57251801e1c3f50024b0f145e407fa5d96fac17a542de3de5d6ec6634a9fe310",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9a9a94",
+        "a0673a",
+        "cfe3a2"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        198,
+        72,
+        199
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 6961,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "manor",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 408649,
+      "opaque_fraction": 0.38971805572509766,
+      "nonzero_fraction": 0.3958091735839844,
+      "bounding_box": [
+        72,
+        207,
+        952,
+        816
+      ],
+      "nonzero_bounding_box": [
+        72,
+        207,
+        952,
+        816
+      ],
+      "sha256": "190260e13287fe48c309fdcc0c9d39691a841482c3e91feb6bdec83e4a409b3e",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9a9a94",
+        "a0673a",
+        "cfe3a2",
+        "dcc9a1",
+        "e8b021",
+        "f7f3e6"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        207,
+        72,
+        208
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 6387,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "shieling",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 396292,
+      "opaque_fraction": 0.3779335021972656,
+      "nonzero_fraction": 0.38822269439697266,
+      "bounding_box": [
+        72,
+        144,
+        952,
+        879
+      ],
+      "nonzero_bounding_box": [
+        72,
+        144,
+        952,
+        879
+      ],
+      "sha256": "62b4b1ae086fe93fe7a5e02df9b3999857e13ac88da9861d519050a4b1769a4c",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9a9a94",
+        "a0673a",
+        "cfe3a2"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        144,
+        72,
+        145
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 10789,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "tomb",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 329814,
+      "opaque_fraction": 0.31453514099121094,
+      "nonzero_fraction": 0.32201099395751953,
+      "bounding_box": [
+        72,
+        86,
+        952,
+        937
+      ],
+      "nonzero_bounding_box": [
+        72,
+        86,
+        952,
+        937
+      ],
+      "sha256": "c468c59dac998f69d1a747855753720082c2d6a289907083e1b418297a7cf79e",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9a9a94",
+        "cfe3a2"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        86,
+        72,
+        87
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 7839,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "monument",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 271946,
+      "opaque_fraction": 0.25934791564941406,
+      "nonzero_fraction": 0.2660503387451172,
+      "bounding_box": [
+        120,
+        54,
+        904,
+        970
+      ],
+      "nonzero_bounding_box": [
+        120,
+        54,
+        904,
+        970
+      ],
+      "sha256": "791dcf1676775569427c433ffae358dc22a8805ffd76a4a9cd915dc4acfa0ab5",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9a9a94",
+        "a0673a",
+        "cfe3a2"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        120,
+        54,
+        120,
+        54
+      ],
+      "span_fraction": 0.89453125,
+      "half_transparent_pixels": 7028,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "milestone",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 375102,
+      "opaque_fraction": 0.3577251434326172,
+      "nonzero_fraction": 0.3651885986328125,
+      "bounding_box": [
+        72,
+        84,
+        952,
+        939
+      ],
+      "nonzero_bounding_box": [
+        72,
+        84,
+        952,
+        939
+      ],
+      "sha256": "0f6cc1818ff8ad65802731326be6187a562c70200c6269d69d525754c3e3d5b2",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9a9a94",
+        "a0673a",
+        "cfe3a2",
+        "e8b021"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        84,
+        72,
+        85
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 7826,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "historic_stone",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 386691,
+      "opaque_fraction": 0.3687772750854492,
+      "nonzero_fraction": 0.376220703125,
+      "bounding_box": [
+        72,
+        114,
+        952,
+        910
+      ],
+      "nonzero_bounding_box": [
+        72,
+        114,
+        952,
+        910
+      ],
+      "sha256": "8cbdb823affb6aa63d4491d030c46d00d01034c2e6d3e4ead377a706f5133bd8",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9a9a94",
+        "9c3b2a",
+        "a0673a",
+        "cfe3a2",
+        "f7f3e6"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        114,
+        72,
+        114
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 7805,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "fort",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 425483,
+      "opaque_fraction": 0.40577220916748047,
+      "nonzero_fraction": 0.4136381149291992,
+      "bounding_box": [
+        73,
+        163,
+        952,
+        860
+      ],
+      "nonzero_bounding_box": [
+        72,
+        163,
+        952,
+        860
+      ],
+      "sha256": "1c1b0ee60824b4f5b834c79f40e3735020f64f78996129c0ee554eb6c7a73627",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9a9a94",
+        "a0673a",
+        "cfe3a2",
+        "dcc9a1",
+        "e8b021"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        73,
+        163,
+        72,
+        164
+      ],
+      "span_fraction": 0.8583984375,
+      "half_transparent_pixels": 8248,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "aircraft",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 283818,
+      "opaque_fraction": 0.27066993713378906,
+      "nonzero_fraction": 0.28218936920166016,
+      "bounding_box": [
+        120,
+        54,
+        904,
+        970
+      ],
+      "nonzero_bounding_box": [
+        120,
+        54,
+        904,
+        970
+      ],
+      "sha256": "6165838a23a39d8e8dcaacc0269b837989b7cf15030d4993f19c7c164f2d3c18",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "79c7d8",
+        "9a9a94",
+        "cfe3a2"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        120,
+        54,
+        120,
+        54
+      ],
+      "span_fraction": 0.89453125,
+      "half_transparent_pixels": 12079,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "cannon",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 285565,
+      "opaque_fraction": 0.2723360061645508,
+      "nonzero_fraction": 0.28493595123291016,
+      "bounding_box": [
+        54,
+        213,
+        970,
+        810
+      ],
+      "nonzero_bounding_box": [
+        54,
+        213,
+        970,
+        810
+      ],
+      "sha256": "0a9c5b89f877056a6bf77822c2a2786b2876c2585e54d59acb8038767f7d3670",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9a9a94",
+        "a0673a",
+        "cfe3a2"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        54,
+        213,
+        54,
+        214
+      ],
+      "span_fraction": 0.89453125,
+      "half_transparent_pixels": 13212,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "mine_shaft",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 372821,
+      "opaque_fraction": 0.35554981231689453,
+      "nonzero_fraction": 0.37081241607666016,
+      "bounding_box": [
+        72,
+        78,
+        952,
+        946
+      ],
+      "nonzero_bounding_box": [
+        72,
+        78,
+        952,
+        946
+      ],
+      "sha256": "8d4efa5c9d44c88820187913b960c9835ba3821da8961daf6afeb9b927f8070f",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9a9a94",
+        "9c3b2a",
+        "a0673a",
+        "cfe3a2"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        78,
+        72,
+        78
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 16004,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "charcoal_pile",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 265544,
+      "opaque_fraction": 0.25324249267578125,
+      "nonzero_fraction": 0.2619667053222656,
+      "bounding_box": [
+        54,
+        197,
+        970,
+        827
+      ],
+      "nonzero_bounding_box": [
+        54,
+        197,
+        970,
+        827
+      ],
+      "sha256": "0a59f3a25b78f7fd567ffde37ef7e5123fb0f0b15816108915f85aafebdf7ae1",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "a0673a",
+        "cfe3a2",
+        "dcc9a1",
+        "e8b021",
+        "f7f3e6"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        54,
+        197,
+        54,
+        197
+      ],
+      "span_fraction": 0.89453125,
+      "half_transparent_pixels": 9148,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "ship",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 365001,
+      "opaque_fraction": 0.34809207916259766,
+      "nonzero_fraction": 0.3687448501586914,
+      "bounding_box": [
+        72,
+        83,
+        952,
+        941
+      ],
+      "nonzero_bounding_box": [
+        72,
+        83,
+        952,
+        941
+      ],
+      "sha256": "44759a44bdca79413672489ba2155886b20fa2b42b04cc2088a0a58447b72c5b",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "79c7d8",
+        "9a9a94",
+        "9c3b2a",
+        "a0673a",
+        "dcc9a1",
+        "f7f3e6"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        83,
+        72,
+        83
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 21656,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "city_gate",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 320560,
+      "opaque_fraction": 0.3057098388671875,
+      "nonzero_fraction": 0.31487274169921875,
+      "bounding_box": [
+        72,
+        105,
+        952,
+        919
+      ],
+      "nonzero_bounding_box": [
+        72,
+        105,
+        952,
+        919
+      ],
+      "sha256": "45ca6984e768e36e015f02defda83aba06594236480902523d774ddd0ffee931",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9a9a94",
+        "a0673a",
+        "cfe3a2",
+        "dcc9a1",
+        "f7f3e6"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        105,
+        72,
+        105
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 9608,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "peak",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 291333,
+      "opaque_fraction": 0.27783679962158203,
+      "nonzero_fraction": 0.2848854064941406,
+      "bounding_box": [
+        72,
+        170,
+        952,
+        853
+      ],
+      "nonzero_bounding_box": [
+        72,
+        170,
+        952,
+        853
+      ],
+      "sha256": "18fb00ba5b21c20e11c572d4579958bf68cfa58054e46ec5f06f452ab5efab21",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9a9a94",
+        "a0673a",
+        "cfe3a2",
+        "dcc9a1",
+        "f7f3e6"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        170,
+        72,
+        171
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 7391,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "rock",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 366757,
+      "opaque_fraction": 0.34976673126220703,
+      "nonzero_fraction": 0.3563375473022461,
+      "bounding_box": [
+        72,
+        217,
+        952,
+        807
+      ],
+      "nonzero_bounding_box": [
+        72,
+        217,
+        952,
+        807
+      ],
+      "sha256": "b03653a2a5b90f747ed136c57e48757dd98163da9ba1298a7ff77f1e0d6140b0",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9a9a94",
+        "9c3b2a",
+        "cfe3a2"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        217,
+        72,
+        217
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 6890,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "beach",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 279824,
+      "opaque_fraction": 0.2668609619140625,
+      "nonzero_fraction": 0.2767000198364258,
+      "bounding_box": [
+        54,
+        151,
+        970,
+        873
+      ],
+      "nonzero_bounding_box": [
+        54,
+        151,
+        970,
+        873
+      ],
+      "sha256": "6a5ab70ad8437ebc34302b8526a0a3e4db982f6563059cf9f1eb4e513851000a",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "79c7d8",
+        "9a9a94",
+        "9c3b2a",
+        "a0673a",
+        "dcc9a1",
+        "f7f3e6"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        54,
+        151,
+        54,
+        151
+      ],
+      "span_fraction": 0.89453125,
+      "half_transparent_pixels": 10317,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "cliff",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 339308,
+      "opaque_fraction": 0.3235893249511719,
+      "nonzero_fraction": 0.33194923400878906,
+      "bounding_box": [
+        72,
+        135,
+        952,
+        889
+      ],
+      "nonzero_bounding_box": [
+        72,
+        135,
+        952,
+        889
+      ],
+      "sha256": "4a345587e29588a7c60b8c9e6056d70bbba87ed9a4980c4d5f9f3ad4bb1cd564",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9a9a94",
+        "cfe3a2"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        135,
+        72,
+        135
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 8766,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "boulder",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 368176,
+      "opaque_fraction": 0.3511199951171875,
+      "nonzero_fraction": 0.35802745819091797,
+      "bounding_box": [
+        72,
+        236,
+        952,
+        788
+      ],
+      "nonzero_bounding_box": [
+        72,
+        236,
+        952,
+        788
+      ],
+      "sha256": "7357a8c0ebc146bb40aea435efa5c096928542e269ac0fb64be923be7d0a50e8",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9a9a94",
+        "a0673a",
+        "cfe3a2"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        236,
+        72,
+        236
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 7243,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "cape",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 414135,
+      "opaque_fraction": 0.39494991302490234,
+      "nonzero_fraction": 0.4024362564086914,
+      "bounding_box": [
+        72,
+        172,
+        952,
+        851
+      ],
+      "nonzero_bounding_box": [
+        72,
+        172,
+        952,
+        851
+      ],
+      "sha256": "8ef041b0e8c80c0150eeb0992f585ad070e751b410508aebcc7adc4e66652b1c",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "79c7d8",
+        "9a9a94",
+        "a0673a",
+        "cfe3a2",
+        "f7f3e6"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        172,
+        72,
+        173
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 7850,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "hill",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 297165,
+      "opaque_fraction": 0.2833986282348633,
+      "nonzero_fraction": 0.2913684844970703,
+      "bounding_box": [
+        72,
+        204,
+        952,
+        819
+      ],
+      "nonzero_bounding_box": [
+        72,
+        204,
+        952,
+        819
+      ],
+      "sha256": "97eb86b764244491404f33f1eb20b42f9b20d744e6600322308bdd2909a0a83e",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9a9a94",
+        "a0673a",
+        "cfe3a2",
+        "e8b021"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        204,
+        72,
+        205
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 8357,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "spring",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 351203,
+      "opaque_fraction": 0.3349332809448242,
+      "nonzero_fraction": 0.34195709228515625,
+      "bounding_box": [
+        72,
+        218,
+        952,
+        806
+      ],
+      "nonzero_bounding_box": [
+        72,
+        218,
+        952,
+        806
+      ],
+      "sha256": "244ff2b3c12182082d6d0362ce73186c3feab7c9938c01b28c096edfbcc34f2a",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "79c7d8",
+        "9a9a94",
+        "a0673a",
+        "cfe3a2",
+        "f7f3e6"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        218,
+        72,
+        218
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 7365,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "cave_entrance",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 415458,
+      "opaque_fraction": 0.3962116241455078,
+      "nonzero_fraction": 0.40299510955810547,
+      "bounding_box": [
+        73,
+        186,
+        952,
+        837
+      ],
+      "nonzero_bounding_box": [
+        72,
+        186,
+        952,
+        837
+      ],
+      "sha256": "0b8547154f889633f823b6de6ab1d0f7fe9ca8fc8e2a999385c9bffe9031de56",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9a9a94",
+        "cfe3a2"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        73,
+        186,
+        72,
+        187
+      ],
+      "span_fraction": 0.8583984375,
+      "half_transparent_pixels": 7113,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "saddle",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 385287,
+      "opaque_fraction": 0.36743831634521484,
+      "nonzero_fraction": 0.3760099411010742,
+      "bounding_box": [
+        72,
+        189,
+        952,
+        835
+      ],
+      "nonzero_bounding_box": [
+        72,
+        189,
+        952,
+        835
+      ],
+      "sha256": "bc70bb5c69cf6938aedc214538038f9586a24e20d550f42d7a270258cbb400e4",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9a9a94",
+        "a0673a",
+        "cfe3a2",
+        "f7f3e6"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        189,
+        72,
+        189
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 8988,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "tower",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 262508,
+      "opaque_fraction": 0.2503471374511719,
+      "nonzero_fraction": 0.2599353790283203,
+      "bounding_box": [
+        162,
+        54,
+        862,
+        970
+      ],
+      "nonzero_bounding_box": [
+        162,
+        54,
+        862,
+        970
+      ],
+      "sha256": "e98a424291de707f9c8f5212ee47b29aeab1982b5dc1133b73c6238115a6d527",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9a9a94",
+        "a0673a",
+        "cfe3a2"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        162,
+        54,
+        162,
+        54
+      ],
+      "span_fraction": 0.89453125,
+      "half_transparent_pixels": 10054,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "bridge",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 292991,
+      "opaque_fraction": 0.2794179916381836,
+      "nonzero_fraction": 0.2898979187011719,
+      "bounding_box": [
+        72,
+        264,
+        952,
+        759
+      ],
+      "nonzero_bounding_box": [
+        72,
+        264,
+        952,
+        759
+      ],
+      "sha256": "f065029ab601c96db36b931a62ed559ef93a4f5caf8ca3c0d7d9e7ec4080300a",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "79c7d8",
+        "9a9a94",
+        "a0673a",
+        "cfe3a2",
+        "f7f3e6"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        264,
+        72,
+        265
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 10989,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "chimney",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 270389,
+      "opaque_fraction": 0.25786304473876953,
+      "nonzero_fraction": 0.2654743194580078,
+      "bounding_box": [
+        179,
+        54,
+        845,
+        970
+      ],
+      "nonzero_bounding_box": [
+        179,
+        54,
+        845,
+        970
+      ],
+      "sha256": "ae61be9cf5f3f2ba1547787d430c6c75d993c1825618774c0ef3d5c14bbc245a",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9a9a94",
+        "9c3b2a",
+        "a0673a",
+        "cfe3a2",
+        "dcc9a1",
+        "f7f3e6"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        179,
+        54,
+        179,
+        54
+      ],
+      "span_fraction": 0.89453125,
+      "half_transparent_pixels": 7981,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "survey_point",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 298732,
+      "opaque_fraction": 0.2848930358886719,
+      "nonzero_fraction": 0.29749488830566406,
+      "bounding_box": [
+        72,
+        79,
+        952,
+        944
+      ],
+      "nonzero_bounding_box": [
+        72,
+        79,
+        952,
+        945
+      ],
+      "sha256": "e475a84291fa12135cf7d953ea73369e6a67dcd4ed0e7b67fb70724650aee8e5",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9a9a94",
+        "a0673a",
+        "dcc9a1",
+        "e8b021"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        79,
+        72,
+        80
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 13214,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "cairn",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 289817,
+      "opaque_fraction": 0.27639102935791016,
+      "nonzero_fraction": 0.2844715118408203,
+      "bounding_box": [
+        68,
+        166,
+        955,
+        857
+      ],
+      "nonzero_bounding_box": [
+        68,
+        166,
+        955,
+        857
+      ],
+      "sha256": "32039a1e3d8a8dbca00b19567bdc1a5c94ddca761ee5e8f51ece3c239efe0735",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9a9a94",
+        "a0673a",
+        "cfe3a2"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        68,
+        166,
+        69,
+        167
+      ],
+      "span_fraction": 0.8662109375,
+      "half_transparent_pixels": 8473,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "water_tower",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 375079,
+      "opaque_fraction": 0.35770320892333984,
+      "nonzero_fraction": 0.3696165084838867,
+      "bounding_box": [
+        89,
+        72,
+        934,
+        952
+      ],
+      "nonzero_bounding_box": [
+        89,
+        72,
+        934,
+        952
+      ],
+      "sha256": "52d24c7eca59f983d541556c8d67ecd7c8e60372f008796d6365f5577e1d1e27",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9a9a94",
+        "a0673a",
+        "cfe3a2",
+        "dcc9a1",
+        "f7f3e6"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        89,
+        72,
+        90,
+        72
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 12492,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "lighthouse",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 289157,
+      "opaque_fraction": 0.27576160430908203,
+      "nonzero_fraction": 0.28441619873046875,
+      "bounding_box": [
+        60,
+        61,
+        964,
+        963
+      ],
+      "nonzero_bounding_box": [
+        60,
+        61,
+        964,
+        963
+      ],
+      "sha256": "bbde6031ea45656251ebb95465af26386037cc7d6af569f2bfa29f14a9f6815a",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "79c7d8",
+        "9a9a94",
+        "9c3b2a",
+        "a0673a",
+        "cfe3a2",
+        "e8b021",
+        "f7f3e6"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        60,
+        61,
+        60,
+        61
+      ],
+      "span_fraction": 0.8828125,
+      "half_transparent_pixels": 9075,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "water_tap",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 287703,
+      "opaque_fraction": 0.27437496185302734,
+      "nonzero_fraction": 0.2858152389526367,
+      "bounding_box": [
+        112,
+        71,
+        912,
+        952
+      ],
+      "nonzero_bounding_box": [
+        112,
+        71,
+        912,
+        952
+      ],
+      "sha256": "4237102091b20d5f4b8ab8747b4d4290ce79d0fc66f0314eac68c814cf947824",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "79c7d8",
+        "9a9a94",
+        "a0673a",
+        "cfe3a2",
+        "dcc9a1",
+        "e8b021"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        112,
+        71,
+        112,
+        72
+      ],
+      "span_fraction": 0.8603515625,
+      "half_transparent_pixels": 11996,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "windmill",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 287237,
+      "opaque_fraction": 0.27393054962158203,
+      "nonzero_fraction": 0.28926849365234375,
+      "bounding_box": [
+        180,
+        73,
+        843,
+        952
+      ],
+      "nonzero_bounding_box": [
+        180,
+        72,
+        843,
+        952
+      ],
+      "sha256": "e646855e6786c204ccd1b68aa8ed9b218bbfa540e40a9cf4a0cd911855da22a1",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9a9a94",
+        "9c3b2a",
+        "a0673a",
+        "cfe3a2",
+        "f7f3e6"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        180,
+        73,
+        181,
+        72
+      ],
+      "span_fraction": 0.8583984375,
+      "half_transparent_pixels": 16083,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "water_well",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 336631,
+      "opaque_fraction": 0.32103633880615234,
+      "nonzero_fraction": 0.3326606750488281,
+      "bounding_box": [
+        72,
+        81,
+        952,
+        943
+      ],
+      "nonzero_bounding_box": [
+        72,
+        81,
+        952,
+        943
+      ],
+      "sha256": "6afb76eb20f09c13e216ce924dee70ec59fb042fb4cdb534678f33eadcc628de",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "a0673a",
+        "cfe3a2"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        81,
+        72,
+        81
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 12189,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "beacon",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 288410,
+      "opaque_fraction": 0.27504920959472656,
+      "nonzero_fraction": 0.2857017517089844,
+      "bounding_box": [
+        56,
+        88,
+        967,
+        935
+      ],
+      "nonzero_bounding_box": [
+        56,
+        88,
+        967,
+        935
+      ],
+      "sha256": "d21cbbb1a09fb90bfcc11eff1dfbb3b88ef6382def83a109cc5520843173463b",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "79c7d8",
+        "9a9a94",
+        "9c3b2a",
+        "a0673a",
+        "cfe3a2",
+        "f7f3e6"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        56,
+        88,
+        57,
+        89
+      ],
+      "span_fraction": 0.8896484375,
+      "half_transparent_pixels": 11170,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "watermill",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 372375,
+      "opaque_fraction": 0.35512447357177734,
+      "nonzero_fraction": 0.3637361526489258,
+      "bounding_box": [
+        73,
+        183,
+        952,
+        840
+      ],
+      "nonzero_bounding_box": [
+        72,
+        183,
+        952,
+        840
+      ],
+      "sha256": "f911b8473fa3950df1739bb503b7722a87750799a308fd5de6f119f2318b3188",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "79c7d8",
+        "9a9a94",
+        "9c3b2a",
+        "a0673a",
+        "cfe3a2",
+        "f7f3e6"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        73,
+        183,
+        72,
+        184
+      ],
+      "span_fraction": 0.8583984375,
+      "half_transparent_pixels": 9030,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "maypole",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 283932,
+      "opaque_fraction": 0.2707786560058594,
+      "nonzero_fraction": 0.2900228500366211,
+      "bounding_box": [
+        165,
+        58,
+        858,
+        965
+      ],
+      "nonzero_bounding_box": [
+        165,
+        58,
+        858,
+        965
+      ],
+      "sha256": "30e1335f14f4d3fefafb9ce3e7d76410d243e011138f521c0435231ddabc1cde",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "79c7d8",
+        "cfe3a2",
+        "dcc9a1",
+        "e8b021",
+        "f7f3e6"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        165,
+        58,
+        166,
+        59
+      ],
+      "span_fraction": 0.8857421875,
+      "half_transparent_pixels": 20179,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "cross",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 291591,
+      "opaque_fraction": 0.27808284759521484,
+      "nonzero_fraction": 0.28643226623535156,
+      "bounding_box": [
+        103,
+        72,
+        921,
+        952
+      ],
+      "nonzero_bounding_box": [
+        103,
+        72,
+        921,
+        952
+      ],
+      "sha256": "ab28c929ab53a9c0693514afc6dc5cf09f81c7f379673781d414e917b5fee72e",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9a9a94",
+        "cfe3a2"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        103,
+        72,
+        103,
+        72
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 8755,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "tar_kiln",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 486422,
+      "opaque_fraction": 0.46388816833496094,
+      "nonzero_fraction": 0.47254180908203125,
+      "bounding_box": [
+        72,
+        130,
+        952,
+        894
+      ],
+      "nonzero_bounding_box": [
+        72,
+        130,
+        952,
+        894
+      ],
+      "sha256": "77df802f00c784228eda42e76dcf2ee4a50f129690137d6f2b13284e45c7bb89",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9a9a94",
+        "a0673a",
+        "cfe3a2",
+        "dcc9a1"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        130,
+        72,
+        130
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 9074,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "telescope",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 303391,
+      "opaque_fraction": 0.2893362045288086,
+      "nonzero_fraction": 0.30338573455810547,
+      "bounding_box": [
+        72,
+        82,
+        952,
+        941
+      ],
+      "nonzero_bounding_box": [
+        72,
+        82,
+        952,
+        941
+      ],
+      "sha256": "6d1ac2a6993bf71fea9b4d15792798c86140e9210a2e4dc6dca3deae3787e21c",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "79c7d8",
+        "9a9a94",
+        "a0673a",
+        "cfe3a2",
+        "dcc9a1",
+        "e8b021",
+        "f7f3e6"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        82,
+        72,
+        83
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 14732,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "insect_hotel",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 451407,
+      "opaque_fraction": 0.4304952621459961,
+      "nonzero_fraction": 0.4399127960205078,
+      "bounding_box": [
+        90,
+        72,
+        933,
+        952
+      ],
+      "nonzero_bounding_box": [
+        90,
+        72,
+        933,
+        952
+      ],
+      "sha256": "7cdeaf6775e7ec87c4fd685a52f4d465ac9634d16acd93f165ea7fac6679b530",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "a0673a",
+        "cfe3a2",
+        "dcc9a1",
+        "e8b021"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        90,
+        72,
+        91,
+        72
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 9875,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "playground",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 314370,
+      "opaque_fraction": 0.2998065948486328,
+      "nonzero_fraction": 0.3179206848144531,
+      "bounding_box": [
+        72,
+        185,
+        952,
+        838
+      ],
+      "nonzero_bounding_box": [
+        72,
+        185,
+        952,
+        838
+      ],
+      "sha256": "ddb4191e385f56959297e213b081f4b81543782ae793bf60e2f907497f3bb204",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "79c7d8",
+        "9c3b2a",
+        "a0673a",
+        "cfe3a2",
+        "dcc9a1"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        185,
+        72,
+        186
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 18994,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "picnic_table",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 314674,
+      "opaque_fraction": 0.3000965118408203,
+      "nonzero_fraction": 0.31142711639404297,
+      "bounding_box": [
+        72,
+        243,
+        952,
+        781
+      ],
+      "nonzero_bounding_box": [
+        72,
+        243,
+        952,
+        781
+      ],
+      "sha256": "a1137cf40c3e278958b422416febe42e3c0c24a2762cc57cf1e6bcadd9ef8c16",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "a0673a",
+        "cfe3a2",
+        "e8b021"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        243,
+        72,
+        243
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 11881,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "firepit",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 288866,
+      "opaque_fraction": 0.2754840850830078,
+      "nonzero_fraction": 0.2842874526977539,
+      "bounding_box": [
+        65,
+        254,
+        959,
+        770
+      ],
+      "nonzero_bounding_box": [
+        65,
+        254,
+        959,
+        770
+      ],
+      "sha256": "aa36ef3a31444c3ce2007ddca348e029dbe39fd0ceb145a497ae6710de91d199",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9a9a94",
+        "9c3b2a",
+        "a0673a",
+        "cfe3a2",
+        "dcc9a1",
+        "e8b021"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        65,
+        254,
+        65,
+        254
+      ],
+      "span_fraction": 0.873046875,
+      "half_transparent_pixels": 9231,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "bathing_place",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 292257,
+      "opaque_fraction": 0.2787179946899414,
+      "nonzero_fraction": 0.2915658950805664,
+      "bounding_box": [
+        72,
+        180,
+        952,
+        844
+      ],
+      "nonzero_bounding_box": [
+        72,
+        180,
+        952,
+        844
+      ],
+      "sha256": "390daa61144c53acec3b57b00c39f308951d7d55a8f7ec260f72d08e12f48e15",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "79c7d8",
+        "9a9a94",
+        "9c3b2a",
+        "a0673a",
+        "cfe3a2",
+        "f7f3e6"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        180,
+        72,
+        180
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 13472,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "slipway",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 292264,
+      "opaque_fraction": 0.27872467041015625,
+      "nonzero_fraction": 0.28908538818359375,
+      "bounding_box": [
+        72,
+        251,
+        952,
+        772
+      ],
+      "nonzero_bounding_box": [
+        72,
+        251,
+        952,
+        772
+      ],
+      "sha256": "86a341be07c5f81acf72a700d64ec989d0ff419a4cc5e3a0243bf76db4e667f5",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "79c7d8",
+        "9a9a94",
+        "a0673a",
+        "cfe3a2",
+        "f7f3e6"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        251,
+        72,
+        252
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 10864,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "bird_hide",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 399517,
+      "opaque_fraction": 0.3810091018676758,
+      "nonzero_fraction": 0.40107154846191406,
+      "bounding_box": [
+        72,
+        150,
+        952,
+        873
+      ],
+      "nonzero_bounding_box": [
+        72,
+        150,
+        952,
+        873
+      ],
+      "sha256": "8f6339ee6e415c644490f70d7fbc53ae25c220412550f2549620e2bfe193f648",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "a0673a",
+        "cfe3a2"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        150,
+        72,
+        151
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 21037,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "sauna",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 327062,
+      "opaque_fraction": 0.31191062927246094,
+      "nonzero_fraction": 0.32172298431396484,
+      "bounding_box": [
+        72,
+        132,
+        952,
+        892
+      ],
+      "nonzero_bounding_box": [
+        72,
+        132,
+        952,
+        892
+      ],
+      "sha256": "ad9ef3bf747c563d3959337db399b3b48e6f9208c2a869d78c6dd5f1fcffcb5e",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "79c7d8",
+        "9a9a94",
+        "9c3b2a",
+        "a0673a",
+        "cfe3a2",
+        "dcc9a1",
+        "f7f3e6"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        132,
+        72,
+        132
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 10289,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "fitness_station",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 288213,
+      "opaque_fraction": 0.27486133575439453,
+      "nonzero_fraction": 0.28568267822265625,
+      "bounding_box": [
+        64,
+        178,
+        959,
+        845
+      ],
+      "nonzero_bounding_box": [
+        64,
+        178,
+        959,
+        845
+      ],
+      "sha256": "8dffcebe36bbe3eb0f3c337048dd17c8282f010972b40b336cdd5a04564de1d6",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9a9a94",
+        "a0673a",
+        "cfe3a2",
+        "dcc9a1"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        64,
+        178,
+        65,
+        179
+      ],
+      "span_fraction": 0.8740234375,
+      "half_transparent_pixels": 11347,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "bandstand",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 368210,
+      "opaque_fraction": 0.3511524200439453,
+      "nonzero_fraction": 0.3649883270263672,
+      "bounding_box": [
+        72,
+        74,
+        952,
+        950
+      ],
+      "nonzero_bounding_box": [
+        72,
+        74,
+        952,
+        950
+      ],
+      "sha256": "66f1b5417541711920299729c59bfa90348d635f7ef93ed305b40da7d1cce61b",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9a9a94",
+        "a0673a",
+        "cfe3a2",
+        "dcc9a1",
+        "e8b021",
+        "f7f3e6"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        74,
+        72,
+        74
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 14508,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "disc_golf_course",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 281968,
+      "opaque_fraction": 0.2689056396484375,
+      "nonzero_fraction": 0.29221153259277344,
+      "bounding_box": [
+        65,
+        76,
+        958,
+        947
+      ],
+      "nonzero_bounding_box": [
+        65,
+        76,
+        958,
+        947
+      ],
+      "sha256": "21826d1de59844878a47993fd446e141087f227a3c0f5be08d84f1bf67b02638",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9a9a94",
+        "9c3b2a",
+        "a0673a",
+        "cfe3a2",
+        "e8b021"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        65,
+        76,
+        66,
+        77
+      ],
+      "span_fraction": 0.8720703125,
+      "half_transparent_pixels": 24438,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "swimming_area",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 269616,
+      "opaque_fraction": 0.2571258544921875,
+      "nonzero_fraction": 0.26851940155029297,
+      "bounding_box": [
+        54,
+        199,
+        969,
+        824
+      ],
+      "nonzero_bounding_box": [
+        54,
+        199,
+        970,
+        824
+      ],
+      "sha256": "fe3b2129594b41aaf3eefdc0641803a5f2e7447a79ef28b201ea63b5e5553dd5",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "79c7d8",
+        "9a9a94",
+        "9c3b2a",
+        "a0673a",
+        "dcc9a1",
+        "f7f3e6"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        54,
+        199,
+        55,
+        200
+      ],
+      "span_fraction": 0.8935546875,
+      "half_transparent_pixels": 11947,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "park",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 444151,
+      "opaque_fraction": 0.42357540130615234,
+      "nonzero_fraction": 0.4358692169189453,
+      "bounding_box": [
+        74,
+        72,
+        949,
+        952
+      ],
+      "nonzero_bounding_box": [
+        74,
+        72,
+        949,
+        952
+      ],
+      "sha256": "7a6efbdd44d196ad47f0cd1ffa992e8cb9e672e247d141ab575d7e283f83de8e",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "a0673a",
+        "cfe3a2",
+        "dcc9a1",
+        "e8b021",
+        "f7f3e6"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        74,
+        72,
+        75,
+        72
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 12891,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "nature_reserve",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 351319,
+      "opaque_fraction": 0.33504390716552734,
+      "nonzero_fraction": 0.3494300842285156,
+      "bounding_box": [
+        92,
+        72,
+        932,
+        952
+      ],
+      "nonzero_bounding_box": [
+        92,
+        72,
+        932,
+        952
+      ],
+      "sha256": "3cbbf24e552b5e5293cd50841d50bad35fe48286596913e7554a25bd18a99695",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "79c7d8",
+        "9a9a94",
+        "a0673a",
+        "cfe3a2",
+        "f7f3e6"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        92,
+        72,
+        92,
+        72
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 15085,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "dog_park",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 346694,
+      "opaque_fraction": 0.33063316345214844,
+      "nonzero_fraction": 0.34792518615722656,
+      "bounding_box": [
+        72,
+        228,
+        952,
+        796
+      ],
+      "nonzero_bounding_box": [
+        72,
+        228,
+        952,
+        796
+      ],
+      "sha256": "74bb3af9918f639a2485f067ba12a9305d092a5fdbefd1efbc1058a774138937",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9c3b2a",
+        "a0673a",
+        "cfe3a2",
+        "dcc9a1",
+        "f7f3e6"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        228,
+        72,
+        228
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 18132,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "waterfall",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 511249,
+      "opaque_fraction": 0.4875650405883789,
+      "nonzero_fraction": 0.49533557891845703,
+      "bounding_box": [
+        72,
+        113,
+        952,
+        911
+      ],
+      "nonzero_bounding_box": [
+        72,
+        113,
+        952,
+        911
+      ],
+      "sha256": "2384605dd26dba82dd646b4c258b957426efe6881538b1c04febae68f1d978f5",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "79c7d8",
+        "9a9a94",
+        "a0673a",
+        "cfe3a2",
+        "dcc9a1",
+        "f7f3e6"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        113,
+        72,
+        113
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 8148,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "dam",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 343987,
+      "opaque_fraction": 0.3280515670776367,
+      "nonzero_fraction": 0.33568286895751953,
+      "bounding_box": [
+        72,
+        200,
+        952,
+        824
+      ],
+      "nonzero_bounding_box": [
+        72,
+        200,
+        952,
+        824
+      ],
+      "sha256": "93f3226e649f0642d87fc62a5e6dc2ccddde0df78d271e1405c586f9a6480bc0",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "79c7d8",
+        "9a9a94",
+        "a0673a",
+        "cfe3a2",
+        "dcc9a1",
+        "f7f3e6"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        200,
+        72,
+        200
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 8002,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "weir",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 349004,
+      "opaque_fraction": 0.3328361511230469,
+      "nonzero_fraction": 0.33928394317626953,
+      "bounding_box": [
+        72,
+        259,
+        952,
+        765
+      ],
+      "nonzero_bounding_box": [
+        72,
+        259,
+        952,
+        765
+      ],
+      "sha256": "287145b600b97c4bb6b5d445c00436814e2c8daa8a644b8822fa17f8e297d894",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "79c7d8",
+        "9a9a94",
+        "a0673a",
+        "cfe3a2",
+        "f7f3e6"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        259,
+        72,
+        259
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 6761,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "lock_gate",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 324486,
+      "opaque_fraction": 0.30945396423339844,
+      "nonzero_fraction": 0.3198976516723633,
+      "bounding_box": [
+        72,
+        258,
+        952,
+        766
+      ],
+      "nonzero_bounding_box": [
+        72,
+        258,
+        952,
+        766
+      ],
+      "sha256": "3d3629fc8a93c021a542bd9a04df1ed224f465d0918da5a7545c752d9a339e79",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "79c7d8",
+        "9a9a94",
+        "a0673a",
+        "cfe3a2"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        258,
+        72,
+        258
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 10951,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "rapids",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 405330,
+      "opaque_fraction": 0.3865528106689453,
+      "nonzero_fraction": 0.39353084564208984,
+      "bounding_box": [
+        72,
+        216,
+        952,
+        808
+      ],
+      "nonzero_bounding_box": [
+        72,
+        216,
+        952,
+        808
+      ],
+      "sha256": "889c9dd462a3a786af0f8e4807b4c0dac2ea7b9c150c15a52f82dee2121938c3",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "79c7d8",
+        "9a9a94",
+        "f7f3e6"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        216,
+        72,
+        216
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 7317,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "fish_pass",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 359485,
+      "opaque_fraction": 0.3428316116333008,
+      "nonzero_fraction": 0.3555030822753906,
+      "bounding_box": [
+        72,
+        155,
+        952,
+        869
+      ],
+      "nonzero_bounding_box": [
+        72,
+        155,
+        952,
+        869
+      ],
+      "sha256": "9acb481d72b03f907d26f06eb8d54cefc32970b5fe5cb74b1e882af917a1771e",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "79c7d8",
+        "9a9a94",
+        "cfe3a2",
+        "f7f3e6"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        155,
+        72,
+        155
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 13287,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "giants_kettle",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 382489,
+      "opaque_fraction": 0.36476993560791016,
+      "nonzero_fraction": 0.37175941467285156,
+      "bounding_box": [
+        72,
+        231,
+        952,
+        793
+      ],
+      "nonzero_bounding_box": [
+        72,
+        231,
+        952,
+        793
+      ],
+      "sha256": "b3c6dbbff098a410e00d0d79688fed581cc7d3fd54e01bdaabb51c8211556a6c",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "79c7d8",
+        "9a9a94",
+        "a0673a",
+        "cfe3a2"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        231,
+        72,
+        231
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 7329,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "glacial_erratic",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 405076,
+      "opaque_fraction": 0.3863105773925781,
+      "nonzero_fraction": 0.3962535858154297,
+      "bounding_box": [
+        72,
+        150,
+        952,
+        874
+      ],
+      "nonzero_bounding_box": [
+        72,
+        150,
+        952,
+        874
+      ],
+      "sha256": "04ce433fef35c4fd1771a30944d4494962f3b2d176bbb91bc91eb4c2da6c108f",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9a9a94",
+        "cfe3a2"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        150,
+        72,
+        150
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 10426,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "bus_stop",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 398188,
+      "opaque_fraction": 0.3797416687011719,
+      "nonzero_fraction": 0.3900413513183594,
+      "bounding_box": [
+        79,
+        72,
+        945,
+        952
+      ],
+      "nonzero_bounding_box": [
+        79,
+        72,
+        945,
+        952
+      ],
+      "sha256": "ce8a60130eb1cc05096225f3a16cd1582650bbb7789bb9c99179931382dfffd2",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "79c7d8",
+        "9a9a94",
+        "a0673a",
+        "cfe3a2",
+        "dcc9a1",
+        "f7f3e6"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        79,
+        72,
+        79,
+        72
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 10800,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "pitch",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 300570,
+      "opaque_fraction": 0.28664588928222656,
+      "nonzero_fraction": 0.30870532989501953,
+      "bounding_box": [
+        72,
+        248,
+        952,
+        775
+      ],
+      "nonzero_bounding_box": [
+        72,
+        248,
+        952,
+        775
+      ],
+      "sha256": "d9f41e106c591ae4431a62f46034a546a8790c6580278d2f207a444cef98a0dd",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9a9a94",
+        "a0673a",
+        "cfe3a2",
+        "f7f3e6"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        248,
+        72,
+        249
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 23131,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "legendary",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 432828,
+      "opaque_fraction": 0.4127769470214844,
+      "nonzero_fraction": 0.43511390686035156,
+      "bounding_box": [
+        72,
+        128,
+        952,
+        896
+      ],
+      "nonzero_bounding_box": [
+        72,
+        128,
+        952,
+        896
+      ],
+      "sha256": "c38ab33371c5712df1c062df288e774b0f0673477ead190b6a6cbe09d99e33f3",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9a9a94",
+        "a0673a",
+        "cfe3a2",
+        "e8b021"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        128,
+        72,
+        128
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 23422,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    }
+  ]
+}

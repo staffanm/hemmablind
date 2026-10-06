@@ -1,0 +1,11 @@
+{
+  "stage": "complete",
+  "pilot_accepted": true,
+  "generated_count": 93,
+  "passed_count": 93,
+  "pending_visual_retry": [],
+  "current_generation_cells": [],
+  "rune_inscription_corrected": true,
+  "final_sheets_inspected": true,
+  "inspection_record": "scripts/inspection.json"
+}
