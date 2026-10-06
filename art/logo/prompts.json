@@ -1,0 +1,41 @@
+{
+  "tool": "built-in image_gen",
+  "proposals": [
+    {
+      "number": 1,
+      "file": "logo-1.png",
+      "prompt": "Create a square 1024x1024 app icon as a flat digital spot-color drawing. SOLID COLORS ONLY, completely smooth uniformly colored regions, with no texture, grain, noise, mottling, gradient or lighting anywhere. Bold warm brown ink contours, gently imperfect hand-shaped curves, playful exaggerated proportions. No simulated paper or paint. Every fill region is a single exact RGB color from the hex colors below. Opaque uniform background edge to edge, sharp square canvas corners. Strong simple motif that works at 32 pixels, centered entirely inside the central 80% square, ample empty margin on every side. No words, letters, numbers, watermark, border, shadows, shine, reflection, gloss or 3D. Only one icon, no mockup.\nA wide open eye: #efe6cd almond shape with #4a3b22 bold outline and a large #e8b021 map pin replacing its iris. Pin hole is #16302b. Background #16302b. Eye occupies 70% of canvas width, centered."
+    },
+    {
+      "number": 2,
+      "file": "logo-2.png",
+      "prompt": "Create a square 1024x1024 app icon as a flat digital spot-color drawing. SOLID COLORS ONLY, completely smooth uniformly colored regions, with no texture, grain, noise, mottling, gradient or lighting anywhere. Bold warm brown ink contours, gently imperfect hand-shaped curves, playful exaggerated proportions. No simulated paper or paint. Every fill region is a single exact RGB color from the hex colors below. Opaque uniform background edge to edge, sharp square canvas corners. Strong simple motif that works at 32 pixels, centered entirely inside the central 80% square, ample empty margin on every side. No words, letters, numbers, watermark, border, shadows, shine, reflection, gloss or 3D. Only one icon, no mockup.\nA front-facing small #9c3b2a Swedish house with chunky #4a3b22 pitched roof and outline, a #16302b blindfold lifted diagonally above one large open eye, a #efe6cd eye white with #e8b021 iris and #4a3b22 pupil, and one #efe6cd door. Background #efe6cd. House occupies 60% width and 65% height. No eye highlight or door knob."
+    },
+    {
+      "number": 3,
+      "file": "logo-3.png",
+      "prompt": "Create a square 1024x1024 app icon as a flat digital spot-color drawing. SOLID COLORS ONLY, completely smooth uniformly colored regions, with no texture, grain, noise, mottling, gradient or lighting anywhere. Bold warm brown ink contours, gently imperfect hand-shaped curves, playful exaggerated proportions. No simulated paper or paint. Every fill region is a single exact RGB color from the hex colors below. Opaque uniform background edge to edge, sharp square canvas corners. Strong simple motif that works at 32 pixels, centered entirely inside the central 80% square, ample empty margin on every side. No words, letters, numbers, watermark, border, shadows, shine, reflection, gloss or 3D. Only one icon, no mockup.\nOne #efe6cd collector card tilted 9 degrees, chunky #4a3b22 outline. Its only content is a simple broad lighthouse with #efe6cd body, #9c3b2a wide middle band, #4a3b22 cap and outline, against a #79c7d8 disc. Background #16302b. Card occupies 55% width and 68% height including tilt. No text or fine details."
+    },
+    {
+      "number": 4,
+      "file": "logo-4.png",
+      "prompt": "Create a square 1024x1024 app icon as a flat digital spot-color drawing. SOLID COLORS ONLY, completely smooth uniformly colored regions, with no texture, grain, noise, mottling, gradient or lighting anywhere. Bold warm brown ink contours, gently imperfect hand-shaped curves, playful exaggerated proportions. No simulated paper or paint. Every fill region is a single exact RGB color from the hex colors below. Opaque uniform background edge to edge, sharp square canvas corners. Strong simple motif that works at 32 pixels, centered entirely inside the central 80% square, ample empty margin on every side. No words, letters, numbers, watermark, border, shadows, shine, reflection, gloss or 3D. Only one icon, no mockup.\nOne pair of circular #e8b021 eyeglasses with thick #4a3b22 outlines and bridge. Left lens #afd08a with one chunky #4a3b22 bench silhouette; right lens #79c7d8 with one squat #efe6cd lighthouse with #4a3b22 cap and wide band. Background #efe6cd. Whole pair occupies 68% width and 32% height. Both landmarks fill their lenses. Only short temple ends."
+    },
+    {
+      "number": 5,
+      "file": "logo-5.png",
+      "prompt": "Create a square 1024x1024 app icon as a flat digital spot-color drawing. SOLID COLORS ONLY, completely smooth uniformly colored regions, with no texture, grain, noise, mottling, gradient or lighting anywhere. Bold warm brown ink contours, gently imperfect hand-shaped curves, playful exaggerated proportions. No simulated paper or paint. Every fill region is a single exact RGB color from the hex colors below. Opaque uniform background edge to edge, sharp square canvas corners. Strong simple motif that works at 32 pixels, centered entirely inside the central 80% square, ample empty margin on every side. No words, letters, numbers, watermark, border, shadows, shine, reflection, gloss or 3D. Only one icon, no mockup.\nOne magnifying glass: thick #efe6cd circular rim with #4a3b22 outlines, #efe6cd lens, short thick #e8b021 handle angled down-right. One large #9c3b2a Swedish house fills the lens, with #4a3b22 roof and outlines, one #efe6cd window and one #efe6cd door. Background #16302b. Whole motif occupies 62% width and 68% height. No chimney, window panes or door knob."
+    }
+  ],
+  "export": {
+    "format": "PNG",
+    "size": [
+      1024,
+      1024
+    ],
+    "mode": "RGB",
+    "palette": "Requested spot colors; no dithering; antialiasing only at shape edges.",
+    "layout": "Preserve generated motif; center and fit its longest edge to 740 pixels inside the 1024 pixel canvas.",
+    "note": "Repeated built-in generations retained unwanted grain; palette-constrained export removes it without redrawing the motifs."
+  }
+}

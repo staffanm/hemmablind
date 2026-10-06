@@ -68,6 +68,8 @@ An album belongs to one web address, so an album from `landmarkcards.tomtebo.org
 A card shows an illustration of its type, and the map shows the icon. `art/BRIEF.md` is the brief for the 93 illustrations, and `art/README.md` says how they were made.
 `npm run art` copies the masters in `art/cards/` to `public/cards/` as 512 pixel WebP files (needs Pillow). A card without an image shows its icon.
 
+The logo is `art/logo/logo-2.png`, one of five proposals in `art/logo/`. `npm run art` also makes the app icons in `public/` from it.
+
 ## Extra sources
 
 `src/sources.json` lists open data of municipalities and agencies. The cell build downloads each source as GeoJSON and merges it with the OSM cards.
@@ -95,7 +97,7 @@ Remove a file in `build/data/sources/` to download that source again.
 - `src/sources.json`: the extra sources of the cell build
 - `src/specials.json`: cards with their own link, by OSM id. A name and an image are optional. The cell build never removes these cards.
 - `art/`: the card illustrations: brief, references, masters and scripts
-- `scripts/export-art.py`: copies the card illustrations to `public/cards/`
+- `scripts/export-art.py`: copies the card illustrations to `public/cards/` and makes the app icons from the logo
 - `scripts/build-cells.py`: writes the cell files from an OSM extract
 - `public/icons/`: one SVG icon for each type
 - `public/manifest.webmanifest`: PWA manifest

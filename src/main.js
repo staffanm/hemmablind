@@ -694,7 +694,7 @@ function drawAlbum() {
         <span><b>${esc(p.name)}</b> ${esc(p.land)}</span>
         <span class="dim">${state.cards[p.id] ? day(state.cards[p.id].at) : p.d === null ? '' : metres(p.d)}</span></button>`).join('')}</div>`;
   } else {
-    body.innerHTML = `<h2>Hemmablind</h2>${ABOUT}
+    body.innerHTML = `<img class="logo" src="./icon-192.png" alt=""><h2>Hemmablind</h2>${ABOUT}
       <p class="dim" id="about-storage"></p>
       <p class="dim">Kortdata: © OpenStreetMaps bidragsgivare, hämtad ${esc(meta.built)}. Fler platser och namn: ${SOURCES.map((src) => esc(src.label)).join(', ')}.</p>
       <div class="row"><button id="btn-export">Exportera album</button><button id="btn-import">Importera album</button></div>
