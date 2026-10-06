@@ -1,7 +1,8 @@
 {
   "name": "Landmark Cards",
   "short_name": "Landmarks",
-  "description": "Walk to real places from OpenStreetMap and collect them as cards.",
+  "description": "Gå till verkliga platser från OpenStreetMap, fotografera dem och samla dem som kort.",
+  "lang": "sv",
   "start_url": "./",
   "display": "standalone",
   "orientation": "portrait",

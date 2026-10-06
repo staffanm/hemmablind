@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="sv">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
@@ -9,7 +9,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Landmark Cards">
 <title>Landmark Cards</title>
-<meta name="description" content="Walk to real places from OpenStreetMap and collect them as cards. Common cards pay for hints to rare ones.">
+<meta name="description" content="Gå till verkliga platser från OpenStreetMap, fotografera dem och samla dem som kort. Vanliga kort betalar för ledtrådar till sällsynta.">
 <link rel="manifest" href="./manifest.webmanifest">
 <link rel="icon" type="image/svg+xml" href="./favicon.svg">
 <link rel="apple-touch-icon" href="./apple-touch-icon.png">
@@ -19,58 +19,76 @@
 
 <div id="hud" class="hidden">
   <div id="hud-top">
-    <span class="chip" id="hud-coins" title="Common cards to spend on hints"></span>
-    <span class="chip" id="hud-cards" title="Cards in the album"></span>
+    <span class="chip" id="hud-coins" title="Vanliga kort att spendera på ledtrådar"></span>
+    <span class="chip" id="hud-cards" title="Kort i albumet"></span>
     <span class="chip" id="hud-speed"></span>
   </div>
   <div id="hud-hints"></div>
   <div id="toasts"></div>
-  <button id="btn-center" aria-label="Center the map on your position">◎</button>
-  <div id="sim" class="hidden">
-    <span>Simulation: tap the map to move</span>
-    <button data-kmh="5" class="on">Walk</button><button data-kmh="18">Bike</button><button data-kmh="50">Car</button>
+  <button id="btn-center" aria-label="Centrera kartan på din position">◎</button>
+  <div id="reach" class="hidden">
+    <i class="ic"></i><span id="reach-text"></span>
+    <button id="btn-photo" class="primary">Kamera</button>
+  </div>
+  <div id="dev" class="hidden">
+    <div><span>Tryck för att</span>
+      <button data-move="5" class="on">Gå</button><button data-move="18">Cykla</button><button data-move="50">Köra bil</button><button data-move="0">Hoppa</button></div>
+    <div><span id="dev-note">Visa</span>
+      <button data-reveal="0">Vanliga</button><button data-reveal="1">Ovanliga</button><button data-reveal="2">Sällsynta</button><button data-reveal="3">Episka</button></div>
   </div>
   <div id="bar">
-    <button id="btn-hint">Hint</button>
+    <button id="btn-hint">Ledtråd</button>
     <button id="btn-album">Album</button>
-    <button id="btn-sets">Sets</button>
+    <button id="btn-sets">Set</button>
   </div>
 </div>
 
-<div id="title" class="screen show">
+<div id="title" class="screen">
   <div class="panel">
     <h1>Landmark Cards</h1>
-    <p>Each bench, viewpoint, runestone and lighthouse on the map is a card. Walk within 30 m of the real place to collect it.</p>
-    <p>Common places show on the map. Rare places stay hidden. Spend common cards on a hint, or find the rare ones by chance.</p>
-    <p>Cards that you reach on foot or by bike count double. You cannot collect above 25 km/h.</p>
+    <div id="title-about"></div>
     <p id="title-error" class="error"></p>
-    <div class="row"><button id="btn-start" class="primary">Start</button></div>
+    <div class="row"><button id="btn-start" class="primary">Starta</button></div>
   </div>
 </div>
 
 <div id="hint" class="screen">
   <div class="panel">
-    <h2>Buy a hint</h2>
-    <p>A hint shows the direction and the distance to the nearest hidden card.</p>
+    <h2>Köp en ledtråd</h2>
+    <p>En ledtråd visar riktningen och avståndet till närmaste dolda kort.</p>
     <p id="hint-balance"></p>
     <div class="row">
       <button id="btn-hint-rare" class="lv-rare"></button>
       <button id="btn-hint-epic" class="lv-epic"></button>
     </div>
-    <div class="row"><button class="close">Close</button></div>
+    <div class="row"><button class="close">Stäng</button></div>
   </div>
 </div>
 
 <div id="album" class="screen">
   <div class="panel wide">
     <div class="tabs">
-      <button data-tab="cards" class="on">Cards</button>
-      <button data-tab="sets">Sets</button>
-      <button data-tab="legendary">Legendary</button>
-      <button class="close" aria-label="Close">✕</button>
+      <button data-tab="cards" class="on">Kort</button>
+      <button data-tab="sets">Set</button>
+      <button data-tab="legendary">Legendariska</button>
+      <button data-tab="about">Om</button>
+      <button class="close" aria-label="Stäng">✕</button>
     </div>
     <div id="album-body"></div>
   </div>
+</div>
+
+<div id="camera" class="screen">
+  <div id="cam-title"></div>
+  <video id="cam-video" playsinline autoplay muted></video>
+  <p id="cam-none">Sidan kan inte använda kameran. Öppna telefonens kameraapp.</p>
+  <div class="row">
+    <button id="btn-shutter" class="primary">Ta bilden</button>
+    <label id="cam-app" class="button primary" for="cam-file">Öppna kameraappen</label>
+    <button id="btn-test-photo" class="hidden">Använd en testbild</button>
+    <button id="btn-cam-cancel">Avbryt</button>
+  </div>
+  <input id="cam-file" type="file" accept="image/*" capture="environment" hidden>
 </div>
 
 <div id="reveal" class="screen"></div>

@@ -4,7 +4,7 @@
   --ink: #f3efe2;
   --dim: #a9b8ad;
   --accent: #e8b021;
-  --common: #8a94a3;
+  --common: #64748b;
   --uncommon: #3fa35c;
   --rare: #3b82f6;
   --epic: #a855f7;
@@ -12,8 +12,8 @@
 }
 * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 html, body { margin: 0; height: 100%; overflow: hidden; background: var(--bg); color: var(--ink); font: 15px/1.4 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; }
-button { font: inherit; color: var(--ink); background: var(--panel); border: 1px solid #ffffff2e; border-radius: 10px; padding: .6rem 1rem; cursor: pointer; }
-button.primary { background: var(--accent); color: #23190a; border-color: transparent; font-weight: 700; }
+button, .button { font: inherit; color: var(--ink); background: var(--panel); border: 1px solid #ffffff2e; border-radius: 10px; padding: .6rem 1rem; cursor: pointer; }
+button.primary, .button.primary { background: var(--accent); color: #23190a; border-color: transparent; font-weight: 700; }
 button.on { background: var(--ink); color: var(--bg); }
 a { color: var(--accent); }
 .hidden { display: none !important; }
@@ -32,12 +32,15 @@ a { color: var(--accent); }
 #map { position: fixed; inset: 0; }
 .player { width: 18px; height: 18px; border-radius: 50%; background: #1e88ff; border: 3px solid #fff; box-shadow: 0 0 0 0 #1e88ff80; animation: pulse 2s infinite; }
 @keyframes pulse { to { box-shadow: 0 0 0 18px #1e88ff00; } }
-.mk { width: 30px; height: 30px; border-radius: 50%; background: #fff; border: 3px solid var(--lv); color: var(--lv); display: grid; place-items: center; font-weight: 800; box-shadow: 0 2px 6px #0005; cursor: pointer; }
-.mk .ic { width: 16px; height: 16px; }
-.mk.lv-legendary { background: var(--legendary); color: #23190a; border-color: #fff; }
+/* A place to collect: a filled marker in the colour of its level. A collected card is a grey icon in a map layer. */
+.mk { width: 32px; height: 32px; border-radius: 50%; background: var(--lv); border: 2px solid #fff; color: #fff; display: grid; place-items: center; font-weight: 800; box-shadow: 0 2px 6px #0007; cursor: pointer; }
+.mk .ic { width: 17px; height: 17px; }
+.mk.lv-legendary { color: #23190a; }
+.mk.reach { animation: reach 1.1s infinite; z-index: 2; }
+@keyframes reach { from { box-shadow: 0 0 0 0 var(--lv); } to { box-shadow: 0 0 0 18px transparent; } }
 
 #hud { position: fixed; inset: 0; pointer-events: none; padding: max(.6rem, env(safe-area-inset-top)) .6rem max(.6rem, env(safe-area-inset-bottom)); display: flex; flex-direction: column; gap: .4rem; }
-#hud button, #hud .mk { pointer-events: auto; }
+#hud button { pointer-events: auto; }
 #hud-top { display: flex; flex-wrap: wrap; gap: .4rem; padding-right: 2.2rem; }
 .chip { background: var(--bg); border-radius: 999px; padding: .3rem .8rem; box-shadow: 0 2px 6px #0004; }
 .chip.good { background: var(--uncommon); }
@@ -47,13 +50,15 @@ a { color: var(--accent); }
 .hintchip .arrow { display: inline-block; width: 1.4em; text-align: center; font-weight: 900; }
 #toasts { margin-top: auto; display: flex; flex-direction: column; gap: .3rem; align-items: center; }
 .toast { background: var(--bg); border-radius: 12px; padding: .5rem .9rem; box-shadow: 0 4px 14px #0006; display: flex; gap: .45rem; align-items: center; max-width: 100%; animation: rise .25s ease-out; }
-.toast .ic { color: var(--lv); }
-.toast em { font-style: normal; color: var(--accent); font-weight: 700; }
 @keyframes rise { from { transform: translateY(14px); opacity: 0; } }
 #btn-center { align-self: flex-end; width: 44px; height: 44px; padding: 0; border-radius: 50%; font-size: 1.3rem; background: var(--bg); display: none; }
 #btn-center.show { display: block; }
-#sim { align-self: center; background: var(--bg); border-radius: 12px; padding: .4rem .6rem; display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; justify-content: center; }
-#sim button { padding: .3rem .7rem; }
+#reach { display: flex; align-items: center; gap: .6rem; background: var(--bg); border: 2px solid var(--lv); border-radius: 14px; padding: .6rem .7rem; font-weight: 600; box-shadow: 0 4px 18px #0008; animation: rise .25s ease-out; }
+#reach .ic { width: 1.9rem; height: 1.9rem; color: var(--lv); }
+#reach span { flex: 1; }
+#dev { align-self: center; background: var(--bg); border-radius: 12px; padding: .4rem .6rem; display: flex; flex-direction: column; gap: .3rem; font-size: .8rem; pointer-events: auto; }
+#dev div { display: flex; flex-wrap: wrap; gap: .3rem; align-items: center; }
+#dev button { padding: .2rem .55rem; }
 #bar { display: flex; gap: .5rem; justify-content: center; }
 #bar button { flex: 1; max-width: 9rem; background: var(--bg); padding: .8rem 0; font-weight: 700; box-shadow: 0 2px 8px #0005; }
 
@@ -68,8 +73,8 @@ p { margin: .5rem 0; }
 .row { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1rem; justify-content: center; }
 #hint .row button[class^="lv-"] { background: var(--lv); border-color: transparent; font-weight: 700; color: #fff; }
 
-.tabs { display: flex; gap: .4rem; margin-bottom: .6rem; }
-.tabs button { padding: .45rem .8rem; }
+.tabs { display: flex; gap: .3rem; margin-bottom: .6rem; }
+.tabs button { padding: .45rem .6rem; }
 .tabs .close { margin-left: auto; }
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(5.6rem, 1fr)); gap: .4rem; }
 .tile { position: relative; display: flex; flex-direction: column; align-items: center; gap: .3rem; padding: .6rem .3rem; font-size: .75rem; line-height: 1.15; border: 2px solid var(--lv); background: #ffffff0d; min-height: 5.2rem; }
@@ -90,11 +95,27 @@ p { margin: .5rem 0; }
 .set-types span { display: inline-flex; align-items: center; gap: .3rem; color: var(--lv); }
 .set-perk { color: var(--dim); font-size: .9rem; }
 
-#reveal { align-content: center; justify-items: center; gap: .2rem; z-index: 20; }
+#camera { background: #000; z-index: 20; align-content: center; justify-items: center; gap: .6rem; }
+#cam-title { font-weight: 700; font-size: 1.1rem; text-align: center; }
+#cam-video { width: 100%; max-height: 68vh; border-radius: 14px; background: #111; object-fit: cover; }
+#cam-none, #cam-app { display: none; }
+#camera.nocam #cam-none { display: block; }
+#camera.nocam #cam-app { display: inline-block; }
+#camera.nocam #cam-video, #camera.nocam #btn-shutter { display: none; }
+
+/* A card has two faces. The front has the icon and the text. The back has the photo of the player. */
+#reveal { align-content: center; justify-items: center; gap: .2rem; z-index: 20; background: #0b1a17f5; }
 .reveal-title { font-size: 1.1rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); }
-.card { width: min(19rem, 100%); border-radius: 18px; padding: 1rem; background: linear-gradient(160deg, color-mix(in srgb, var(--lv) 55%, #10201c), #10201c 70%); border: 3px solid var(--lv); box-shadow: 0 0 40px color-mix(in srgb, var(--lv) 50%, transparent); text-align: center; }
-#reveal.fresh .card { animation: flip .7s cubic-bezier(.2, .8, .3, 1.2); }
-@keyframes flip { from { transform: perspective(700px) rotateY(180deg) scale(.4); opacity: 0; } }
+.card { width: min(19rem, 100%); perspective: 900px; text-align: center; }
+.card.has-photo { cursor: pointer; }
+.card-inner { position: relative; transition: transform .7s cubic-bezier(.2, .8, .3, 1.1); transform-style: preserve-3d; }
+.card.flipped .card-inner { transform: rotateY(180deg); }
+.card.noanim .card-inner { transition: none; }
+.card-face { border-radius: 18px; border: 3px solid var(--lv); box-shadow: 0 0 40px color-mix(in srgb, var(--lv) 50%, transparent); -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+.card-front { min-height: 24rem; padding: 1rem; background: linear-gradient(160deg, color-mix(in srgb, var(--lv) 55%, #10201c), #10201c 70%); }
+.card-back { position: absolute; inset: 0; transform: rotateY(180deg); overflow: hidden; background: #10201c; }
+.card-back img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.card-caption { position: absolute; left: 0; right: 0; bottom: 0; padding: 1.6rem .8rem .7rem; background: linear-gradient(transparent, #000c); font-weight: 600; }
 .card-level { font-size: .8rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #fff; }
 .card-art { width: 7rem; height: 7rem; margin: .8rem auto; border-radius: 50%; background: #ffffff14; border: 2px solid var(--lv); display: grid; place-items: center; }
 .card-art .ic { width: 3.6rem; height: 3.6rem; color: #fff; }
@@ -102,7 +123,10 @@ p { margin: .5rem 0; }
 .card-name { font-size: 1.25rem; font-weight: 700; margin: .1rem 0 .5rem; }
 .card-marks { display: flex; flex-wrap: wrap; gap: .3rem; justify-content: center; }
 .card-marks span { background: #ffffff1f; border-radius: 999px; padding: .15rem .6rem; font-size: .8rem; }
+.card-marks .gain { background: var(--accent); color: #23190a; font-weight: 700; }
 .card-journal { text-align: left; font-size: .88rem; }
 .card-journal p { display: -webkit-box; -webkit-line-clamp: 7; line-clamp: 7; -webkit-box-orient: vertical; overflow: hidden; }
 .card-journal img { width: 100%; max-height: 10rem; object-fit: cover; border-radius: 10px; margin-top: .7rem; }
 .card-foot { margin-top: .7rem; font-size: .8rem; color: var(--dim); }
+.card-tip { display: none; margin-top: .5rem; font-size: .8rem; color: var(--dim); }
+.card.has-photo .card-tip { display: block; }
