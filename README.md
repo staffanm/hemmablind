@@ -1,4 +1,4 @@
-# Landmark Cards
+# Hemmablind
 
 A location game. Each bench, viewpoint, runestone and lighthouse in OpenStreetMap is a card. Walk within 30 m of the real place and photograph it to collect the card.
 Common places show on the map. Rare places stay hidden until you buy a hint with common cards, or find them by chance.
@@ -51,14 +51,17 @@ The build asks Wikidata which cards have a Wikipedia article. It keeps the answe
 ## Deploy
 
 A push to `main` deploys the site. The GitHub Action (`.github/workflows/deploy.yml`) builds it and pushes `dist/` to the `deploy` branch.
-The push to `deploy` fires the repository webhook. The hook `update-landmark-cards` on ludo.tomtebo.org then runs `deploy/update-site.sh`,
-which copies the branch to `/home/staffan/sites/landmarkcards.tomtebo.org`. The update log is `/var/log/webhook-updates.log`.
+The push to `deploy` fires the repository webhook. The hook `update-hemmablind` on ludo.tomtebo.org then runs `deploy/update-site.sh`,
+which copies the branch to `/home/staffan/sites/hemmablind.tomtebo.org`. The update log is `/var/log/webhook-updates.log`.
 
 `npm run deploy` builds locally and copies `dist/` with rsync, without GitHub.
 
-One-time server setup: `deploy/setup-server.sh` (nginx site and TLS certificate) and `deploy/setup-webhook.sh` (the hook).
+One-time server setup: `deploy/setup.sh` makes the nginx site, requests the Let's Encrypt certificate, installs the hook and copies the site.
 
 The cell files in `public/cells/` are in the repository, because the GitHub Action does not build them.
+
+The game had the name Landmark Cards at first. The album database in the browser keeps the name `landmark-cards`.
+An album belongs to one web address, so an album from `landmarkcards.tomtebo.org` moves to the new address with the export and import buttons.
 
 ## Card images
 
@@ -90,7 +93,7 @@ Remove a file in `build/data/sources/` to download that source again.
 - `src/legendary.json`: the 25 legendary places
 - `src/map-style.json`: the MapLibre style of the map
 - `src/sources.json`: the extra sources of the cell build
-- `src/specials.json`: cards with their own name, image and link, by OSM id. The cell build never removes them.
+- `src/specials.json`: cards with their own link, by OSM id. A name and an image are optional. The cell build never removes these cards.
 - `art/`: the card illustrations: brief, references, masters and scripts
 - `scripts/export-art.py`: copies the card illustrations to `public/cards/`
 - `scripts/build-cells.py`: writes the cell files from an OSM extract

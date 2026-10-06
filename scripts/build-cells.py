@@ -135,7 +135,7 @@ def with_article(ids):
                  'FILTER(?site IN (<https://sv.wikipedia.org/>, <https://en.wikipedia.org/>)) }' % ' '.join('wd:' + i for i in batch))
         request = urllib.request.Request(
             'https://query.wikidata.org/sparql', data=urllib.parse.urlencode({'query': query}).encode(),
-            headers={'Accept': 'application/sparql-results+json', 'User-Agent': 'landmark-cards cell build'})
+            headers={'Accept': 'application/sparql-results+json', 'User-Agent': 'hemmablind cell build'})
         rows = json.load(urllib.request.urlopen(request, timeout=120))['results']['bindings']
         found = {row['item']['value'].rsplit('/', 1)[1] for row in rows}
         cache.update({q: q in found for q in batch})
@@ -171,7 +171,7 @@ def source_places(source):
     cache_file = SRC.parent / 'sources' / f"{source['id']}.json"
     if not cache_file.exists():
         cache_file.parent.mkdir(exist_ok=True)
-        request = urllib.request.Request(source['url'], headers={'User-Agent': 'landmark-cards cell build'})
+        request = urllib.request.Request(source['url'], headers={'User-Agent': 'hemmablind cell build'})
         cache_file.write_bytes(urllib.request.urlopen(request, timeout=120).read())
     fields = source['fields']
     for f in json.loads(cache_file.read_text())['features']:

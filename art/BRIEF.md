@@ -1,6 +1,6 @@
-# Art brief: Landmark Cards card images
+# Art brief: Hemmablind card images
 
-Landmark Cards is a location game for phones. Each bench, lighthouse, runestone and bus stop in OpenStreetMap is a card.
+Hemmablind is a location game for phones. Each bench, lighthouse, runestone and bus stop in OpenStreetMap is a card.
 The player walks to the real place, photographs it and gets the card. The game is Swedish and the places are in Sweden.
 
 Today a card shows a small one-colour map icon (see `reference/card-current.png`).

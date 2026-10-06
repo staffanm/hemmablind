@@ -1,11 +1,11 @@
-# landmarkcards.tomtebo.org: a static site. Certbot adds the TLS lines and the redirect from port 80.
+# hemmablind.tomtebo.org: a static site. Certbot adds the TLS lines and the redirect from port 80.
 server {
     listen 80;
     listen [::]:80;
-    server_name landmarkcards.tomtebo.org;
+    server_name hemmablind.tomtebo.org;
 
     # `npm run deploy` copies the Vite build output here.
-    root /home/staffan/sites/landmarkcards.tomtebo.org;
+    root /home/staffan/sites/hemmablind.tomtebo.org;
     index index.html;
 
     gzip on;

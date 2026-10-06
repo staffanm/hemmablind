@@ -79,6 +79,7 @@ const buzzed = new Set();  // ids that already gave the "in reach" vibration
 
 // ---------- storage ----------
 
+// The database keeps the first name of the game, Landmark Cards, so that no player loses an album.
 const db = new Promise((resolve, reject) => {
   const req = indexedDB.open('landmark-cards', 2);
   req.onupgradeneeded = () => {
@@ -205,7 +206,7 @@ function cellAt(cx, cy) {
     // A missing file is an empty cell. A failed request is tried again at the next position.
     fetch(`./cells/${key}.json`).then((r) => (r.ok ? r.json().catch(() => []) : []), () => null).then((rows) => {
       if (!rows) return cells.delete(key);
-      // A card in specials.json has its own name, image and link, and no Wikipedia text.
+      // A card in specials.json has its own link, and no Wikipedia text. It can also have its own name and image.
       cells.set(key, rows.map(([id, la, lo, t, n, wd, r, url, v]) => ({
         id, la, lo, t, n: SPECIALS[id]?.name || n || '', wd: SPECIALS[id] ? '' : wd || '', r: r || 0, url: url || '', v: v || 0,
       })));
@@ -563,8 +564,8 @@ function cardHtml(id, gain) {
   return `<div class="card lv-${LEVELS[lv]}${gain === undefined ? '' : ' flipped noanim'}"><div class="card-inner">
     <div class="card-face card-front">
       <div class="card-level">${LEVEL_NAME[lv]}</div>
-      <div class="card-art${special ? ' photo' : ''}"><span class="card-badge"><i class="ic" style="${iconStyle(c.t)}"></i></span>
-        <img src="./cards/${special ? esc(special.image) : `${artKey(c)}.webp`}" alt="" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()"></div>
+      <div class="card-art${special?.image ? ' photo' : ''}"><span class="card-badge"><i class="ic" style="${iconStyle(c.t)}"></i></span>
+        <img src="./cards/${special?.image ? esc(special.image) : `${artKey(c)}.webp`}" alt="" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()"></div>
       <div class="card-type">${esc(c.t < 0 ? c.land : typeName(c))}</div>
       <div class="card-name">${esc(name)}</div>
       <div class="card-marks">${c.foot ? '<span>Till fots eller cykel</span>' : ''}${c.nohint ? '<span>Hittat utan ledtråd</span>' : ''}${gain ? `<span class="gain">+${gain} att spendera</span>` : ''}</div>
@@ -693,7 +694,7 @@ function drawAlbum() {
         <span><b>${esc(p.name)}</b> ${esc(p.land)}</span>
         <span class="dim">${state.cards[p.id] ? day(state.cards[p.id].at) : p.d === null ? '' : metres(p.d)}</span></button>`).join('')}</div>`;
   } else {
-    body.innerHTML = `<h2>Landmark Cards</h2>${ABOUT}
+    body.innerHTML = `<h2>Hemmablind</h2>${ABOUT}
       <p class="dim" id="about-storage"></p>
       <p class="dim">Kortdata: © OpenStreetMaps bidragsgivare, hämtad ${esc(meta.built)}. Fler platser och namn: ${SOURCES.map((src) => esc(src.label)).join(', ')}.</p>
       <div class="row"><button id="btn-export">Exportera album</button><button id="btn-import">Importera album</button></div>
@@ -810,7 +811,7 @@ async function exportAlbum() {
   end.setUint32(16, offset, true);
   const a = document.createElement('a');
   a.href = URL.createObjectURL(new Blob([...parts, ...directory, end], { type: 'application/zip' }));
-  a.download = 'landmark-cards-album.zip';
+  a.download = 'hemmablind-album.zip';
   a.click();
 }
 

@@ -1,6 +1,6 @@
 {
-  "name": "Landmark Cards",
-  "short_name": "Landmarks",
+  "name": "Hemmablind",
+  "short_name": "Hemmablind",
   "description": "Gå till verkliga platser från OpenStreetMap, fotografera dem och samla dem som kort.",
   "lang": "sv",
   "start_url": "./",

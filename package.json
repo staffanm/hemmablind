@@ -1,5 +1,5 @@
 {
-  "name": "landmark-cards",
+  "name": "hemmablind",
   "private": true,
   "version": "0.1.0",
   "description": "Location game: walk to real places from OpenStreetMap and collect them as cards",
@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "cells": "uv run scripts/build-cells.py",
     "art": "python3 scripts/export-art.py",
-    "deploy": "npm run build && rsync -rv --delete dist/ staffan@ludo.tomtebo.org:/home/staffan/sites/landmarkcards.tomtebo.org/"
+    "deploy": "npm run build && rsync -rv --delete dist/ staffan@ludo.tomtebo.org:/home/staffan/sites/hemmablind.tomtebo.org/"
   },
   "dependencies": {
     "maplibre-gl": "^5.0.0"
