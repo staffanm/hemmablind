@@ -100,6 +100,12 @@ export function buildAchievements(game) {
     { id: 'epic', name: 'Episk', tiers: [1, 10, 50, Math.ceil(kept.filter((n, i) => levelOf[i] === 3).reduce((a, b) => a + b, 0) / 2)], count: countIf((c) => cardLevel(c) === 3), what: (n) => `Du har ${n} episka kort` },
     { id: 'rare', name: 'Sällsynt', tiers: [1, 25, 100, Math.ceil(kept.filter((n, i) => levelOf[i] === 2).reduce((a, b) => a + b, 0) / 2)], count: countIf((c) => cardLevel(c) === 2), what: (n) => `Du har ${n} sällsynta kort` },
     { id: 'types', name: 'Mångsidig', tiers: [10, 30, 60, TYPES.length], count: (s) => ownedTypes(s).size, what: (n) => `Du har ${n} olika korttyper` },
+    // One of each type of a level: a quarter, a half, three quarters and all of the types.
+    ...[['Vardagssamlare', 'vanliga'], ['Udda samlare', 'ovanliga'], ['Raritetssamlare', 'sällsynta'], ['Episk samlare', 'episka']].map(([name, plural], lv) => {
+      const types = TYPES.map((t, i) => i).filter((i) => levelOf[i] === lv);
+      return { id: `level${lv}`, name, tiers: [1, 2, 3, 4].map((q) => Math.ceil(types.length * q / 4)),
+        count: (s) => { const o = ownedTypes(s); return types.filter((i) => o.has(i)).length; }, what: (n) => `Du har ${n} av de ${types.length} ${plural} korttyperna` };
+    }),
     { id: 'foot', name: 'Fotgängare', tiers: [10, 100, 1000, 10000], count: countIf((c) => c.foot), what: (n) => `Du har ${n} kort till fots eller cykel` },
     { id: 'nohint', name: 'Spårhund', tiers: [1, 10, 50, 500], count: countIf((c) => c.nohint), what: (n) => `Du har hittat ${n} dolda kort utan ledtråd` },
     { id: 'hint', name: 'Ledtrådsköpare', tiers: [1, 10, 50, 500], count: countIf((c) => c.hint), what: (n) => `Du har hittat ${n} kort med ledtråd` },
