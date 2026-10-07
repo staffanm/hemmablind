@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="theme-color" content="#16302b">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Hemmablind">
+<title>Hemmablind</title>
+<meta name="description" content="Gå till verkliga platser från OpenStreetMap, fotografera dem och samla dem som kort. Vanliga kort betalar för ledtrådar till sällsynta.">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png">
+<link rel="apple-touch-icon" href="./apple-touch-icon.png">
+  <script type="module" crossorigin src="./assets/index-DVnwwurd.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-BL-DOX84.css">
+</head>
+<body>
+<div id="map"></div>
+
+<div id="hud" class="hidden">
+  <div id="hud-top">
+    <span class="chip" id="hud-coins" title="Poäng att köpa ledtrådar för. Ett vanligt kort ger en poäng, eller två till fots eller cykel."></span>
+    <span class="chip" id="hud-cards"></span>
+    <span class="chip" id="hud-speed"></span>
+  </div>
+  <div id="hud-day">
+    <span class="chip" id="hud-day-cards"></span>
+    <span class="chip" id="hud-day-m" title="Meter till fots eller cykel"></span>
+    <button class="chip" id="hud-level" title="Nivå och bedrifter"></button>
+  </div>
+  <div id="hud-hints"></div>
+  <div id="toasts"></div>
+  <button id="btn-view" aria-label="Byt mellan 2D och 3D">2D</button>
+  <button id="btn-center" aria-label="Centrera kartan på din position">◎</button>
+  <div id="reach" class="hidden">
+    <i class="ic"></i><span id="reach-text"></span>
+    <div id="reach-buttons"><button id="btn-photo" class="primary">Kamera</button><button id="btn-more"></button></div>
+  </div>
+  <div id="dev" class="hidden">
+    <div><span>Tryck för att</span>
+      <button data-move="5" class="on">Gå</button><button data-move="18">Cykla</button><button data-move="50">Köra bil</button><button data-move="0">Hoppa</button></div>
+    <div><span id="dev-note">Visa</span>
+      <button data-reveal="0">Vanliga</button><button data-reveal="1">Ovanliga</button><button data-reveal="2">Sällsynta</button><button data-reveal="3">Episka</button>
+      <details id="dev-types" class="hidden"><summary>Typer</summary><div id="dev-type-list"></div></details></div>
+  </div>
+  <div id="bar">
+    <button id="btn-hint">Ledtråd</button>
+    <button id="btn-album">Album</button>
+    <button id="btn-sets">Set</button>
+  </div>
+</div>
+
+<div id="title" class="screen">
+  <div class="panel">
+    <img class="logo" src="./icon-192.png" alt="">
+    <h1>Hemmablind</h1>
+    <div id="title-about"></div>
+    <p id="title-error" class="error"></p>
+    <div class="row"><button id="btn-start" class="primary">Starta</button></div>
+  </div>
+</div>
+
+<div id="hint" class="screen">
+  <div class="panel">
+    <h2>Köp en ledtråd</h2>
+    <p>En ledtråd visar riktningen och avståndet till närmaste dolda kort.</p>
+    <p id="hint-balance"></p>
+    <div class="row">
+      <button id="btn-hint-rare" class="lv-rare"></button>
+      <button id="btn-hint-epic" class="lv-epic"></button>
+    </div>
+    <div class="row"><button class="close">Stäng</button></div>
+  </div>
+</div>
+
+<div id="album" class="screen">
+  <div class="panel wide">
+    <div class="tabs">
+      <button data-tab="cards" class="on">Kort</button>
+      <button data-tab="sets">Set</button>
+      <button data-tab="legendary">Legendariska</button>
+      <button data-tab="feats">Bedrifter</button>
+      <button data-tab="about">Om</button>
+      <button class="close" aria-label="Stäng">✕</button>
+    </div>
+    <div id="album-body"></div>
+  </div>
+</div>
+
+<div id="choose" class="screen">
+  <div class="panel">
+    <h2>Kort inom räckhåll</h2>
+    <p class="dim">Välj platsen som du vill fotografera.</p>
+    <div id="choose-list" class="list"></div>
+    <div class="row"><button class="close">Stäng</button></div>
+  </div>
+</div>
+
+<div id="camera" class="screen">
+  <div id="cam-title"></div>
+  <video id="cam-video" playsinline autoplay muted></video>
+  <p id="cam-none">Sidan kan inte använda kameran. Öppna telefonens kameraapp.</p>
+  <div class="row">
+    <button id="btn-shutter" class="primary">Ta bilden</button>
+    <label id="cam-app" class="button primary" for="cam-file">Öppna kameraappen</label>
+    <button id="btn-test-photo" class="hidden">Använd en testbild</button>
+    <button id="btn-cam-cancel">Avbryt</button>
+  </div>
+  <input id="cam-file" type="file" accept="image/*" capture="environment" hidden>
+</div>
+
+<div id="reveal" class="screen"></div>
+<div id="peek"></div>
+
+</body>
+</html>
