@@ -1,11 +1,1176 @@
 [
-  {
-    "id": "huddinge-lekplatser",
-    "label": "Huddinge kommun",
-    "about": "https://www.huddinge.se/bostad-och-miljo/kartor-oppna-geodata-och-mattjanster/oppna-geodata",
-    "url": "https://gd-huddinge.sokigohosting.com/public-maps/Oppnadata/KSF?token=7f76920a28154b588684ef2b1b51531c&SERVICE=WFS&VERSION=1.1.0&REQUEST=GetFeature&TYPENAME=qgs%3ALekplatser&SRSNAME=EPSG%3A4326&OUTPUTFORMAT=application%2Fgeo%2Bjson",
-    "type": "leisure=playground",
-    "fields": {"id": "idnr", "name": "lekplatser", "link": "url"},
-    "match": 100
+ {
+  "id": "huddinge-lekplatser",
+  "label": "Huddinge kommun",
+  "about": "https://www.dataportal.se/datasets/549_2107",
+  "url": "https://gd-huddinge.sokigohosting.com/public-maps/Oppnadata/KSF?token=7f76920a28154b588684ef2b1b51531c&SERVICE=WFS&VERSION=1.1.0&REQUEST=GetFeature&TYPENAME=qgs%3ALekplatser&SRSNAME=EPSG%3A4326&OUTPUTFORMAT=application%2Fgeo%2Bjson",
+  "format": "geojson",
+  "type": "leisure=playground",
+  "match": 100,
+  "fields": {
+   "id": "idnr",
+   "name": "lekplatser",
+   "link": "url"
+  },
+  "image": "og:image"
+ },
+ {
+  "id": "goteborg-lekplatser",
+  "label": "Göteborgs Stad",
+  "about": "https://goteborg.se/wps/portal/start/uppleva-och-gora/parker-och-lekplatser/lekplatser/hitta-lekplatser",
+  "url": "https://goteborg.se/wps/portal/start/uppleva-och-gora/parker-och-lekplatser/lekplatser/hitta-lekplatser/?page={page}",
+  "format": "jsonld",
+  "link": "href=\"(/wps/portal/start/uppleva-och-gora/parker-och-lekplatser/lekplatser/hitta-lekplatser\\?id=\\d+)\"",
+  "type": "leisure=playground",
+  "fields": {
+   "link": "link",
+   "image": "image"
+  },
+  "match": 100
+ },
+ {
+  "id": "stockholm-lekplatser",
+  "label": "Stockholms stad",
+  "about": "https://www.dataportal.se/datasets/733_84991",
+  "url": "https://apigw.stockholm.se/api/PublicHittaCMS/api/serviceunits?filter[servicetype.id]=102&page[limit]=2000&page[offset]=0&sort=name",
+  "format": "stockholm",
+  "type": "leisure=playground",
+  "match": 100,
+  "fields": {
+   "x": "east",
+   "y": "north"
+  },
+  "crs": 3011
+ },
+ {
+  "id": "stockholm-parklek",
+  "label": "Stockholms stad",
+  "about": "https://www.dataportal.se/datasets/733_87266",
+  "url": "https://apigw.stockholm.se/api/PublicHittaCMS/api/serviceunits?filter[servicetype.id]=103&page[limit]=2000&page[offset]=0&sort=name",
+  "format": "stockholm",
+  "type": "leisure=playground",
+  "match": 100,
+  "fields": {
+   "x": "east",
+   "y": "north"
+  },
+  "crs": 3011
+ },
+ {
+  "id": "stockholm-badplatser",
+  "label": "Stockholms stad",
+  "about": "https://www.dataportal.se/datasets/733_87755",
+  "url": "https://apigw.stockholm.se/api/PublicHittaCMS/api/serviceunits?filter[servicetype.id]=104&page[limit]=2000&page[offset]=0&sort=name",
+  "format": "stockholm",
+  "type": "leisure=bathing_place",
+  "match": 300,
+  "fields": {
+   "x": "east",
+   "y": "north"
+  },
+  "crs": 3011
+ },
+ {
+  "id": "stockholm-utegym",
+  "label": "Stockholms stad",
+  "about": "https://www.dataportal.se/datasets/733_89468",
+  "url": "https://apigw.stockholm.se/api/PublicHittaCMS/api/serviceunits?filter[servicetype.id]=122&page[limit]=2000&page[offset]=0&sort=name",
+  "format": "stockholm",
+  "type": "leisure=fitness_station",
+  "match": 100,
+  "fields": {
+   "x": "east",
+   "y": "north"
+  },
+  "crs": 3011
+ },
+ {
+  "id": "stockholm-bollplaner",
+  "label": "Stockholms stad",
+  "about": "https://www.dataportal.se/datasets/733_84991",
+  "url": "https://apigw.stockholm.se/api/PublicHittaCMS/api/serviceunits?filter[servicetype.id]=129&page[limit]=2000&page[offset]=0&sort=name",
+  "format": "stockholm",
+  "type": "leisure=pitch",
+  "match": 100,
+  "fields": {
+   "x": "east",
+   "y": "north"
+  },
+  "crs": 3011
+ },
+ {
+  "id": "stockholm-discgolf",
+  "label": "Stockholms stad",
+  "about": "https://www.dataportal.se/datasets/733_84991",
+  "url": "https://apigw.stockholm.se/api/PublicHittaCMS/api/serviceunits?filter[servicetype.id]=33006&page[limit]=2000&page[offset]=0&sort=name",
+  "format": "stockholm",
+  "type": "leisure=disc_golf_course",
+  "match": 100,
+  "fields": {
+   "x": "east",
+   "y": "north"
+  },
+  "crs": 3011
+ },
+ {
+  "id": "stockholm-skateparker",
+  "label": "Stockholms stad",
+  "about": "https://www.dataportal.se/datasets/733_84991",
+  "url": "https://apigw.stockholm.se/api/PublicHittaCMS/api/serviceunits?filter[servicetype.id]=126&page[limit]=2000&page[offset]=0&sort=name",
+  "format": "stockholm",
+  "type": "sport=skateboard",
+  "match": 100,
+  "fields": {
+   "x": "east",
+   "y": "north"
+  },
+  "crs": 3011
+ },
+ {
+  "id": "gavle-lekplatser",
+  "label": "Gävle kommun",
+  "about": "https://www.dataportal.se/datasets/574_926",
+  "url": "https://catalog.gavle.se/store/1/resource/83",
+  "format": "zip",
+  "type": "leisure=playground",
+  "match": 100,
+  "fields": {
+   "name": "Namn"
   }
+ },
+ {
+  "id": "gavle-hundrastgardar",
+  "label": "Gävle kommun",
+  "about": "https://www.dataportal.se/datasets/574_929",
+  "url": "https://catalog.gavle.se/store/1/resource/85",
+  "format": "zip",
+  "type": "leisure=dog_park",
+  "match": 100,
+  "fields": {
+   "name": "Namn"
+  }
+ },
+ {
+  "id": "gavle-utegym",
+  "label": "Gävle kommun",
+  "about": "https://www.dataportal.se/datasets/574_2064",
+  "url": "https://catalog.gavle.se/store/1/resource/360",
+  "format": "zip",
+  "type": "leisure=fitness_station",
+  "match": 100,
+  "fields": {
+   "name": "NAMN"
+  }
+ },
+ {
+  "id": "gavle-badplatser",
+  "label": "Gävle kommun",
+  "about": "https://www.dataportal.se/datasets/574_1655",
+  "url": "https://catalog.gavle.se/store/1/resource/237",
+  "format": "zip",
+  "type": "leisure=bathing_place",
+  "match": 300,
+  "fields": {
+   "name": "NAMN",
+   "link": "URL"
+  }
+ },
+ {
+  "id": "gavle-soffor",
+  "label": "Gävle kommun",
+  "about": "https://www.dataportal.se/datasets/574_1683",
+  "url": "https://catalog.gavle.se/store/1/resource/247",
+  "format": "zip",
+  "type": "amenity=bench",
+  "match": 100,
+  "filter": {
+   "PRODTYP": "Soffa"
+  }
+ },
+ {
+  "id": "boras-lekplatser",
+  "label": "Borås stad",
+  "about": "https://www.dataportal.se/datasets/610_1948",
+  "url": "https://catalog.boras.se/store/1/resource/74",
+  "format": "geojson",
+  "type": "leisure=playground",
+  "match": 100
+ },
+ {
+  "id": "boras-badplatser",
+  "label": "Borås stad",
+  "about": "https://www.dataportal.se/datasets/610_1946",
+  "url": "https://catalog.boras.se/store/1/resource/57",
+  "format": "geojson",
+  "type": "leisure=bathing_place",
+  "match": 300,
+  "fields": {
+   "id": "place_id"
+  }
+ },
+ {
+  "id": "boras-hundrastplatser",
+  "label": "Borås stad",
+  "about": "https://www.dataportal.se/datasets/610_2032",
+  "url": "https://catalog.boras.se/store/1/resource/80",
+  "format": "geojson",
+  "type": "leisure=dog_park",
+  "match": 100,
+  "fields": {
+   "name": "namn",
+   "link": "link"
+  }
+ },
+ {
+  "id": "boras-parker",
+  "label": "Borås stad",
+  "about": "https://www.dataportal.se/datasets/610_1947",
+  "url": "https://catalog.boras.se/store/1/resource/77",
+  "format": "geojson",
+  "type": "leisure=park",
+  "match": 300,
+  "fields": {
+   "name": "namn"
+  }
+ },
+ {
+  "id": "botkyrka-lekplatser",
+  "label": "Botkyrka kommun",
+  "about": "https://www.dataportal.se/datasets/271_4654",
+  "url": "https://data.botkyrka.se/store/3/resource/173",
+  "format": "geojson",
+  "type": "leisure=playground",
+  "match": 100
+ },
+ {
+  "id": "botkyrka-hundrastgardar",
+  "label": "Botkyrka kommun",
+  "about": "https://www.dataportal.se/datasets/271_4655",
+  "url": "https://data.botkyrka.se/store/3/resource/56",
+  "format": "geojson",
+  "type": "leisure=dog_park",
+  "match": 100
+ },
+ {
+  "id": "eskilstuna-grillplatser",
+  "label": "Eskilstuna kommun",
+  "about": "https://www.dataportal.se/datasets/597_4565",
+  "url": "https://eskilstuna.entryscape.net/store/1/resource/136",
+  "format": "geojson",
+  "type": "amenity=bbq",
+  "match": 100,
+  "fields": {
+   "name": "namn"
+  }
+ },
+ {
+  "id": "gislaved-grillplatser",
+  "label": "Gislaveds kommun",
+  "about": "https://www.dataportal.se/datasets/329_2678",
+  "url": "https://hub.arcgis.com/api/v3/datasets/4edf8960cd3a494b9db725e05ee5aefd_0/downloads/data?format=geojson&spatialRefId=4326&where=1%3D1",
+  "format": "geojson",
+  "type": "amenity=bbq",
+  "match": 100
+ },
+ {
+  "id": "helsingborg-lekplatser",
+  "label": "Helsingborgs stad",
+  "about": "https://www.dataportal.se/datasets/270_26095",
+  "url": "https://oppnadata.helsingborg.se/sbf/utbildning_kultur_och_sport/lekplatser/lekplatser.geojson",
+  "format": "geojson",
+  "type": "leisure=playground",
+  "match": 100,
+  "fields": {
+   "id": "Lekplatsnummer",
+   "name": "Namn"
+  }
+ },
+ {
+  "id": "helsingborg-konst",
+  "label": "Helsingborgs stad",
+  "about": "https://www.dataportal.se/datasets/270_26097",
+  "url": "https://oppnadata.helsingborg.se/sbf/utbildning_kultur_och_sport/konstverk_och_fontaner/konstverk_och_fontaner.geojson",
+  "format": "geojson",
+  "type": "tourism=artwork",
+  "match": 100,
+  "fields": {
+   "name": "Namn",
+   "image": "Bildlank"
+  }
+ },
+ {
+  "id": "karlstad-lekplatser",
+  "label": "Karlstads Kommun",
+  "about": "https://www.dataportal.se/datasets/453_4482",
+  "url": "https://gi.karlstad.se/geoserver/oppnadata/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=oppnadata%3Akarlstad_lekplatser&outputFormat=application%2Fjson",
+  "format": "geojson",
+  "type": "leisure=playground",
+  "match": 100,
+  "fields": {
+   "id": "guid"
+  }
+ },
+ {
+  "id": "lidingo-badplatser",
+  "label": "Lidingö stad",
+  "about": "https://www.dataportal.se/datasets/238_42967",
+  "url": "https://metadata.lidingo.se/store/7/resource/50",
+  "format": "geojson",
+  "type": "leisure=bathing_place",
+  "match": 300,
+  "fields": {
+   "name": "Namn",
+   "link": "url"
+  }
+ },
+ {
+  "id": "lidingo-grillplatser",
+  "label": "Lidingö stad",
+  "about": "https://www.dataportal.se/datasets/238_42935",
+  "url": "https://metadata.lidingo.se/store/7/resource/37",
+  "format": "geojson",
+  "type": "amenity=bbq",
+  "match": 100,
+  "fields": {
+   "name": "plats"
+  }
+ },
+ {
+  "id": "lidingo-vindskydd",
+  "label": "Lidingö stad",
+  "about": "https://www.dataportal.se/datasets/238_42933",
+  "url": "https://metadata.lidingo.se/store/7/resource/40",
+  "format": "geojson",
+  "type": "amenity=shelter",
+  "match": 100,
+  "fields": {
+   "name": "plats"
+  }
+ },
+ {
+  "id": "lidingo-kulturarv",
+  "label": "Lidingö stad",
+  "about": "https://www.dataportal.se/datasets/238_42937",
+  "url": "https://metadata.lidingo.se/store/7/resource/22",
+  "format": "geojson",
+  "type": "tourism=attraction",
+  "match": 100,
+  "fields": {
+   "name": "titel",
+   "link": "url"
+  }
+ },
+ {
+  "id": "lidingo-kulturminnen",
+  "label": "Lidingö stad",
+  "about": "https://www.dataportal.se/datasets/238_42931",
+  "url": "https://metadata.lidingo.se/store/7/resource/19",
+  "format": "geojson",
+  "type": "tourism=attraction",
+  "match": 100,
+  "fields": {
+   "id": "nr",
+   "name": "objektsnamn",
+   "link": "url",
+   "lat": "-",
+   "lon": "-"
+  }
+ },
+ {
+  "id": "lidingo-skulpturer",
+  "label": "Lidingö stad",
+  "about": "https://www.dataportal.se/datasets/238_42971",
+  "url": "https://metadata.lidingo.se/store/7/resource/53",
+  "format": "geojson",
+  "type": "tourism=artwork",
+  "match": 100,
+  "fields": {
+   "name": "objektsnamn",
+   "link": "url",
+   "lat": "-",
+   "lon": "-"
+  }
+ },
+ {
+  "id": "malmo-lekplatser",
+  "label": "Malmö stad",
+  "about": "https://www.dataportal.se/datasets/290_9853",
+  "url": "https://opendata-api.malmo.se/dataset/c08d7231-9b49-4af5-94bd-3bc6ed5cf7a2/resource/c18f001e-891c-42c6-86e2-f30b8749e26f/download/lekplatser.geojson",
+  "format": "geojson",
+  "type": "leisure=playground",
+  "match": 100
+ },
+ {
+  "id": "malmo-konst",
+  "label": "Malmö stad",
+  "about": "https://www.dataportal.se/datasets/290_9338",
+  "url": "https://opendata-api.malmo.se/dataset/cf5f830c-0216-43c0-af60-e8385dfef4e2/resource/01c13bc1-861c-4486-85a3-15d50ac6584e/download/offentlig_konst.geojson",
+  "format": "geojson",
+  "type": "tourism=artwork",
+  "match": 100,
+  "fields": {
+   "name": "title",
+   "link": "URL",
+   "image": "image"
+  }
+ },
+ {
+  "id": "malmo-utegym",
+  "label": "Malmö stad",
+  "about": "https://www.dataportal.se/datasets/290_9881",
+  "url": "https://opendata-api.malmo.se/dataset/30b5a80c-692b-41f4-baa6-f0d1119e8b5d/resource/c58dab9d-f331-4368-aac4-68e8ecfcd7b9/download/utegym.geojson",
+  "format": "geojson",
+  "type": "leisure=fitness_station",
+  "match": 100
+ },
+ {
+  "id": "malmo-parker",
+  "label": "Malmö stad",
+  "about": "https://www.dataportal.se/datasets/290_9391",
+  "url": "https://opendata-api.malmo.se/dataset/172c6d5f-7e71-4e7b-ae71-72ff3ed8417b/resource/b1839f8b-35a4-4d7c-9cdb-0f9cf5844a2c/download/park_torg.geojson",
+  "format": "geojson",
+  "type": "leisure=park",
+  "match": 300,
+  "fields": {
+   "id": "ObjectID",
+   "name": "Namn"
+  },
+  "filter": {
+   "Detaljplan_kategori": "Park"
+  }
+ },
+ {
+  "id": "molndal-badplatser",
+  "label": "Mölndals stad",
+  "about": "https://www.dataportal.se/datasets/68_3474",
+  "url": "https://catalog.molndal.se/store/1/resource/41",
+  "format": "geojson",
+  "type": "leisure=bathing_place",
+  "match": 300
+ },
+ {
+  "id": "sodertalje-badplatser",
+  "label": "Södertälje kommun",
+  "about": "https://www.dataportal.se/datasets/75_7052",
+  "url": "https://static-content.sodertalje.se/opendata/Badplatser.json",
+  "format": "geojson",
+  "type": "leisure=bathing_place",
+  "match": 300
+ },
+ {
+  "id": "sodertalje-bankar",
+  "label": "Södertälje kommun",
+  "about": "https://www.dataportal.se/datasets/75_8325",
+  "url": "https://static-content.sodertalje.se/opendata/bankar_och_fikabord_friluftsliv.json",
+  "format": "geojson",
+  "type": "amenity=bench",
+  "match": 100
+ },
+ {
+  "id": "sodertalje-grillplatser",
+  "label": "Södertälje kommun",
+  "about": "https://www.dataportal.se/datasets/75_8243",
+  "url": "https://static-content.sodertalje.se/opendata/grillplatser.json",
+  "format": "geojson",
+  "type": "amenity=bbq",
+  "match": 100
+ },
+ {
+  "id": "sodertalje-hundrastgardar",
+  "label": "Södertälje kommun",
+  "about": "https://www.dataportal.se/datasets/75_7067",
+  "url": "https://static-content.sodertalje.se/opendata/hundrastgardar.json",
+  "format": "geojson",
+  "type": "leisure=dog_park",
+  "match": 100,
+  "fields": {
+   "name": "Namn",
+   "link": "Webbsida"
+  }
+ },
+ {
+  "id": "sodertalje-lekplatser",
+  "label": "Södertälje kommun",
+  "about": "https://www.dataportal.se/datasets/75_7048",
+  "url": "https://static-content.sodertalje.se/opendata/lekplatser.json",
+  "format": "geojson",
+  "type": "leisure=playground",
+  "match": 100,
+  "fields": {
+   "name": "Namn",
+   "link": "Webbsida"
+  }
+ },
+ {
+  "id": "sodertalje-parker",
+  "label": "Södertälje kommun",
+  "about": "https://www.dataportal.se/datasets/75_8590",
+  "url": "https://static-content.sodertalje.se/opendata/parker.json",
+  "format": "geojson",
+  "type": "leisure=park",
+  "match": 300,
+  "fields": {
+   "name": "Namn",
+   "link": "Webbsida"
+  }
+ },
+ {
+  "id": "sodertalje-sevardheter",
+  "label": "Södertälje kommun",
+  "about": "https://www.dataportal.se/datasets/75_8315",
+  "url": "https://static-content.sodertalje.se/opendata/sevardheter.json",
+  "format": "geojson",
+  "type": "tourism=attraction",
+  "match": 100,
+  "fields": {
+   "name": "Namn",
+   "link": "Webbsida"
+  }
+ },
+ {
+  "id": "sodertalje-utsiktsplatser",
+  "label": "Södertälje kommun",
+  "about": "https://www.dataportal.se/datasets/75_8331",
+  "url": "https://static-content.sodertalje.se/opendata/utsiktsplatser.json",
+  "format": "geojson",
+  "type": "tourism=viewpoint",
+  "match": 100
+ },
+ {
+  "id": "sodertalje-vindskydd",
+  "label": "Södertälje kommun",
+  "about": "https://www.dataportal.se/datasets/75_8323",
+  "url": "https://static-content.sodertalje.se/opendata/vindskydd.json",
+  "format": "geojson",
+  "type": "amenity=shelter",
+  "match": 100
+ },
+ {
+  "id": "umea-badplatser",
+  "label": "Umeå kommun",
+  "about": "https://www.dataportal.se/datasets/43_69516",
+  "url": "https://opendata.umea.se/api/explore/v2.1/catalog/datasets/badplatser/exports/geojson",
+  "format": "geojson",
+  "type": "leisure=bathing_place",
+  "match": 300,
+  "fields": {
+   "id": "anlaggn_id",
+   "name": "namn"
+  }
+ },
+ {
+  "id": "umea-konst",
+  "label": "Umeå kommun",
+  "about": "https://www.dataportal.se/datasets/43_69333",
+  "url": "https://opendata.umea.se/api/explore/v2.1/catalog/datasets/konsten-umea-kommun/exports/geojson",
+  "format": "geojson",
+  "type": "tourism=artwork",
+  "match": 100,
+  "fields": {
+   "name": "titel_forestallande"
+  }
+ },
+ {
+  "id": "umea-lekplatser",
+  "label": "Umeå kommun",
+  "about": "https://www.dataportal.se/datasets/43_69320",
+  "url": "https://opendata.umea.se/api/explore/v2.1/catalog/datasets/gop_lekparker/exports/geojson",
+  "format": "geojson",
+  "type": "leisure=playground",
+  "match": 100,
+  "fields": {
+   "name": "namn",
+   "link": "besoksurl",
+   "lat": "-",
+   "lon": "-"
+  }
+ },
+ {
+  "id": "umea-rastplatser",
+  "label": "Umeå kommun",
+  "about": "https://www.dataportal.se/datasets/43_69544",
+  "url": "https://opendata.umea.se/api/explore/v2.1/catalog/datasets/rastplatser/exports/geojson",
+  "format": "geojson",
+  "type": "tourism=picnic_site",
+  "match": 100,
+  "fields": {
+   "id": "anlaggn_id",
+   "name": "namn"
+  }
+ },
+ {
+  "id": "umea-utegym",
+  "label": "Umeå kommun",
+  "about": "https://www.dataportal.se/datasets/43_69386",
+  "url": "https://opendata.umea.se/api/explore/v2.1/catalog/datasets/utegym-umea/exports/geojson",
+  "format": "geojson",
+  "type": "leisure=fitness_station",
+  "match": 100,
+  "fields": {
+   "name": "namn",
+   "link": "webb",
+   "lat": "lat",
+   "lon": "long"
+  }
+ },
+ {
+  "id": "angelholm-badplatser",
+  "label": "Ängelholms kommun",
+  "about": "https://www.dataportal.se/datasets/853_202",
+  "url": "https://geodata.engelholm.se/maps/oppen_data/geodirekt_4_badplatser/data.json",
+  "format": "geojson",
+  "type": "leisure=bathing_place",
+  "match": 300,
+  "fields": {
+   "id": "td_id",
+   "name": "namn",
+   "lat": "-",
+   "lon": "-"
+  }
+ },
+ {
+  "id": "angelholm-lekplatser",
+  "label": "Ängelholms kommun",
+  "about": "https://www.dataportal.se/datasets/853_166",
+  "url": "https://geodata.engelholm.se/maps/oppen_data/geodirekt_4_lekplatser/data.json",
+  "format": "geojson",
+  "type": "leisure=playground",
+  "match": 100,
+  "fields": {
+   "id": "td_id",
+   "name": "namn",
+   "link": "url",
+   "lat": "-",
+   "lon": "-"
+  }
+ },
+ {
+  "id": "alingsas-badplatser",
+  "label": "Alingsås kommun",
+  "about": "https://www.dataportal.se/datasets/298_1947",
+  "url": "https://catalog.alingsas.se/store/1/resource/12",
+  "format": "geojson",
+  "type": "leisure=bathing_place",
+  "match": 300,
+  "fields": {
+   "id": "FID",
+   "name": "Text",
+   "link": "Text2"
+  },
+  "crs": 3007
+ },
+ {
+  "id": "skovde-badplatser",
+  "label": "Skövde kommun",
+  "about": "https://www.dataportal.se/datasets/286_6869",
+  "url": "https://karta.skovde.se/linkdokument/OpenData/badplatser.json",
+  "format": "json",
+  "type": "leisure=bathing_place",
+  "match": 300
+ },
+ {
+  "id": "skovde-hundrastgardar",
+  "label": "Skövde kommun",
+  "about": "https://www.dataportal.se/datasets/286_11527",
+  "url": "https://karta.skovde.se/linkdokument/OpenData/hundrastgard.json",
+  "format": "json",
+  "type": "leisure=dog_park",
+  "match": 100,
+  "fields": {
+   "link": "url_info"
+  }
+ },
+ {
+  "id": "skovde-lekplatser",
+  "label": "Skövde kommun",
+  "about": "https://www.dataportal.se/datasets/286_10153",
+  "url": "https://karta.skovde.se/linkdokument/OpenData/lekplatser.json",
+  "format": "json",
+  "type": "leisure=playground",
+  "match": 100
+ },
+ {
+  "id": "skovde-utegym",
+  "label": "Skövde kommun",
+  "about": "https://www.dataportal.se/datasets/286_11232",
+  "url": "https://karta.skovde.se/linkdokument/OpenData/utegym.json",
+  "format": "geojson",
+  "type": "leisure=fitness_station",
+  "match": 100
+ },
+ {
+  "id": "eslov-lekplatser",
+  "label": "Eslövs kommun",
+  "about": "https://www.dataportal.se/datasets/294_3321",
+  "url": "https://catalog.eslov.se/rowstore/dataset/08b5e92d-7bc7-41de-aa56-f67f6662e919/json?_limit=1000",
+  "format": "rowstore",
+  "type": "leisure=playground",
+  "match": 100
+ },
+ {
+  "id": "eslov-utegym",
+  "label": "Eslövs kommun",
+  "about": "https://www.dataportal.se/datasets/294_2445",
+  "url": "https://catalog.eslov.se/rowstore/dataset/9fcfb747-6dd5-49d1-801c-8c07bcff9b58/json?_limit=1000",
+  "format": "rowstore",
+  "type": "leisure=fitness_station",
+  "match": 100,
+  "fields": {
+   "link": "visiturl"
+  }
+ },
+ {
+  "id": "eslov-badplatser",
+  "label": "Eslövs kommun",
+  "about": "https://www.dataportal.se/datasets/294_2444",
+  "url": "https://catalog.eslov.se/rowstore/dataset/6239e690-de8a-4302-8d49-28ea45dd521f/json?_limit=1000",
+  "format": "rowstore",
+  "type": "leisure=bathing_place",
+  "match": 300
+ },
+ {
+  "id": "essunga-badplatser",
+  "label": "Essunga kommun",
+  "about": "https://www.dataportal.se/datasets/428_2070",
+  "url": "https://catalog.essunga.se/rowstore/dataset/7ed4c2e2-6566-4b9e-add2-dd5b5f75f7f6/json?_limit=1000",
+  "format": "rowstore",
+  "type": "leisure=bathing_place",
+  "match": 300
+ },
+ {
+  "id": "essunga-grillplatser",
+  "label": "Essunga kommun",
+  "about": "https://www.dataportal.se/datasets/428_3588",
+  "url": "https://catalog.essunga.se/rowstore/dataset/b6692756-1772-46a4-a7ff-6062d8211add/json?_limit=1000",
+  "format": "rowstore",
+  "type": "amenity=bbq",
+  "match": 100
+ },
+ {
+  "id": "essunga-utegym",
+  "label": "Essunga kommun",
+  "about": "https://www.dataportal.se/datasets/428_2355",
+  "url": "https://catalog.essunga.se/rowstore/dataset/50392303-6c97-4398-a162-38d61fbf637b/json?_limit=1000",
+  "format": "rowstore",
+  "type": "leisure=fitness_station",
+  "match": 100
+ },
+ {
+  "id": "falkoping-grillplatser",
+  "label": "Falköpings kommun",
+  "about": "https://www.dataportal.se/datasets/330_3265",
+  "url": "https://catalog.falkoping.se/rowstore/dataset/d916a8ce-e602-4df9-a178-cbadbb495e0e/json?_limit=1000",
+  "format": "rowstore",
+  "type": "amenity=bbq",
+  "match": 100
+ },
+ {
+  "id": "gullspang-badplatser",
+  "label": "Gullspångs kommun",
+  "about": "https://www.dataportal.se/datasets/420_3673",
+  "url": "https://catalog.gullspang.se/rowstore/dataset/cc6cd93d-e0a0-46b4-af61-069ce48ffd33/json?_limit=1000",
+  "format": "rowstore",
+  "type": "leisure=bathing_place",
+  "match": 300
+ },
+ {
+  "id": "gotene-badplatser",
+  "label": "Götene kommun",
+  "about": "https://www.dataportal.se/datasets/567_2913",
+  "url": "https://catalog.gotene.se/rowstore/dataset/92063107-40f3-4915-8692-e2fcd710b2cc/json?_limit=1000",
+  "format": "rowstore",
+  "type": "leisure=bathing_place",
+  "match": 300
+ },
+ {
+  "id": "harryda-badplatser",
+  "label": "Härryda kommun",
+  "about": "https://www.dataportal.se/datasets/413_2691",
+  "url": "https://catalog.harryda.se/rowstore/dataset/21cffcda-f0aa-471d-9cd3-4630669f6fb1/json?_limit=1000",
+  "format": "rowstore",
+  "type": "leisure=bathing_place",
+  "match": 300
+ },
+ {
+  "id": "harryda-grillplatser",
+  "label": "Härryda kommun",
+  "about": "https://www.dataportal.se/datasets/413_2740",
+  "url": "https://catalog.harryda.se/rowstore/dataset/86fd5d64-9403-4908-b423-a236a84da8b5/json?_limit=1000",
+  "format": "rowstore",
+  "type": "amenity=bbq",
+  "match": 100
+ },
+ {
+  "id": "harryda-lekplatser",
+  "label": "Härryda kommun",
+  "about": "https://www.dataportal.se/datasets/413_2919",
+  "url": "https://catalog.harryda.se/rowstore/dataset/977bd7e6-a7a1-48c1-8392-bc5897772ac9/json?_limit=1000",
+  "format": "rowstore",
+  "type": "leisure=playground",
+  "match": 100
+ },
+ {
+  "id": "harryda-utegym",
+  "label": "Härryda kommun",
+  "about": "https://www.dataportal.se/datasets/413_3791",
+  "url": "https://catalog.harryda.se/rowstore/dataset/940f46ad-7fbc-483d-a4d7-3eaacf835d19/json?_limit=1000",
+  "format": "rowstore",
+  "type": "leisure=fitness_station",
+  "match": 100
+ },
+ {
+  "id": "harryda-konst",
+  "label": "Härryda kommun",
+  "about": "https://www.dataportal.se/datasets/413_4749",
+  "url": "https://catalog.harryda.se/store/2/resource/221",
+  "format": "geojson",
+  "type": "tourism=artwork",
+  "match": 100,
+  "fields": {
+   "id": "AppID",
+   "name": "Name",
+   "link": "Link_1",
+   "x": "x",
+   "y": "y"
+  }
+ },
+ {
+  "id": "kungsbacka-grillplatser",
+  "label": "Kungsbacka kommun",
+  "about": "https://www.dataportal.se/datasets/396_2563",
+  "url": "https://kungsbacka.entryscape.net/rowstore/dataset/1928e92f-2467-45a9-af92-8c48eca1e80d/json?_limit=1000",
+  "format": "rowstore",
+  "type": "amenity=bbq",
+  "match": 100,
+  "fields": {
+   "name": "namn"
+  }
+ },
+ {
+  "id": "kungsbacka-badplatser",
+  "label": "Kungsbacka kommun",
+  "about": "https://www.dataportal.se/datasets/396_2869",
+  "url": "https://kungsbacka.entryscape.net/store/1/resource/68",
+  "format": "csv",
+  "type": "leisure=bathing_place",
+  "match": 300
+ },
+ {
+  "id": "kungsbacka-lekplatser",
+  "label": "Kungsbacka kommun",
+  "about": "https://www.dataportal.se/datasets/396_2557",
+  "url": "https://kungsbacka.entryscape.net/store/1/resource/188",
+  "format": "csv",
+  "type": "leisure=playground",
+  "match": 100
+ },
+ {
+  "id": "kungsbacka-utegym",
+  "label": "Kungsbacka kommun",
+  "about": "https://www.dataportal.se/datasets/396_2488",
+  "url": "https://kungsbacka.entryscape.net/rowstore/dataset/81b3aac5-288e-4677-996f-8750a49ee194/json?_limit=1000",
+  "format": "rowstore",
+  "type": "leisure=fitness_station",
+  "match": 100,
+  "fields": {
+   "lat": "latitud",
+   "lon": "longitud"
+  }
+ },
+ {
+  "id": "kungalv-lekplatser",
+  "label": "Kungälvs kommun",
+  "about": "https://www.dataportal.se/datasets/397_2779",
+  "url": "https://catalog.kungalv.se/rowstore/dataset/eaf573d8-94ff-4d89-8286-474f5deb9fda/json?_limit=1000",
+  "format": "rowstore",
+  "type": "leisure=playground",
+  "match": 100
+ },
+ {
+  "id": "lidkoping-badplatser",
+  "label": "Lidköpings kommun",
+  "about": "https://www.dataportal.se/datasets/391_2066",
+  "url": "https://catalog.lidkoping.se/rowstore/dataset/5b82d441-5f0d-4ebb-b21b-a82df3d4b0e9/json?_limit=1000",
+  "format": "rowstore",
+  "type": "leisure=bathing_place",
+  "match": 300
+ },
+ {
+  "id": "lomma-badplatser",
+  "label": "Lomma kommun",
+  "about": "https://www.dataportal.se/datasets/291_2446",
+  "url": "https://catalog.lomma.se/store/1/resource/68",
+  "format": "json",
+  "type": "leisure=bathing_place",
+  "match": 300
+ },
+ {
+  "id": "lomma-grillplatser",
+  "label": "Lomma kommun",
+  "about": "https://www.dataportal.se/datasets/291_2335",
+  "url": "https://catalog.lomma.se/store/1/resource/8",
+  "format": "json",
+  "type": "amenity=bbq",
+  "match": 100
+ },
+ {
+  "id": "lomma-lekplatser",
+  "label": "Lomma kommun",
+  "about": "https://www.dataportal.se/datasets/291_2379",
+  "url": "https://catalog.lomma.se/store/1/resource/52",
+  "format": "json",
+  "type": "leisure=playground",
+  "match": 100
+ },
+ {
+  "id": "lomma-utegym",
+  "label": "Lomma kommun",
+  "about": "https://www.dataportal.se/datasets/291_2380",
+  "url": "https://catalog.lomma.se/store/1/resource/58",
+  "format": "json",
+  "type": "leisure=fitness_station",
+  "match": 100
+ },
+ {
+  "id": "mariestad-badplatser",
+  "label": "Mariestads kommun",
+  "about": "https://www.dataportal.se/datasets/506_3671",
+  "url": "https://catalog.mariestad.se/rowstore/dataset/b2a5c3e1-1573-4824-a7aa-647c0f2a48e0/json?_limit=1000",
+  "format": "rowstore",
+  "type": "leisure=bathing_place",
+  "match": 300
+ },
+ {
+  "id": "molndal-grillplatser",
+  "label": "Mölndals stad",
+  "about": "https://www.dataportal.se/datasets/68_3737",
+  "url": "https://catalog.molndal.se/rowstore/dataset/75bb7861-380a-4175-b7d6-9e341f41135d/json?_limit=1000",
+  "format": "rowstore",
+  "type": "amenity=bbq",
+  "match": 100,
+  "fields": {
+   "name": "namn"
+  }
+ },
+ {
+  "id": "oxelosund-badplatser",
+  "label": "Oxelösunds kommun",
+  "about": "https://www.dataportal.se/datasets/366_2816",
+  "url": "https://geodok.oxelosund.se/oppna_data/Badplaser_Oxelosund.csv",
+  "format": "csv",
+  "type": "leisure=bathing_place",
+  "match": 300
+ },
+ {
+  "id": "oxelosund-grillplatser",
+  "label": "Oxelösunds kommun",
+  "about": "https://www.dataportal.se/datasets/366_4078",
+  "url": "https://geodok.oxelosund.se/oppna_data/Grillplatser_oxelosund.csv",
+  "format": "csv",
+  "type": "amenity=bbq",
+  "match": 100
+ },
+ {
+  "id": "oxelosund-hundrastgardar",
+  "label": "Oxelösunds kommun",
+  "about": "https://www.dataportal.se/datasets/366_4164",
+  "url": "https://geodok.oxelosund.se/oppna_data/hundrastgardar_oxelosund.csv",
+  "format": "csv",
+  "type": "leisure=dog_park",
+  "match": 100
+ },
+ {
+  "id": "skara-badplatser",
+  "label": "Skara kommun",
+  "about": "https://www.dataportal.se/datasets/83_2065",
+  "url": "https://catalog.skara.se/rowstore/dataset/d30e8943-d132-41ec-863b-9fbd9914ed56/json?_limit=1000",
+  "format": "rowstore",
+  "type": "leisure=bathing_place",
+  "match": 300
+ },
+ {
+  "id": "skara-hundrastgardar",
+  "label": "Skara kommun",
+  "about": "https://www.dataportal.se/datasets/83_7093",
+  "url": "https://catalog.skara.se/store/1/resource/90",
+  "format": "csv",
+  "type": "leisure=dog_park",
+  "match": 100,
+  "fields": {
+   "link": "url_info"
+  }
+ },
+ {
+  "id": "skara-utegym",
+  "label": "Skara kommun",
+  "about": "https://www.dataportal.se/datasets/83_2350",
+  "url": "https://catalog.skara.se/rowstore/dataset/e490ebb8-9507-463a-bfec-e82054a20b14/json?_limit=1000",
+  "format": "rowstore",
+  "type": "leisure=fitness_station",
+  "match": 100
+ },
+ {
+  "id": "stenungsund-badplatser",
+  "label": "Stenungsunds kommun",
+  "about": "https://www.dataportal.se/datasets/353_2700",
+  "url": "https://catalog.stenungsund.se/rowstore/dataset/fc46d794-596d-4d67-a21b-412c800684f0/json?_limit=1000",
+  "format": "rowstore",
+  "type": "leisure=bathing_place",
+  "match": 300
+ },
+ {
+  "id": "stenungsund-lekplatser",
+  "label": "Stenungsunds kommun",
+  "about": "https://www.dataportal.se/datasets/353_2690",
+  "url": "https://catalog.stenungsund.se/rowstore/dataset/fc6ad312-1a22-4fa3-88c0-de26daf66cc4/json?_limit=1000",
+  "format": "rowstore",
+  "type": "leisure=playground",
+  "match": 100
+ },
+ {
+  "id": "sodertalje-konst",
+  "label": "Södertälje kommun",
+  "about": "https://www.dataportal.se/datasets/75_7087",
+  "url": "https://static-content.sodertalje.se/opendata/offentlig_konst.csv",
+  "format": "csv",
+  "type": "tourism=artwork",
+  "match": 100,
+  "fields": {
+   "name": "title",
+   "link": "url",
+   "image": "image"
+  }
+ },
+ {
+  "id": "sodertalje-utegym",
+  "label": "Södertälje kommun",
+  "about": "https://www.dataportal.se/datasets/75_7090",
+  "url": "https://catalog.sodertalje.se/rowstore/dataset/ad01a6d6-e986-4d97-820b-f7d5f44d0a03/json?_limit=1000",
+  "format": "rowstore",
+  "type": "leisure=fitness_station",
+  "match": 100
+ },
+ {
+  "id": "tidaholm-utegym",
+  "label": "Tidaholms kommun",
+  "about": "https://www.dataportal.se/datasets/55_5007",
+  "url": "https://catalog.tidaholm.se/store/2/resource/58",
+  "format": "csv",
+  "type": "leisure=fitness_station",
+  "match": 100
+ },
+ {
+  "id": "tjorn-badplatser",
+  "label": "Tjörns kommun",
+  "about": "https://www.dataportal.se/datasets/348_2691",
+  "url": "https://catalog.tjorn.se/rowstore/dataset/130de203-c668-445e-9cb3-72e8afb62780/json?_limit=1000",
+  "format": "rowstore",
+  "type": "leisure=bathing_place",
+  "match": 300
+ },
+ {
+  "id": "tomelilla-badplatser",
+  "label": "Tomelilla kommun",
+  "about": "https://www.dataportal.se/datasets/347_2621",
+  "url": "https://data.tomelilla.se/rowstore/dataset/ec1ca1d9-a9a0-4939-912e-3c969482d8fc/json?_limit=1000",
+  "format": "rowstore",
+  "type": "leisure=bathing_place",
+  "match": 300,
+  "fields": {
+   "name": "namn",
+   "link": "url",
+   "geom": "geom"
+  }
+ },
+ {
+  "id": "tomelilla-grillplatser",
+  "label": "Tomelilla kommun",
+  "about": "https://www.dataportal.se/datasets/347_4226",
+  "url": "https://data.tomelilla.se/rowstore/dataset/f74c226b-8418-4d41-b466-9b4365a3bae6/json?_limit=1000",
+  "format": "rowstore",
+  "type": "amenity=bbq",
+  "match": 100,
+  "fields": {
+   "id": "fid",
+   "name": "-",
+   "geom": "geom"
+  }
+ },
+ {
+  "id": "tomelilla-hundrastgardar",
+  "label": "Tomelilla kommun",
+  "about": "https://www.dataportal.se/datasets/347_4336",
+  "url": "https://data.tomelilla.se/rowstore/dataset/8795911f-cf02-4662-9451-0af63c75ca15/json?_limit=1000",
+  "format": "rowstore",
+  "type": "leisure=dog_park",
+  "match": 100,
+  "fields": {
+   "geom": "geom"
+  }
+ },
+ {
+  "id": "tomelilla-lekplatser",
+  "label": "Tomelilla kommun",
+  "about": "https://www.dataportal.se/datasets/347_4221",
+  "url": "https://data.tomelilla.se/rowstore/dataset/6f5ff23b-0e05-4746-a37d-ad2dad3ada29/json?_limit=1000",
+  "format": "rowstore",
+  "type": "leisure=playground",
+  "match": 100,
+  "fields": {
+   "id": "fid",
+   "name": "namn",
+   "geom": "geom"
+  }
+ },
+ {
+  "id": "tomelilla-utegym",
+  "label": "Tomelilla kommun",
+  "about": "https://www.dataportal.se/datasets/347_4228",
+  "url": "https://data.tomelilla.se/rowstore/dataset/6be58dd1-0638-4b42-a6e2-9e542ab5767c/json?_limit=1000",
+  "format": "rowstore",
+  "type": "leisure=fitness_station",
+  "match": 100,
+  "fields": {
+   "id": "fid",
+   "name": "namn",
+   "link": "url",
+   "geom": "geom"
+  }
+ },
+ {
+  "id": "toreboda-badplatser",
+  "label": "Töreboda kommun",
+  "about": "https://www.dataportal.se/datasets/309_3669",
+  "url": "https://catalog.toreboda.se/rowstore/dataset/302f67fe-ec1f-4f37-a355-9ee93a14e57c/json?_limit=1000",
+  "format": "rowstore",
+  "type": "leisure=bathing_place",
+  "match": 300
+ },
+ {
+  "id": "ulricehamn-badplatser",
+  "label": "Ulricehamns kommun",
+  "about": "https://www.dataportal.se/datasets/344_2409",
+  "url": "https://catalog.ulricehamn.se/store/1/resource/27",
+  "format": "csv",
+  "type": "leisure=bathing_place",
+  "match": 300
+ },
+ {
+  "id": "vara-badplatser",
+  "label": "Vara kommun",
+  "about": "https://www.dataportal.se/datasets/31_2078",
+  "url": "https://catalog.vara.se/rowstore/dataset/f7374a5d-4795-4057-8f65-5e9783345767/json?_limit=1000",
+  "format": "rowstore",
+  "type": "leisure=bathing_place",
+  "match": 300
+ },
+ {
+  "id": "grastorp-utegym",
+  "label": "Grästorps kommun",
+  "about": "https://www.dataportal.se/datasets/421_2882",
+  "url": "https://catalog.grastorp.se/store/1/resource/26",
+  "format": "csv",
+  "type": "leisure=fitness_station",
+  "match": 100
+ }
 ]

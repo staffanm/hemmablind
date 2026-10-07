@@ -6,6 +6,7 @@ import LEGENDARY from './legendary.json';
 import MAP_STYLE from './map-style.json';
 import SOURCES from './sources.json';
 import SPECIALS from './specials.json';
+import { buildAchievements, tierOf, xpParts, levelAt, xpFor, titleAt, streak, TIER_NAME } from './achievements.js';
 
 const $ = (s) => document.querySelector(s);
 const esc = (s) => String(s).replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
@@ -24,7 +25,9 @@ const LEGENDARY_RADIUS = 100;
 const VIEW_RANGE = 300;      // common and uncommon features show inside this range
 const FOOT_DISTANCE = 500;   // track length for the "on foot or bike" mark
 const TRACK_STEP = 8;        // metres between two track samples
-const TRACK_GAP = 30000;     // ms without a position that breaks the track
+const TRACK_PAUSE = 30000;   // ms without a position: the phone was locked or the app was closed
+const TRACK_END = 3600000;   // a pause longer than this ends the walk
+const BIKE_KMH = 10;         // the track shows a faster pace as a bike ride
 const PHOTO_SIZE = 1024;     // longest side of a saved photo in pixels
 const REACH_BUZZ = [70, 50, 70, 50, 220];  // vibration when a card is in reach: short, short, long
 // The map is tilted and the buildings have height. The player is below the middle of the screen,
@@ -35,13 +38,13 @@ const VIEW_2D = { zoom: 15, pitch: 0, padding: { top: 0 } };
 
 const ABOUT = `
   <p>Varje bänk, utsiktsplats, runsten och fyr på kartan är ett kort. Gå inom 30 m från den verkliga platsen och fotografera den för att få kortet.</p>
-  <p>På kartan ser du bara de kort som finns inom 300 m från dig. De sällsynta korten är dolda på kartan och syns när du är inom 30 m ifrån. Men du kan använda dina vanliga kort för att köpa en ledtråd till var de närmaste finns.</p>
-  <p>Du kan inte fotografera eller få ett kort medan du åker bil. Om du istället promenerar eller cyklar hela vägen till kortet räknas det som två när du köper ledtrådar.</p>
+  <p>På kartan ser du bara de kort som finns inom 300 m från dig. De sällsynta korten är dolda på kartan och syns när du är inom 30 m ifrån. Varje vanligt kort ger en poäng. Med poängen köper du en ledtråd till var de närmaste finns.</p>
+  <p>Du kan inte fotografera eller få ett kort medan du åker bil. Om du istället promenerar eller cyklar minst 500 m fram till kortet ger det två poäng. Promenaden räknas även om telefonen är låst på vägen, så länge pausen är kortare än en timme. Spåret finns bara på den här telefonen och raderas varje ny dag.</p>
   <p>Dina bilder stannar på den här telefonen. Tryck på ett kort för att se bilden.</p>`;
 
 const PERKS = {
   farsight: ['Fjärrsyn', 'Vanliga och ovanliga platser syns inom 500 m i stället för 300 m.'],
-  windfall: ['Bonus', 'Varje ovanligt kort ger också ett vanligt kort att spendera.'],
+  windfall: ['Bonus', 'Varje ovanligt kort ger också en poäng.'],
   pinpoint: ['Precision', 'En ledtråd visar den dolda platsen på kartan.'],
   sixthsense: ['Sjätte sinne', 'Sällsynta platser syns på kartan inom 100 m.'],
   dowser: ['Slagruta', 'Episka platser syns på kartan inom 60 m.'],
@@ -64,12 +67,13 @@ const DECK_SIZE = 3;
 
 // cards: id -> {t: type index or -1 for legendary, n: name, la, lo, at: ms, foot, nohint, wd}
 // discarded: id -> {hinted}. A card that you collect again gives no cards to spend.
-let state = { cards: {}, coins: 0, hints: [], deck: [], discarded: {}, seen: false, flat: false };
+let state = { cards: {}, coins: 0, hints: [], deck: [], discarded: {}, seen: false, flat: false, days: {}, ach: {}, level: 1 };
+let ACHIEVEMENTS = [];
 let meta = null;
 let levelOf = [];
 let map = null;
 let me = null;       // last position {la, lo, t, kmh}
-let track = [];      // samples at least TRACK_STEP apart: {la, lo, kmh, d: metres from the start}
+let track = [];      // the walk: samples at least TRACK_STEP apart {la, lo, t, kmh, d: metres from the start, gap: true after a pause}
 let reach = [];      // places inside their collect radius, nearest first
 let follow = true;
 let turning = false;  // the map moves to another view; the move that follows the player waits
@@ -119,6 +123,7 @@ function circle(la, lo, r) {
 }
 const metres = (d) => (d < 1000 ? `${Math.round(d / 10) * 10} m` : `${(d / 1000).toFixed(d < 10000 ? 1 : 0).replace('.', ',')} km`);
 const day = (ms) => new Date(ms).toLocaleDateString('sv-SE');
+const today = () => day(Date.now());
 const points = (features) => ({ type: 'FeatureCollection', features });
 const point = (f, properties) => ({ type: 'Feature', geometry: { type: 'Point', coordinates: [f.lo, f.la] }, properties });
 
@@ -135,10 +140,50 @@ const variant = (c) => (c.v ? TYPES[c.t].variants.values[c.v - 1] : null);
 const typeName = (c) => (c.t < 0 ? 'Legendarisk plats' : variant(c)?.[1] || TYPES[c.t].name);
 // The card image: public/cards/<key>.webp. A variant can have its own image.
 const artKey = (c) => (c.t < 0 ? 'legendary' : variant(c)?.[3] || TYPES[c.t].icon);
-const cardName = (c) => c.n || (c.t < 0 ? '' : `${typeName(c)} utan namn`);
-const thing = (f) => (f.t < 0 ? f.n : `${variant(f)?.[2] || TYPES[f.t].def}${f.n ? ` ${f.n}` : ''}`);
+// A place without a name has a number instead: its number among the cards of its type, "Bänk #4711".
+const nameOf = (c) => (typeof c.n === 'number' ? `#${c.n}` : c.n || '');
+const cardName = (c) => (typeof c.n === 'number' ? `${typeName(c)} #${c.n}` : c.n || (c.t < 0 ? '' : `${typeName(c)} utan namn`));
+const thing = (f) => (f.t < 0 ? f.n : `${variant(f)?.[2] || TYPES[f.t].def}${f.n ? ` ${nameOf(f)}` : ''}`);
 const iconUrl = (t) => `./icons/${t < 0 ? 'legendary' : TYPES[t].icon}.svg`;
 const iconStyle = (t) => `-webkit-mask-image:url(${iconUrl(t)});mask-image:url(${iconUrl(t)})`;
+
+// The count of the day: `cards` collected and `m` metres walked or cycled.
+function addDay(key, n) {
+  const d = (state.days[today()] ||= { cards: 0, m: 0 });
+  d[key] += n;
+  checkProgress();
+  save();
+}
+
+// ---------- achievements and level ----------
+
+const gameCtx = () => ({ TYPES, levelOf, kept: meta.kept, LEGEND, SETS, cardLevel, setDone, ownedTypes: (s) => new Set(Object.values(s.cards).map((c) => c.t)) });
+const xpTotal = () => xpParts(state, ACHIEVEMENTS, gameCtx()).reduce((n, [, x]) => n + x, 0);
+
+// New tiers and a new level give a toast. The tiers are kept, so a discarded card takes nothing away.
+function checkProgress() {
+  if (!ACHIEVEMENTS.length) return;
+  for (const a of ACHIEVEMENTS) {
+    const tier = tierOf(a, a.count(state));
+    if (tier > (state.ach[a.id] || 0)) {
+      state.ach[a.id] = tier;
+      toast(`<b>Bedrift: ${esc(a.name)} – ${TIER_NAME[tier]}</b> ${esc(a.what(a.tiers[tier - 1]))}`, 6000);
+      chime([7, 12, 16]);
+    }
+  }
+  const level = levelAt(xpTotal());
+  if (level > (state.level || 1)) {
+    state.level = level;
+    toast(`<b>Nivå ${level}: ${esc(titleAt(level))}</b>`, 6000);
+    chime([0, 4, 7, 12, 16, 19]);
+  }
+  drawLevel();
+}
+
+function drawLevel() {
+  const xp = xpTotal(), level = levelAt(xp), from = xpFor(level), to = xpFor(level + 1);
+  $('#hud-level').innerHTML = `<b>Nivå ${level}</b> ${esc(titleAt(level))} <i class="bar"><i style="width:${Math.round((xp - from) / (to - from) * 100)}%"></i></i>`;
+}
 
 // The last FOOT_DISTANCE metres of the track must exist, and 90 percent of the samples must be slow.
 function onFoot() {
@@ -158,13 +203,16 @@ async function collect(f, photo) {
   const card = { t: f.t, n: f.n || '', la: f.la, lo: f.lo, wd: f.wd || '', at: Date.now(), foot: onFoot() };
   if (f.url) card.url = f.url;
   if (f.v) card.v = f.v;
+  if (f.img) card.img = f.img;
   if (f.t < 0) card.land = f.land;
   if (f.lv === 2 || f.lv === 3) card.nohint = !again?.hinted && !state.hints.some((h) => h.id === f.id);
+  if (state.hints.some((h) => h.id === f.id)) card.hint = true;
   let gain = 0;
   if (!again && f.lv === 0) gain = card.foot ? 2 : 1;
   if (!again && f.lv === 1 && perk('windfall')) gain = 1;
   state.coins += gain;
   state.cards[f.id] = card;
+  addDay('cards', 1);
   state.hints = state.hints.filter((h) => h.id !== f.id);
   save();
   await idb('photos', 'readwrite', (s) => s.put(photo, f.id));
@@ -211,8 +259,8 @@ function cellAt(cx, cy) {
       loading.delete(key);
       if (!rows) return cells.delete(key);
       // A card in specials.json has its own link, and no Wikipedia text. It can also have its own name and image.
-      cells.set(key, rows.map(([id, la, lo, t, n, wd, r, url, v]) => ({
-        id, la, lo, t, n: SPECIALS[id]?.name || n || '', wd: SPECIALS[id] ? '' : wd || '', r: r || 0, url: url || '', v: v || 0,
+      cells.set(key, rows.map(([id, la, lo, t, n, wd, r, url, v, img]) => ({
+        id, la, lo, t, n: SPECIALS[id]?.name || n || '', wd: SPECIALS[id] ? '' : wd || '', r: r || 0, url: url || '', v: v || 0, img: img || '',
       })));
       // A card from before the variants gets its variant here.
       for (const f of cells.get(key)) {
@@ -245,18 +293,36 @@ function onFix(la, lo, t, speed) {
     kmh = dist(speedRef.la, speedRef.lo, la, lo) / (t - speedRef.t) * 3600;
     speedRef = { la, lo, t };
   }
-  if (me && t - me.t > TRACK_GAP) track = [];
   const last = track.at(-1);
-  if (!last) track.push({ la, lo, kmh, d: 0 });
-  else {
-    const step = dist(last.la, last.lo, la, lo);
-    if (step >= TRACK_STEP) {
-      track.push({ la, lo, kmh, d: last.d + step });
-      while (track.at(-1).d - track[1].d >= FOOT_DISTANCE) track.shift();
+  if (last) {
+    const step = dist(last.la, last.lo, la, lo), pause = t - (me || last).t;
+    // After a pause, the phone was locked or the app was closed. The straight line from the last position
+    // counts as walked when the pace along it is slow. A long pause, or a fast line, starts the walk again.
+    const gap = pause > TRACK_PAUSE, pace = step / pause * 3600;
+    // The track is private: a new day deletes the track of the day before.
+    if (pause > TRACK_END || (gap && pace > MAX_KMH) || day(last.t) !== day(t)) track = [];
+    else if (step >= TRACK_STEP) {
+      track.push({ la, lo, t, kmh: gap ? pace : kmh, d: last.d + step, gap });
+      if (track.at(-1).kmh <= MAX_KMH) addDay('m', step);
     }
   }
+  if (!track.length) track.push({ la, lo, t, kmh, d: 0 });
+  localStorage.setItem('track', JSON.stringify(track));
   me = { la, lo, t, kmh };
+  drawTrack();
   refresh();
+}
+
+// The track on the map: one line for each step of the walk, in the colour of its pace.
+function drawTrack() {
+  const source = map?.getSource('track');
+  if (!source) return;
+  const lines = track.slice(1).map((s, i) => ({
+    type: 'Feature',
+    geometry: { type: 'LineString', coordinates: [[track[i].lo, track[i].la], [s.lo, s.la]] },
+    properties: { pace: s.kmh > MAX_KMH ? 'fast' : s.kmh > BIKE_KMH ? 'bike' : 'foot', gap: !!s.gap },
+  }));
+  source.setData(points(lines));
 }
 
 function refresh() {
@@ -313,6 +379,10 @@ function initMap(la, lo) {
     map.addSource('view', { type: 'geojson', data: points([]) });
     map.addLayer({ id: 'view-fill', type: 'fill', source: 'view', paint: { 'fill-color': '#16302b', 'fill-opacity': 0.06 } });
     map.addLayer({ id: 'view-line', type: 'line', source: 'view', paint: { 'line-color': '#16302b', 'line-opacity': 0.5, 'line-width': 1.5, 'line-dasharray': [3, 3] } });
+    map.addSource('track', { type: 'geojson', data: points([]) });
+    const trackPaint = { 'line-color': ['match', ['get', 'pace'], 'foot', '#3fa35c', 'bike', '#3b82f6', '#64748b'], 'line-width': ['match', ['get', 'pace'], 'fast', 2, 4], 'line-opacity': 0.75 };
+    map.addLayer({ id: 'track', type: 'line', source: 'track', filter: ['!', ['get', 'gap']], layout: { 'line-cap': 'round', 'line-join': 'round' }, paint: trackPaint });
+    map.addLayer({ id: 'track-gap', type: 'line', source: 'track', filter: ['get', 'gap'], paint: { ...trackPaint, 'line-dasharray': [1, 2] } });
     map.addSource('dev', { type: 'geojson', data: points([]) });
     map.addLayer({ id: 'dev', type: 'circle', source: 'dev', paint: {
       'circle-radius': 6, 'circle-color': ['get', 'color'], 'circle-stroke-color': '#fff', 'circle-stroke-width': 1.5,
@@ -321,6 +391,7 @@ function initMap(la, lo) {
     map.addLayer({ id: 'collected', type: 'symbol', source: 'collected', layout: { 'icon-image': ['get', 'icon'], 'icon-allow-overlap': true } });
     drawView();
     drawCollected();
+    drawTrack();
     refresh();
   });
   map.on('click', 'collected', (e) => showCard(e.features[0].properties.id));
@@ -372,8 +443,12 @@ function drawMarkers(show) {
         e.stopPropagation();
         const cur = m.info;
         if (cur.near) openCamera(cur);
-        else toast(`<b>${cur.t === -2 ? `Dolt ${LEVEL_NAME[cur.lv].toLowerCase()} kort` : esc(typeName(cur))}</b> ${esc(cur.n || '')} ${metres(cur.d)}`);
+        else toast(`<b>${cur.t === -2 ? `Dolt ${LEVEL_NAME[cur.lv].toLowerCase()} kort` : esc(typeName(cur))}</b> ${esc(nameOf(cur))} ${metres(cur.d)}`);
       });
+      if (DEV) {
+        el.addEventListener('mousemove', (e) => { if (m.info.t !== -2) peek(id, m.info, e.clientX, e.clientY); });
+        el.addEventListener('mouseleave', unpeek);
+      }
     }
     m.info = f;
     m.getElement().classList.toggle('reach', !!f.near);
@@ -424,8 +499,12 @@ async function drawCollected() {
 // ---------- HUD ----------
 
 function drawHud() {
-  $('#hud-coins').innerHTML = `<b>${state.coins}</b> att spendera`;
-  $('#hud-cards').innerHTML = `<b>${Object.keys(state.cards).length}</b> kort`;
+  $('#hud-coins').innerHTML = `<b>${state.coins}</b> poäng`;
+  $('#hud-cards').innerHTML = `<b>${Object.keys(state.cards).length}</b> kort i albumet`;
+  const d = state.days[today()] || { cards: 0, m: 0 }, days = Object.values(state.days);
+  $('#hud-day-cards').innerHTML = `<b>${d.cards}</b> kort idag (rekord: ${Math.max(0, ...days.map((x) => x.cards))})`;
+  $('#hud-day-m').innerHTML = `<b>${metres(d.m)}</b> idag (rekord: ${metres(Math.max(0, ...days.map((x) => x.m)))})`;
+  drawLevel();
   const chip = $('#hud-speed');
   if (!me) {
     chip.textContent = 'Spelet väntar på din position';
@@ -433,7 +512,7 @@ function drawHud() {
     return;
   }
   const fast = me.kmh > MAX_KMH, foot = onFoot();
-  chip.textContent = fast ? `För fort för att samla kort (${Math.round(me.kmh)} km/h)` : foot ? 'Till fots eller cykel: korten räknas dubbelt' : `${Math.round(me.kmh)} km/h`;
+  chip.textContent = fast ? `För fort för att samla kort (${Math.round(me.kmh)} km/h)` : foot ? 'Till fots eller cykel: vanliga kort ger två poäng' : `${Math.round(me.kmh)} km/h`;
   chip.className = `chip ${fast ? 'bad' : foot ? 'good' : ''}`;
   $('#hud-hints').innerHTML = state.hints.map((h) => `<div class="hintchip lv-${LEVELS[h.lv]}">
     <span class="arrow" style="transform:rotate(${Math.round(bearing(me.la, me.lo, h.la, h.lo))}deg)">↑</span>
@@ -556,8 +635,7 @@ $('#cam-file').addEventListener('change', async (e) => {
 // ---------- cards ----------
 
 // gain is the number of cards to spend that a new card gave. It is undefined for a card from the album.
-function cardHtml(id, gain) {
-  const c = state.cards[id];
+function cardHtml(id, gain, c = state.cards[id]) {
   const lv = cardLevel(c);
   // The id is an OSM id, or the id of a source in sources.json, a dot and the id in that source.
   const oid = id.replace(/^L/, '');
@@ -573,11 +651,10 @@ function cardHtml(id, gain) {
   return `<div class="card lv-${LEVELS[lv]}${gain === undefined ? '' : ' flipped noanim'}"><div class="card-inner">
     <div class="card-face card-front">
       <div class="card-level">${LEVEL_NAME[lv]}</div>
-      <div class="card-art${special?.image ? ' photo' : ''}"><span class="card-badge"><i class="ic" style="${iconStyle(c.t)}"></i></span>
-        <img src="./cards/${special?.image ? esc(special.image) : `${artKey(c)}.webp`}" alt="" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()"></div>
+      <div class="card-art">${artHtml(c, special)}</div>
       <div class="card-type">${esc(c.t < 0 ? c.land : typeName(c))}</div>
       <div class="card-name">${esc(name)}</div>
-      <div class="card-marks">${c.foot ? '<span>Till fots eller cykel</span>' : ''}${c.nohint ? '<span>Hittat utan ledtråd</span>' : ''}${gain ? `<span class="gain">+${gain} att spendera</span>` : ''}</div>
+      <div class="card-marks">${c.foot ? '<span>Till fots eller cykel</span>' : ''}${c.nohint ? '<span>Hittat utan ledtråd</span>' : ''}${gain ? `<span class="gain">+${gain} poäng</span>` : ''}</div>
       <div class="card-journal"></div>
       <div class="card-foot">${date} · ${origin}${more}</div>
       <div class="card-tip">Tryck på kortet för att se din bild</div>
@@ -586,17 +663,31 @@ function cardHtml(id, gain) {
   </div></div>`;
 }
 
+// The picture of a card: a photo of the place when the card has one, otherwise the illustration of its type.
+const artUrl = (c, special) => c.img || (special?.image ? `./cards/${special.image}` : `./cards/${artKey(c)}.webp`);
+const artHtml = (c, special) => `<span class="card-badge"><i class="ic" style="${iconStyle(c.t)}"></i></span>
+  <img src="${esc(artUrl(c, special))}" alt="" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()"${c.img || special?.image ? ' class="photo"' : ''}>`;
+
 // The journal text and photo come from Wikipedia, found through the wikidata tag of the feature.
-async function journal(el, wd) {
-  if (!/^Q\d+$/.test(wd)) return;
+// The photo takes the place of the illustration, and a collected card keeps its address.
+async function journal(card, id, c) {
+  if (SPECIALS[id] || !/^Q\d+$/.test(c.wd)) return;
   try {
     const langs = ['sv', 'en'];
-    const ent = await (await fetch(`https://www.wikidata.org/w/api.php?action=wbgetentities&ids=${wd}&props=sitelinks&sitefilter=svwiki|enwiki&format=json&origin=*`)).json();
-    const links = ent.entities[wd].sitelinks || {};
+    const ent = await (await fetch(`https://www.wikidata.org/w/api.php?action=wbgetentities&ids=${c.wd}&props=sitelinks&sitefilter=svwiki|enwiki&format=json&origin=*`)).json();
+    const links = ent.entities[c.wd].sitelinks || {};
     const lang = langs.find((l) => links[`${l}wiki`]);
     if (!lang) return;
     const sum = await (await fetch(`https://${lang}.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(links[`${lang}wiki`].title)}`)).json();
-    el.innerHTML = `${sum.thumbnail ? `<img src="${esc(sum.thumbnail.source)}" alt="">` : ''}<p>${esc(sum.extract || '')}</p>
+    if (!card.isConnected) return;
+    // Wikimedia serves only its standard thumbnail widths: 330, 500, 960 and so on.
+    const img = sum.thumbnail?.source.replace(/\/\d+px-/, '/500px-');
+    if (img && !c.img) {
+      c.img = img;
+      if (state.cards[id] === c) save();
+      card.querySelector('.card-art').innerHTML = artHtml(c);
+    }
+    card.querySelector('.card-journal').innerHTML = `<p>${esc(sum.extract || '')}</p>
       <a href="${esc(sum.content_urls.desktop.page)}" target="_blank" rel="noopener">Wikipedia</a>`;
   } catch { /* the card stays without journal text */ }
 }
@@ -610,7 +701,7 @@ async function showCard(id, gain) {
     <div class="row"><button class="primary close">${fresh ? 'Behåll' : 'Stäng'}</button><button data-discard="${esc(id)}">Släng</button></div>`;
   el.classList.add('show');
   const card = el.querySelector('.card');
-  journal(card.querySelector('.card-journal'), SPECIALS[id] ? '' : state.cards[id].wd);
+  journal(card, id, state.cards[id]);
   const photo = await idb('photos', 'readonly', (s) => s.get(id));
   if (!card.isConnected) return;
   if (photo) {
@@ -625,7 +716,7 @@ async function showCard(id, gain) {
 $('#reveal').addEventListener('click', (e) => {
   const id = e.target.dataset.discard;
   if (id) {
-    if (!confirm('Vill du slänga kortet och bilden? Du kan samla kortet igen på samma plats. Andra gången ger det inga kort att spendera.')) return;
+    if (!confirm('Vill du slänga kortet och bilden? Du kan samla kortet igen på samma plats. Andra gången ger det inga poäng.')) return;
     discard(id);
     $('#reveal').classList.remove('show');
     if ($('#album').classList.contains('show')) drawAlbum();
@@ -635,15 +726,15 @@ $('#reveal').addEventListener('click', (e) => {
 // ---------- hints ----------
 
 function drawHintPanel() {
-  $('#hint-balance').innerHTML = `Du har <b>${state.coins}</b> vanliga kort att spendera.`;
-  $('#btn-hint-rare').textContent = `Sällsynt kort: ${hintPrice(2)} kort`;
-  $('#btn-hint-epic').textContent = `Episkt kort: ${hintPrice(3)} kort`;
+  $('#hint-balance').innerHTML = `Du har <b>${state.coins}</b> poäng.`;
+  $('#btn-hint-rare').textContent = `Sällsynt kort: ${hintPrice(2)} poäng`;
+  $('#btn-hint-epic').textContent = `Episkt kort: ${hintPrice(3)} poäng`;
 }
 
 function buyHint(lv) {
   if (!me) return;
   const price = hintPrice(lv);
-  if (state.coins < price) return toast(`Du behöver ${price} vanliga kort. Du har ${state.coins}.`);
+  if (state.coins < price) return toast(`Du behöver ${price} poäng. Du har ${state.coins}.`);
   let best = null;
   for (const cell of nearCells()) {
     for (const f of cell) {
@@ -652,7 +743,7 @@ function buyHint(lv) {
       if (!best || d < best.d) best = { id: f.id, la: f.la, lo: f.lo, lv, d };
     }
   }
-  if (!best) return toast(`Inget dolt ${LEVEL_NAME[lv].toLowerCase()} kort finns i närheten. Du behåller dina kort.`);
+  if (!best) return toast(`Inget dolt ${LEVEL_NAME[lv].toLowerCase()} kort finns i närheten. Du behåller dina poäng.`);
   state.coins -= price;
   state.hints.push({ id: best.id, la: best.la, lo: best.lo, lv });
   save();
@@ -664,24 +755,32 @@ function buyHint(lv) {
 // ---------- album ----------
 
 let tab = 'cards';
+let view = 'recent';  // the cards tab: the newest cards first, or the types
 let openType = null;
+
+// A small card in the album, the newest first. A tap opens the card.
+const mini = ([id, c]) => `<button class="mini lv-${LEVELS[cardLevel(c)]}" data-card="${esc(id)}">
+  <div class="card-art">${artHtml(c, SPECIALS[id])}</div>
+  <b>${esc(SPECIALS[id]?.name || cardName(c))}</b><span class="dim">${esc(c.t < 0 ? c.land : typeName(c))} · ${day(c.at)}</span></button>`;
+const newest = (cards) => cards.sort((a, b) => b[1].at - a[1].at);
 
 function drawAlbum() {
   document.querySelectorAll('#album .tabs [data-tab]').forEach((b) => b.classList.toggle('on', b.dataset.tab === tab));
   const body = $('#album-body');
   const cards = Object.entries(state.cards);
-  if (tab === 'cards' && openType !== null) {
-    const list = cards.filter(([, c]) => c.t === openType).sort((a, b) => b[1].at - a[1].at);
-    body.innerHTML = `<button class="back">‹ Alla typer</button>
+  const views = `<div class="views">${[['recent', 'Senaste'], ['types', 'Typer']].map(([v, name]) => `<button data-view="${v}" class="${view === v ? 'on' : ''}">${name}</button>`).join('')}</div>`;
+  if (tab === 'cards' && view === 'recent') {
+    body.innerHTML = `${views}<p class="dim">${cards.length} kort · ${state.coins} poäng</p><div class="cards">${newest(cards).map(mini).join('')}</div>`;
+  } else if (tab === 'cards' && openType !== null) {
+    const list = newest(cards.filter(([, c]) => c.t === openType));
+    body.innerHTML = `${views}<button class="back">‹ Alla typer</button>
       <h2>${esc(TYPES[openType].name)}</h2>
       <p class="dim">${LEVEL_NAME[levelOf[openType]]} · ${meta.counts[openType].toLocaleString('sv-SE')} i Sverige · du har ${list.length}</p>
-      <div class="list">${list.map(([id, c]) => `<button class="line" data-card="${esc(id)}">
-        <span>${esc(SPECIALS[id]?.name || cardName(c))}</span>
-        <span class="dim">${c.foot ? '👣 ' : ''}${c.nohint ? '★ ' : ''}${day(c.at)}</span></button>`).join('')}</div>`;
+      <div class="cards">${list.map(mini).join('')}</div>`;
   } else if (tab === 'cards') {
     const have = new Map();
     for (const [, c] of cards) have.set(c.t, (have.get(c.t) || 0) + 1);
-    body.innerHTML = `<p class="dim">${cards.length} kort · ${[...have.keys()].filter((t) => t >= 0).length} av ${TYPES.length} typer · ${state.coins} vanliga kort att spendera</p>` +
+    body.innerHTML = `${views}<p class="dim">${cards.length} kort · ${[...have.keys()].filter((t) => t >= 0).length} av ${TYPES.length} typer · ${state.coins} poäng</p>` +
       [0, 1, 2, 3].map((lv) => `<h3 class="lv-${LEVELS[lv]}">${LEVEL_PLURAL[lv]}</h3><div class="grid">${
         TYPES.map((t, i) => i).filter((i) => levelOf[i] === lv).sort((a, b) => meta.counts[b] - meta.counts[a]).map((i) => `
           <button class="tile lv-${LEVELS[lv]} ${have.has(i) ? '' : 'none'}" data-type="${i}">
@@ -696,6 +795,25 @@ function drawAlbum() {
           <div class="set-types">${set.types.map((t) => `<span class="lv-${LEVELS[levelOf[t]]} ${owned.has(t) ? '' : 'none'}"><i class="ic" style="${iconStyle(t)}"></i>${esc(TYPES[t].name)}</span>`).join('')}</div>
           <div class="set-perk"><b>${esc(PERKS[set.perk][0])}.</b> ${esc(PERKS[set.perk][1])}</div></div>`;
       }).join('');
+  } else if (tab === 'feats') {
+    const xp = xpTotal(), level = levelAt(xp), from = xpFor(level), to = xpFor(level + 1);
+    const parts = xpParts(state, ACHIEVEMENTS, gameCtx());
+    const rows = ACHIEVEMENTS.map((a) => ({ a, n: a.count(state), tier: tierOf(a, a.count(state)) }));
+    const row = ({ a, n, tier }) => {
+      const next = a.tiers[tier], fmt = a.fmt || String;
+      return `<div class="feat tier-${tier}${n ? '' : ' none'}"><span class="tiers">${[1, 2, 3, 4].map((t) => `<i class="${t <= tier ? 'on' : ''}"></i>`).join('')}</span>
+        <div><b>${esc(a.name)}${tier ? ` · ${TIER_NAME[tier]}` : ''}</b><br><span class="dim">${esc(a.what(n))}${next ? ` · nästa vid ${fmt(next)}` : ' · alla nivåer klara'}</span></div></div>`;
+    };
+    body.innerHTML = `<h2>Nivå ${level}: ${esc(titleAt(level))}</h2>
+      <p class="dim">${xp.toLocaleString('sv-SE')} poäng · nästa nivå vid ${to.toLocaleString('sv-SE')}</p>
+      <i class="bar big"><i style="width:${Math.round((xp - from) / (to - from) * 100)}%"></i></i>
+      <div class="list">${parts.map(([name, x]) => `<div class="line"><span>${esc(name)}</span><span class="dim">${x.toLocaleString('sv-SE')} p</span></div>`).join('')}</div>
+      <p class="dim">Varje kort ger poäng efter sällsynthet, varje 100 m till fots eller cykel ger en poäng, ett komplett set ger 200, en bedrift ger 50 till 1 500 per nivå, och varje dag med kort ger 20 plus 10 per dag i din längsta svit. Svit just nu: ${streak(state.days)} dagar.</p>
+      <h3>Bedrifter: ${rows.filter((r) => r.tier).length} av ${rows.length}</h3>
+      <p class="dim">Fyra nivåer: brons, silver, guld och platina. Platina kräver i regel hälften av alla kort av typen i Sverige.</p>
+      <div class="feats">${rows.filter((r) => r.a.type === undefined).map(row).join('')}</div>
+      <h3>Korttyper</h3>
+      <div class="feats">${rows.filter((r) => r.a.type !== undefined).sort((x, y) => y.tier - x.tier || levelOf[x.a.type] - levelOf[y.a.type] || x.a.name.localeCompare(y.a.name, 'sv')).map(row).join('')}</div>`;
   } else if (tab === 'legendary') {
     const rows = LEGENDARY.map((p) => ({ ...p, d: me ? dist(me.la, me.lo, p.la, p.lo) : null })).sort((a, b) => a.d - b.d);
     body.innerHTML = `<p class="dim">En plats i vart och ett av de 25 landskapen. Gå inom ${LEGENDARY_RADIUS} m och fotografera platsen. Du har ${rows.filter((p) => state.cards[p.id]).length} av 25.</p>
@@ -705,7 +823,7 @@ function drawAlbum() {
   } else {
     body.innerHTML = `<img class="logo" src="./icon-192.png" alt=""><h2>Hemmablind</h2>${ABOUT}
       <p class="dim" id="about-storage"></p>
-      <p class="dim">Kortdata: © OpenStreetMaps bidragsgivare, hämtad ${esc(meta.built)}. Fler platser och namn: ${SOURCES.map((src) => esc(src.label)).join(', ')}.</p>
+      <p class="dim">Kortdata: © OpenStreetMaps bidragsgivare, hämtad ${esc(meta.built)}. Fler platser och namn: ${[...new Set(SOURCES.map((src) => src.label))].map(esc).join(', ')}.</p>
       <div class="row"><button id="btn-export">Exportera album</button><button id="btn-import">Importera album</button></div>
       <p class="dim">Exportfilen är en ZIP-fil med korten och bilderna.</p>`;
     Promise.all([idb('photos', 'readonly', (s) => s.count()), navigator.storage?.estimate?.()]).then(([n, est]) => {
@@ -727,6 +845,7 @@ $('#album').addEventListener('click', (e) => {
   const b = e.target.closest('button');
   if (!b) return;
   if (b.dataset.tab) { tab = b.dataset.tab; openType = null; }
+  else if (b.dataset.view) { view = b.dataset.view; openType = null; }
   else if (b.dataset.type) openType = +b.dataset.type;
   else if (b.classList.contains('back')) openType = null;
   else if (b.dataset.card) return showCard(b.dataset.card);
@@ -756,6 +875,7 @@ $('#btn-hint-rare').addEventListener('click', () => buyHint(2));
 $('#btn-hint-epic').addEventListener('click', () => buyHint(3));
 $('#btn-album').addEventListener('click', () => openAlbum('cards'));
 $('#btn-sets').addEventListener('click', () => openAlbum('sets'));
+$('#hud-level').addEventListener('click', () => openAlbum('feats'));
 $('#btn-center').addEventListener('click', () => {
   follow = true;
   $('#btn-center').classList.remove('show');
@@ -882,6 +1002,8 @@ let simTarget = null;
 let simKmh = 5;
 let simClock = 0;
 const devLevels = new Set();
+const devHidden = new Set();  // types that the reveal leaves out
+const devFeat = new Map();  // the places that the reveal shows, by id
 
 function simTick() {
   simClock += 2500;
@@ -917,17 +1039,55 @@ function drawDev() {
   const y0 = Math.floor(b.getSouth() / meta.cellLat), y1 = Math.floor(b.getNorth() / meta.cellLat);
   const wide = (x1 - x0 + 1) * (y1 - y0 + 1) > 40;
   $('#dev-note').textContent = devLevels.size && wide ? 'Zooma in för att visa' : 'Visa';
+  devFeat.clear();
   if (devLevels.size && !wide) {
     for (let x = x0; x <= x1; x++) {
       for (let y = y0; y <= y1; y++) {
         for (const f of cellAt(x, y)) {
           const lv = levelOf[f.t];
-          if (devLevels.has(lv) && !state.cards[f.id]) features.push(point(f, { color: LEVEL_COLOR[lv], label: `${LEVEL_NAME[lv]}: ${typeName(f)} ${f.n}` }));
+          if (devLevels.has(lv) && !devHidden.has(f.t) && !state.cards[f.id]) {
+            devFeat.set(f.id, f);
+            features.push(point(f, { id: f.id, color: LEVEL_COLOR[lv], label: `${LEVEL_NAME[lv]}: ${cardName(f)}` }));
+          }
         }
       }
     }
   }
   source.setData(points(features));
+}
+
+// The mouse over a dot, a marker or a collected icon shows the card of that place beside the pointer.
+// For a place that is not collected yet, the card is the one that a photo would give now.
+let peekId = null;
+function peek(id, f, x, y) {
+  const el = $('#peek');
+  if (id !== peekId) {
+    peekId = id;
+    const c = state.cards[id] || { t: f.t, n: f.n || '', la: f.la, lo: f.lo, wd: f.wd || '', at: Date.now(), url: f.url, v: f.v, land: f.land };
+    el.innerHTML = cardHtml(id, undefined, c);
+    el.classList.add('show');
+    journal(el.querySelector('.card'), id, c);
+  }
+  const r = el.getBoundingClientRect();
+  el.style.left = `${Math.max(0, Math.min(x + 16, innerWidth - r.width - 8))}px`;
+  el.style.top = `${Math.max(0, Math.min(y + 16, innerHeight - r.height - 8))}px`;
+}
+
+function unpeek() {
+  peekId = null;
+  $('#peek').classList.remove('show');
+}
+
+// The types of the levels that the reveal shows, by name.
+const devTypes = () => TYPES.map((t, i) => i).filter((i) => devLevels.has(levelOf[i])).sort((a, b) => levelOf[a] - levelOf[b] || TYPES[a].name.localeCompare(TYPES[b].name, 'sv'));
+
+// The list with one checkbox for each type of the shown levels.
+function drawDevTypes() {
+  const list = devTypes();
+  $('#dev-types').classList.toggle('hidden', !list.length);
+  $('#dev-types summary').textContent = `Typer ${list.filter((i) => !devHidden.has(i)).length}/${list.length}`;
+  $('#dev-type-list').innerHTML = '<span><button data-all="1">Alla</button> <button data-all="0">Inga</button></span>' + list.map((i, n) => `${n === 0 || levelOf[i] !== levelOf[list[n - 1]] ? `<b class="lv-${LEVELS[levelOf[i]]}">${LEVEL_PLURAL[levelOf[i]]}</b>` : ''}
+    <label><input type="checkbox" data-type="${i}" ${devHidden.has(i) ? '' : 'checked'}> ${esc(TYPES[i].name)}</label>`).join('');
 }
 
 function startDev() {
@@ -946,8 +1106,19 @@ function startDev() {
       const lv = +b.dataset.reveal;
       if (!devLevels.delete(lv)) devLevels.add(lv);
       b.classList.toggle('on', devLevels.has(lv));
+      drawDevTypes();
+      drawDev();
+    } else if (b?.dataset.all) {
+      for (const i of devTypes()) (b.dataset.all === '1' ? devHidden.delete(i) : devHidden.add(i));
+      drawDevTypes();
       drawDev();
     }
+  });
+  $('#dev-type-list').addEventListener('change', (e) => {
+    const i = +e.target.dataset.type;
+    if (e.target.checked) devHidden.delete(i); else devHidden.add(i);
+    $('#dev-types summary').textContent = `Typer ${devTypes().filter((t) => !devHidden.has(t)).length}/${devTypes().length}`;
+    drawDev();
   });
   $('#btn-test-photo').addEventListener('click', () => {
     const canvas = document.createElement('canvas');
@@ -970,6 +1141,13 @@ function startDev() {
     takePhoto(canvas, 768, 1024);
   });
   map.on('moveend', drawDev);
+  map.on('mousemove', 'dev', (e) => {
+    const f = devFeat.get(e.features[0].properties.id);
+    if (f) peek(f.id, f, e.point.x, e.point.y);
+  });
+  map.on('mouseleave', 'dev', unpeek);
+  map.on('mousemove', 'collected', (e) => peek(e.features[0].properties.id, null, e.point.x, e.point.y));
+  map.on('mouseleave', 'collected', unpeek);
   map.on('click', (e) => {
     if (map.queryRenderedFeatures(e.point, { layers: ['collected'] }).length) return;
     const label = map.queryRenderedFeatures(e.point, { layers: ['dev'] })[0]?.properties.label;
@@ -983,6 +1161,7 @@ function startDev() {
     get reach() { return reach; },
     get map() { return map; },
     tick: simTick,
+    fix: onFix,
     jump: simJump,
     goto: (la2, lo2, speed = 5) => { simKmh = speed; simTarget = { la: la2, lo: lo2 }; },
   };
@@ -1036,6 +1215,10 @@ Promise.all([idb('kv', 'readonly', (s) => s.get('state')), fetch('./cells/meta.j
   if (saved) state = { ...state, ...saved };
   meta = m;
   levelOf = meta.counts.map((n) => (n > 10000 ? 0 : n >= 2000 ? 1 : n >= 300 ? 2 : 3));
+  ACHIEVEMENTS = buildAchievements(gameCtx());
+  // The walk of today comes back after a reload. The walk of an earlier day is deleted.
+  try { track = JSON.parse(localStorage.getItem('track')) || []; } catch { track = []; }
+  if (track.length && day(track.at(-1).t) !== today()) { track = []; localStorage.removeItem('track'); }
   if (state.seen) start();
   else $('#title').classList.add('show');
 });

@@ -1,95 +1,674 @@
 [
-  {"key": "bench", "icon": "bench", "name_sv": "Bänk", "osm": "amenity=bench", "subject": "A wooden park bench with a slatted seat and back and cast-iron legs."},
-  {"key": "shelter", "icon": "shelter", "name_sv": "Vindskydd", "osm": "amenity=shelter", "subject": "A Swedish wind shelter (vindskydd): an open timber shelter with three walls and a sloping roof, beside a forest path."},
-  {"key": "post_box", "icon": "post_box", "name_sv": "Brevlåda", "osm": "amenity=post_box", "subject": "A Swedish street post box: a rounded yellow box on a post with a post-horn emblem."},
-  {"key": "place_of_worship", "icon": "place_of_worship", "name_sv": "Helgedom", "osm": "amenity=place_of_worship", "subject": "A small plain house of worship: a simple hall with a porch and one tall arched window. No religious symbol."},
-  {"key": "church", "icon": "place_of_worship", "name_sv": "Kyrka", "osm": "amenity=place_of_worship with religion=christian", "subject": "A Swedish country church: white plastered stone walls, a steep dark roof and a tower with a spire."},
-  {"key": "mosque", "icon": "place_of_worship", "name_sv": "Moské", "osm": "amenity=place_of_worship with religion=muslim", "subject": "A mosque with a dome and one slender minaret."},
-  {"key": "synagogue", "icon": "place_of_worship", "name_sv": "Synagoga", "osm": "amenity=place_of_worship with religion=jewish", "subject": "A synagogue: a stone building with tall arched windows and a facade crowned by a rounded twin-tablet shape."},
-  {"key": "temple", "icon": "place_of_worship", "name_sv": "Tempel", "osm": "amenity=place_of_worship with religion=buddhist", "subject": "An Asian temple with a tiered roof and upturned eaves."},
-  {"key": "bbq", "icon": "bbq", "name_sv": "Grillplats", "osm": "amenity=bbq", "subject": "A fixed public grill: an iron grate over a brick fire box, with a little smoke."},
-  {"key": "fountain", "icon": "fountain", "name_sv": "Fontän", "osm": "amenity=fountain", "subject": "A stone park fountain with a round basin and a water jet."},
-  {"key": "drinking_water", "icon": "drinking_water", "name_sv": "Dricksvattenkran", "osm": "amenity=drinking_water", "subject": "A public drinking-water fountain: a short post with a tap and a small basin."},
-  {"key": "clock", "icon": "clock", "name_sv": "Klocka", "osm": "amenity=clock", "subject": "A public street clock on a tall ornate post. The dial has hands and tick marks."},
-  {"key": "information", "icon": "information", "name_sv": "Informationstavla", "osm": "tourism=information", "subject": "A wooden information board with a small roof, showing a map."},
-  {"key": "artwork", "icon": "artwork", "name_sv": "Konstverk", "osm": "tourism=artwork", "subject": "A public sculpture: an abstract bronze figure on a stone plinth."},
-  {"key": "picnic_site", "icon": "picnic_site", "name_sv": "Rastplats", "osm": "tourism=picnic_site", "subject": "A rest site: a tree with a bench and a table under it."},
-  {"key": "viewpoint", "icon": "viewpoint", "name_sv": "Utsiktsplats", "osm": "tourism=viewpoint", "subject": "A viewpoint: a platform with a railing on a hilltop, with coin binoculars, and a landscape far below."},
-  {"key": "attraction", "icon": "attraction", "name_sv": "Sevärdhet", "osm": "tourism=attraction", "subject": "The sign of a tourist sight: an old-fashioned camera with a strap."},
-  {"key": "museum", "icon": "museum", "name_sv": "Museum", "osm": "tourism=museum", "subject": "A museum building: a classical facade with columns, a pediment and wide steps."},
-  {"key": "wilderness_hut", "icon": "wilderness_hut", "name_sv": "Raststuga", "osm": "tourism=wilderness_hut", "subject": "A small unlocked log cabin in the wilderness, with a stove pipe."},
-  {"key": "alpine_hut", "icon": "alpine_hut", "name_sv": "Fjällstuga", "osm": "tourism=alpine_hut", "subject": "A Swedish mountain hut (fjällstuga): a red timber cabin with white corner boards on a bare fell."},
-  {"key": "lean_to", "icon": "lean_to", "name_sv": "Slogbod", "osm": "tourism=lean_to", "subject": "A slogbod: a simple lean-to of poles and planks with an open front, and a ring of fire stones in front of it."},
-  {"key": "archaeological_site", "icon": "archaeological_site", "name_sv": "Fornlämning", "osm": "historic=archaeological_site", "subject": "An ancient site: a clay urn, half unearthed, beside a ring of old standing stones."},
-  {"key": "ruins", "icon": "ruins", "name_sv": "Ruin", "osm": "historic=ruins", "subject": "The ruins of a stone building: broken walls and one leaning column, with plants growing on them."},
-  {"key": "memorial", "icon": "memorial", "name_sv": "Minnesmärke", "osm": "historic=memorial", "subject": "A memorial: a bronze plaque on a rough granite stone, with a wreath at its foot."},
-  {"key": "boundary_stone", "icon": "boundary_stone", "name_sv": "Gränssten", "osm": "historic=boundary_stone", "subject": "An old boundary stone: a low squared granite post with a carved cross mark, in grass."},
-  {"key": "rune_stone", "icon": "rune_stone", "name_sv": "Runsten", "osm": "historic=rune_stone", "subject": "A Viking rune stone: a tall grey granite slab with a carved serpent band that follows the edge of the stone. The serpent ends in a clear head, seen from the side, with an eye and an open jaw. Inside the band, real Younger Futhark runes in red paint spell exactly this inscription, in this order, with a two-dot divider between the words: ᛘᛅᚾ : ᚢᛅᚾᛁᛅ : ᛋᛁᚴ : ᛘᛅᚾ : ᛘᚢᛋᛏᛁ : ᚢᛅᚾᛁᛅ : ᛋᛁᚴ"},
-  {"key": "castle", "icon": "castle", "name_sv": "Slott", "osm": "historic=castle", "subject": "A castle with round towers, cone roofs and crenellated walls."},
-  {"key": "mine", "icon": "mine", "name_sv": "Gammal gruva", "osm": "historic=mine", "subject": "An old mine: a timber-framed tunnel mouth in a hillside, with an ore cart, a pick and a hammer."},
-  {"key": "manor", "icon": "manor", "name_sv": "Herrgård", "osm": "historic=manor", "subject": "A Swedish manor house (herrgård): a symmetric two-storey house in yellow plaster with white pilasters and a mansard roof."},
-  {"key": "shieling", "icon": "shieling", "name_sv": "Fäbod", "osm": "historic=shieling", "subject": "A fäbod: small grey unpainted timber huts of a summer farm in a forest glade."},
-  {"key": "tomb", "icon": "tomb", "name_sv": "Grav", "osm": "historic=tomb", "subject": "An old grave: a weathered stone tomb with a headstone and a cross, in a churchyard."},
-  {"key": "monument", "icon": "monument", "name_sv": "Monument", "osm": "historic=monument", "subject": "A monument: a tall stone obelisk on a stepped base."},
-  {"key": "milestone", "icon": "milestone", "name_sv": "Milsten", "osm": "historic=milestone", "subject": "A Swedish milestone (milsten): a cast-iron plate with a crown emblem on a small stone base beside an old road."},
-  {"key": "historic_stone", "icon": "historic_stone", "name_sv": "Historisk sten", "osm": "historic=stone", "subject": "A historic stone: a single standing stone with a carved mark and lichen."},
-  {"key": "fort", "icon": "fort", "name_sv": "Fort", "osm": "historic=fort", "subject": "A fort (skans): low earth and stone ramparts in a star shape, with a gate and a flag."},
-  {"key": "aircraft", "icon": "aircraft", "name_sv": "Historiskt flygplan", "osm": "historic=aircraft", "subject": "A retired fighter jet on a display stand."},
-  {"key": "cannon", "icon": "cannon", "name_sv": "Kanon", "osm": "historic=cannon", "subject": "An old iron cannon on a wooden carriage, with a stack of cannonballs."},
-  {"key": "mine_shaft", "icon": "mine_shaft", "name_sv": "Gruvschakt", "osm": "historic=mine_shaft", "subject": "A mine shaft: a timber headframe with a hoist cage over a dark shaft."},
-  {"key": "charcoal_pile", "icon": "charcoal_pile", "name_sv": "Kolmila", "osm": "historic=charcoal_pile", "subject": "A kolmila: a dome-shaped charcoal pile covered with turf, with thin smoke."},
-  {"key": "ship", "icon": "ship", "name_sv": "Historiskt fartyg", "osm": "historic=ship", "subject": "A historic sailing ship with masts and sails at a quay."},
-  {"key": "city_gate", "icon": "city_gate", "name_sv": "Stadsport", "osm": "historic=city_gate", "subject": "An old city gate: a stone archway with heavy wooden doors and a small tower above."},
-  {"key": "peak", "icon": "peak", "name_sv": "Bergstopp", "osm": "natural=peak", "subject": "A mountain peak with a snow cap and a small cairn at the top."},
-  {"key": "rock", "icon": "rock", "name_sv": "Klippa", "osm": "natural=rock", "subject": "A rock outcrop: a rounded bare granite crag in heather."},
-  {"key": "beach", "icon": "beach", "name_sv": "Strand", "osm": "natural=beach", "subject": "A sandy beach with a parasol and small waves."},
-  {"key": "cliff", "icon": "cliff", "name_sv": "Stup", "osm": "natural=cliff", "subject": "A steep cliff face with fallen rocks at its foot."},
-  {"key": "boulder", "icon": "boulder", "name_sv": "Stenblock", "osm": "natural=stone", "subject": "One large boulder on the ground, with moss."},
-  {"key": "cape", "icon": "cape", "name_sv": "Udde", "osm": "natural=cape", "subject": "A cape: a rocky headland that reaches out into the sea."},
-  {"key": "hill", "icon": "hill", "name_sv": "Kulle", "osm": "natural=hill", "subject": "A rounded hill with a few trees and a path to the top."},
-  {"key": "spring", "icon": "spring", "name_sv": "Källa", "osm": "natural=spring", "subject": "A natural spring: clear water that wells up between stones, with a small wooden ladle."},
-  {"key": "cave_entrance", "icon": "cave_entrance", "name_sv": "Grottöppning", "osm": "natural=cave_entrance", "subject": "A cave entrance: a dark opening in a rock face."},
-  {"key": "saddle", "icon": "saddle", "name_sv": "Bergspass", "osm": "natural=saddle", "subject": "A mountain pass: a low saddle between two peaks, with a trail across it."},
-  {"key": "tower", "icon": "tower", "name_sv": "Torn", "osm": "man_made=tower", "subject": "A tall tower with a viewing platform at the top."},
-  {"key": "bridge", "icon": "bridge", "name_sv": "Bro", "osm": "man_made=bridge", "subject": "A stone arch bridge over a stream."},
-  {"key": "chimney", "icon": "chimney", "name_sv": "Skorsten", "osm": "man_made=chimney", "subject": "A tall brick factory chimney with a thin plume of smoke."},
-  {"key": "survey_point", "icon": "survey_point", "name_sv": "Mätpunkt", "osm": "man_made=survey_point", "subject": "A survey point: a brass disc set in rock under a small three-legged timber marker."},
-  {"key": "cairn", "icon": "cairn", "name_sv": "Röse", "osm": "man_made=cairn", "subject": "A cairn: a stack of stones on bare rock."},
-  {"key": "water_tower", "icon": "water_tower", "name_sv": "Vattentorn", "osm": "man_made=water_tower", "subject": "A water tower: a concrete tower in the shape of a mushroom."},
-  {"key": "lighthouse", "icon": "lighthouse", "name_sv": "Fyr", "osm": "man_made=lighthouse", "subject": "A lighthouse: a red and white tower with a lantern room, on a rocky islet."},
-  {"key": "water_tap", "icon": "water_tap", "name_sv": "Vattenkran", "osm": "man_made=water_tap", "subject": "A water tap on a post, with one falling drop."},
-  {"key": "windmill", "icon": "windmill", "name_sv": "Väderkvarn", "osm": "man_made=windmill", "subject": "A Swedish wooden post windmill (stubbkvarn), as on Öland, with four sails."},
-  {"key": "water_well", "icon": "water_well", "name_sv": "Brunn", "osm": "man_made=water_well", "subject": "A cast-iron hand pump on a wooden well cover."},
-  {"key": "beacon", "icon": "beacon", "name_sv": "Båk", "osm": "man_made=beacon", "subject": "A sea mark (båk): a tall wooden pyramid, painted red and white, on a skerry."},
-  {"key": "watermill", "icon": "watermill", "name_sv": "Vattenkvarn", "osm": "man_made=watermill", "subject": "A watermill: a small timber mill house with a water wheel beside a stream."},
-  {"key": "maypole", "icon": "maypole", "name_sv": "Midsommarstång", "osm": "man_made=maypole", "subject": "A Swedish midsummer pole (midsommarstång): a cross-shaped pole covered with leaves, with two wreath rings."},
-  {"key": "cross", "icon": "cross", "name_sv": "Kors", "osm": "man_made=cross", "subject": "A wayside cross: a tall stone cross on a small mound."},
-  {"key": "tar_kiln", "icon": "tar_kiln", "name_sv": "Tjärdal", "osm": "man_made=tar_kiln", "subject": "A tjärdal: a funnel-shaped pit lined with logs on a slope, with a spout and tar that drips into a barrel."},
-  {"key": "telescope", "icon": "telescope", "name_sv": "Teleskop", "osm": "man_made=telescope", "subject": "A large telescope on a tripod, aimed at the sky."},
-  {"key": "insect_hotel", "icon": "insect_hotel", "name_sv": "Insektshotell", "osm": "man_made=insect_hotel", "subject": "An insect hotel: a small wooden house frame filled with drilled logs, cones and reeds."},
-  {"key": "playground", "icon": "playground", "name_sv": "Lekplats", "osm": "leisure=playground", "subject": "A playground: a slide and a swing set in a sand pit."},
-  {"key": "picnic_table", "icon": "picnic_table", "name_sv": "Picknickbord", "osm": "leisure=picnic_table", "subject": "A wooden picnic table with attached benches."},
-  {"key": "firepit", "icon": "firepit", "name_sv": "Eldplats", "osm": "leisure=firepit", "subject": "A fire pit: a ring of stones with burning logs, and log seats around it."},
-  {"key": "bathing_place", "icon": "bathing_place", "name_sv": "Badplats", "osm": "leisure=bathing_place", "subject": "A bathing place: a wooden jetty with a ladder into a lake, and a life ring on a post."},
-  {"key": "slipway", "icon": "slipway", "name_sv": "Båtramp", "osm": "leisure=slipway", "subject": "A boat slipway: a concrete ramp into the water, with a small boat on a trailer."},
-  {"key": "bird_hide", "icon": "bird_hide", "name_sv": "Fågelgömsle", "osm": "leisure=bird_hide", "subject": "A bird hide: a small wooden hut on stilts with a narrow viewing slit, in reeds."},
-  {"key": "sauna", "icon": "sauna", "name_sv": "Bastu", "osm": "leisure=sauna", "subject": "A wood-fired sauna hut beside a lake, with steam from its chimney."},
-  {"key": "fitness_station", "icon": "fitness_station", "name_sv": "Utegym", "osm": "leisure=fitness_station", "subject": "An outdoor gym: wooden pull-up bars and a balance beam."},
-  {"key": "bandstand", "icon": "bandstand", "name_sv": "Musikpaviljong", "osm": "leisure=bandstand", "subject": "A bandstand: an open eight-sided pavilion with a pointed roof."},
-  {"key": "disc_golf_course", "icon": "disc_golf_course", "name_sv": "Discgolfbana", "osm": "leisure=disc_golf_course", "subject": "A disc golf basket: a metal pole with a basket and hanging chains, and a disc that flies towards it."},
-  {"key": "swimming_area", "icon": "swimming_area", "name_sv": "Badområde", "osm": "leisure=swimming_area", "subject": "A swimming area: a floating bathing platform with a ladder and a low diving tower, inside a rope with floats."},
-  {"key": "park", "icon": "park", "name_sv": "Park", "osm": "leisure=park", "subject": "A park: a large broadleaf tree, a gravel path and a lamp post."},
-  {"key": "nature_reserve", "icon": "nature_reserve", "name_sv": "Naturreservat", "osm": "leisure=nature_reserve", "subject": "A nature reserve: tall spruces and a post with a blue sign that shows a white six-pointed star."},
-  {"key": "dog_park", "icon": "dog_park", "name_sv": "Hundrastgård", "osm": "leisure=dog_park", "subject": "A dog park: a fenced yard with a gate, and a happy dog."},
-  {"key": "waterfall", "icon": "waterfall", "name_sv": "Vattenfall", "osm": "waterway=waterfall", "subject": "A waterfall over a rock ledge into a pool."},
-  {"key": "dam", "icon": "dam", "name_sv": "Damm", "osm": "waterway=dam", "subject": "A dam: a concrete wall that holds back a lake, with water through one gate."},
-  {"key": "weir", "icon": "weir", "name_sv": "Dämme", "osm": "waterway=weir", "subject": "A weir: a low stone step across a stream, with water over it."},
-  {"key": "lock_gate", "icon": "lock_gate", "name_sv": "Slussport", "osm": "waterway=lock_gate", "subject": "A canal lock: wooden lock gates with balance beams between stone walls."},
-  {"key": "rapids", "icon": "rapids", "name_sv": "Fors", "osm": "waterway=rapids", "subject": "Rapids: white water between boulders."},
-  {"key": "fish_pass", "icon": "fish_pass", "name_sv": "Fisktrappa", "osm": "waterway=fish_pass", "subject": "A fish ladder: a row of stepped pools beside a weir, with one salmon that leaps."},
-  {"key": "giants_kettle", "icon": "giants_kettle", "name_sv": "Jättegryta", "osm": "geological=giants_kettle", "subject": "A jättegryta: a smooth round pothole in bedrock, with water and one round stone inside."},
-  {"key": "glacial_erratic", "icon": "glacial_erratic", "name_sv": "Flyttblock", "osm": "geological=glacial_erratic", "subject": "A flyttblock: a very large boulder that rests on small stones in a forest."},
-  {"key": "bus_stop", "icon": "bus_stop", "name_sv": "Busshållplats", "osm": "highway=bus_stop", "subject": "A bus stop: a pole with a round sign that shows a bus pictogram, beside a small glass shelter."},
-  {"key": "pitch", "icon": "pitch", "name_sv": "Bollplan", "osm": "leisure=pitch", "subject": "A sports pitch: a small football goal with a net on grass with white lines, and a ball."},
-  {"key": "legendary", "icon": "legendary", "name_sv": "Legendarisk plats", "osm": "", "subject": "A golden star medallion between two laurel branches: the mark of a legendary place."}
+ {
+  "key": "bench",
+  "icon": "bench",
+  "name_sv": "Bänk",
+  "osm": "amenity=bench",
+  "subject": "A wooden park bench with a slatted seat and back and cast-iron legs."
+ },
+ {
+  "key": "shelter",
+  "icon": "shelter",
+  "name_sv": "Vindskydd",
+  "osm": "amenity=shelter",
+  "subject": "A Swedish wind shelter (vindskydd): an open timber shelter with three walls and a sloping roof, beside a forest path."
+ },
+ {
+  "key": "post_box",
+  "icon": "post_box",
+  "name_sv": "Brevlåda",
+  "osm": "amenity=post_box",
+  "subject": "A Swedish street post box: a rounded yellow box on a post with a post-horn emblem."
+ },
+ {
+  "key": "place_of_worship",
+  "icon": "place_of_worship",
+  "name_sv": "Helgedom",
+  "osm": "amenity=place_of_worship",
+  "subject": "A small plain house of worship: a simple hall with a porch and one tall arched window. No religious symbol."
+ },
+ {
+  "key": "church",
+  "icon": "place_of_worship",
+  "name_sv": "Kyrka",
+  "osm": "amenity=place_of_worship with religion=christian",
+  "subject": "A Swedish country church: white plastered stone walls, a steep dark roof and a tower with a spire."
+ },
+ {
+  "key": "mosque",
+  "icon": "place_of_worship",
+  "name_sv": "Moské",
+  "osm": "amenity=place_of_worship with religion=muslim",
+  "subject": "A mosque with a dome and one slender minaret."
+ },
+ {
+  "key": "synagogue",
+  "icon": "place_of_worship",
+  "name_sv": "Synagoga",
+  "osm": "amenity=place_of_worship with religion=jewish",
+  "subject": "A synagogue: a stone building with tall arched windows and a facade crowned by a rounded twin-tablet shape."
+ },
+ {
+  "key": "temple",
+  "icon": "place_of_worship",
+  "name_sv": "Tempel",
+  "osm": "amenity=place_of_worship with religion=buddhist",
+  "subject": "An Asian temple with a tiered roof and upturned eaves."
+ },
+ {
+  "key": "bbq",
+  "icon": "bbq",
+  "name_sv": "Grillplats",
+  "osm": "amenity=bbq",
+  "subject": "A fixed public grill: an iron grate over a brick fire box, with a little smoke."
+ },
+ {
+  "key": "fountain",
+  "icon": "fountain",
+  "name_sv": "Fontän",
+  "osm": "amenity=fountain",
+  "subject": "A stone park fountain with a round basin and a water jet."
+ },
+ {
+  "key": "drinking_water",
+  "icon": "drinking_water",
+  "name_sv": "Dricksvattenkran",
+  "osm": "amenity=drinking_water",
+  "subject": "A public drinking-water fountain: a short post with a tap and a small basin."
+ },
+ {
+  "key": "clock",
+  "icon": "clock",
+  "name_sv": "Klocka",
+  "osm": "amenity=clock",
+  "subject": "A public street clock on a tall ornate post. The dial has hands and tick marks."
+ },
+ {
+  "key": "information",
+  "icon": "information",
+  "name_sv": "Informationstavla",
+  "osm": "tourism=information",
+  "subject": "A wooden information board with a small roof, showing a map."
+ },
+ {
+  "key": "artwork",
+  "icon": "artwork",
+  "name_sv": "Konstverk",
+  "osm": "tourism=artwork",
+  "subject": "A public sculpture: an abstract bronze figure on a stone plinth."
+ },
+ {
+  "key": "picnic_site",
+  "icon": "picnic_site",
+  "name_sv": "Rastplats",
+  "osm": "tourism=picnic_site",
+  "subject": "A rest site: a tree with a bench and a table under it."
+ },
+ {
+  "key": "viewpoint",
+  "icon": "viewpoint",
+  "name_sv": "Utsiktsplats",
+  "osm": "tourism=viewpoint",
+  "subject": "A viewpoint: a platform with a railing on a hilltop, with coin binoculars, and a landscape far below."
+ },
+ {
+  "key": "attraction",
+  "icon": "attraction",
+  "name_sv": "Sevärdhet",
+  "osm": "tourism=attraction",
+  "subject": "The sign of a tourist sight: an old-fashioned camera with a strap."
+ },
+ {
+  "key": "museum",
+  "icon": "museum",
+  "name_sv": "Museum",
+  "osm": "tourism=museum",
+  "subject": "A museum building: a classical facade with columns, a pediment and wide steps."
+ },
+ {
+  "key": "wilderness_hut",
+  "icon": "wilderness_hut",
+  "name_sv": "Raststuga",
+  "osm": "tourism=wilderness_hut",
+  "subject": "A small unlocked log cabin in the wilderness, with a stove pipe."
+ },
+ {
+  "key": "alpine_hut",
+  "icon": "alpine_hut",
+  "name_sv": "Fjällstuga",
+  "osm": "tourism=alpine_hut",
+  "subject": "A Swedish mountain hut (fjällstuga): a red timber cabin with white corner boards on a bare fell."
+ },
+ {
+  "key": "lean_to",
+  "icon": "lean_to",
+  "name_sv": "Slogbod",
+  "osm": "tourism=lean_to",
+  "subject": "A slogbod: a simple lean-to of poles and planks with an open front, and a ring of fire stones in front of it."
+ },
+ {
+  "key": "archaeological_site",
+  "icon": "archaeological_site",
+  "name_sv": "Fornlämning",
+  "osm": "historic=archaeological_site",
+  "subject": "An ancient site: a clay urn, half unearthed, beside a ring of old standing stones."
+ },
+ {
+  "key": "ruins",
+  "icon": "ruins",
+  "name_sv": "Ruin",
+  "osm": "historic=ruins",
+  "subject": "The ruins of a stone building: broken walls and one leaning column, with plants growing on them."
+ },
+ {
+  "key": "memorial",
+  "icon": "memorial",
+  "name_sv": "Minnesmärke",
+  "osm": "historic=memorial",
+  "subject": "A memorial: a bronze plaque on a rough granite stone, with a wreath at its foot."
+ },
+ {
+  "key": "boundary_stone",
+  "icon": "boundary_stone",
+  "name_sv": "Gränssten",
+  "osm": "historic=boundary_stone",
+  "subject": "An old boundary stone: a low squared granite post with a carved cross mark, in grass."
+ },
+ {
+  "key": "rune_stone",
+  "icon": "rune_stone",
+  "name_sv": "Runsten",
+  "osm": "historic=rune_stone",
+  "subject": "A Viking rune stone: a tall grey granite slab with a carved serpent band that follows the edge of the stone. The serpent ends in a clear head, seen from the side, with an eye and an open jaw. Inside the band, real Younger Futhark runes in red paint spell exactly this inscription, in this order, with a two-dot divider between the words: ᛘᛅᚾ : ᚢᛅᚾᛁᛅ : ᛋᛁᚴ : ᛘᛅᚾ : ᛘᚢᛋᛏᛁ : ᚢᛅᚾᛁᛅ : ᛋᛁᚴ"
+ },
+ {
+  "key": "castle",
+  "icon": "castle",
+  "name_sv": "Slott",
+  "osm": "historic=castle",
+  "subject": "A castle with round towers, cone roofs and crenellated walls."
+ },
+ {
+  "key": "mine",
+  "icon": "mine",
+  "name_sv": "Gammal gruva",
+  "osm": "historic=mine",
+  "subject": "An old mine: a timber-framed tunnel mouth in a hillside, with an ore cart, a pick and a hammer."
+ },
+ {
+  "key": "manor",
+  "icon": "manor",
+  "name_sv": "Herrgård",
+  "osm": "historic=manor",
+  "subject": "A Swedish manor house (herrgård): a symmetric two-storey house in yellow plaster with white pilasters and a mansard roof."
+ },
+ {
+  "key": "shieling",
+  "icon": "shieling",
+  "name_sv": "Fäbod",
+  "osm": "historic=shieling",
+  "subject": "A fäbod: small grey unpainted timber huts of a summer farm in a forest glade."
+ },
+ {
+  "key": "tomb",
+  "icon": "tomb",
+  "name_sv": "Grav",
+  "osm": "historic=tomb",
+  "subject": "An old grave: a weathered stone tomb with a headstone and a cross, in a churchyard."
+ },
+ {
+  "key": "monument",
+  "icon": "monument",
+  "name_sv": "Monument",
+  "osm": "historic=monument",
+  "subject": "A monument: a tall stone obelisk on a stepped base."
+ },
+ {
+  "key": "milestone",
+  "icon": "milestone",
+  "name_sv": "Milsten",
+  "osm": "historic=milestone",
+  "subject": "A Swedish milestone (milsten): a cast-iron plate with a crown emblem on a small stone base beside an old road."
+ },
+ {
+  "key": "historic_stone",
+  "icon": "historic_stone",
+  "name_sv": "Historisk sten",
+  "osm": "historic=stone",
+  "subject": "A historic stone: a single standing stone with a carved mark and lichen."
+ },
+ {
+  "key": "fort",
+  "icon": "fort",
+  "name_sv": "Fort",
+  "osm": "historic=fort",
+  "subject": "A fort (skans): low earth and stone ramparts in a star shape, with a gate and a flag."
+ },
+ {
+  "key": "aircraft",
+  "icon": "aircraft",
+  "name_sv": "Historiskt flygplan",
+  "osm": "historic=aircraft",
+  "subject": "A retired fighter jet on a display stand."
+ },
+ {
+  "key": "cannon",
+  "icon": "cannon",
+  "name_sv": "Kanon",
+  "osm": "historic=cannon",
+  "subject": "An old iron cannon on a wooden carriage, with a stack of cannonballs."
+ },
+ {
+  "key": "mine_shaft",
+  "icon": "mine_shaft",
+  "name_sv": "Gruvschakt",
+  "osm": "historic=mine_shaft",
+  "subject": "A mine shaft: a timber headframe with a hoist cage over a dark shaft."
+ },
+ {
+  "key": "charcoal_pile",
+  "icon": "charcoal_pile",
+  "name_sv": "Kolmila",
+  "osm": "historic=charcoal_pile",
+  "subject": "A kolmila: a dome-shaped charcoal pile covered with turf, with thin smoke."
+ },
+ {
+  "key": "ship",
+  "icon": "ship",
+  "name_sv": "Historiskt fartyg",
+  "osm": "historic=ship",
+  "subject": "A historic sailing ship with masts and sails at a quay."
+ },
+ {
+  "key": "city_gate",
+  "icon": "city_gate",
+  "name_sv": "Stadsport",
+  "osm": "historic=city_gate",
+  "subject": "An old city gate: a stone archway with heavy wooden doors and a small tower above."
+ },
+ {
+  "key": "peak",
+  "icon": "peak",
+  "name_sv": "Bergstopp",
+  "osm": "natural=peak",
+  "subject": "A mountain peak with a snow cap and a small cairn at the top."
+ },
+ {
+  "key": "rock",
+  "icon": "rock",
+  "name_sv": "Klippa",
+  "osm": "natural=rock",
+  "subject": "A rock outcrop: a rounded bare granite crag in heather."
+ },
+ {
+  "key": "beach",
+  "icon": "beach",
+  "name_sv": "Strand",
+  "osm": "natural=beach",
+  "subject": "A sandy beach with a parasol and small waves."
+ },
+ {
+  "key": "cliff",
+  "icon": "cliff",
+  "name_sv": "Stup",
+  "osm": "natural=cliff",
+  "subject": "A steep cliff face with fallen rocks at its foot."
+ },
+ {
+  "key": "boulder",
+  "icon": "boulder",
+  "name_sv": "Stenblock",
+  "osm": "natural=stone",
+  "subject": "One large boulder on the ground, with moss."
+ },
+ {
+  "key": "cape",
+  "icon": "cape",
+  "name_sv": "Udde",
+  "osm": "natural=cape",
+  "subject": "A cape: a rocky headland that reaches out into the sea."
+ },
+ {
+  "key": "hill",
+  "icon": "hill",
+  "name_sv": "Kulle",
+  "osm": "natural=hill",
+  "subject": "A rounded hill with a few trees and a path to the top."
+ },
+ {
+  "key": "spring",
+  "icon": "spring",
+  "name_sv": "Källa",
+  "osm": "natural=spring",
+  "subject": "A natural spring: clear water that wells up between stones, with a small wooden ladle."
+ },
+ {
+  "key": "cave_entrance",
+  "icon": "cave_entrance",
+  "name_sv": "Grottöppning",
+  "osm": "natural=cave_entrance",
+  "subject": "A cave entrance: a dark opening in a rock face."
+ },
+ {
+  "key": "saddle",
+  "icon": "saddle",
+  "name_sv": "Bergspass",
+  "osm": "natural=saddle",
+  "subject": "A mountain pass: a low saddle between two peaks, with a trail across it."
+ },
+ {
+  "key": "tower",
+  "icon": "tower",
+  "name_sv": "Torn",
+  "osm": "man_made=tower",
+  "subject": "A tall tower with a viewing platform at the top."
+ },
+ {
+  "key": "bridge",
+  "icon": "bridge",
+  "name_sv": "Bro",
+  "osm": "man_made=bridge",
+  "subject": "A stone arch bridge over a stream."
+ },
+ {
+  "key": "chimney",
+  "icon": "chimney",
+  "name_sv": "Skorsten",
+  "osm": "man_made=chimney",
+  "subject": "A tall brick factory chimney with a thin plume of smoke."
+ },
+ {
+  "key": "survey_point",
+  "icon": "survey_point",
+  "name_sv": "Mätpunkt",
+  "osm": "man_made=survey_point",
+  "subject": "A survey point: a brass disc set in rock under a small three-legged timber marker."
+ },
+ {
+  "key": "cairn",
+  "icon": "cairn",
+  "name_sv": "Röse",
+  "osm": "man_made=cairn",
+  "subject": "A cairn: a stack of stones on bare rock."
+ },
+ {
+  "key": "water_tower",
+  "icon": "water_tower",
+  "name_sv": "Vattentorn",
+  "osm": "man_made=water_tower",
+  "subject": "A water tower: a concrete tower in the shape of a mushroom."
+ },
+ {
+  "key": "lighthouse",
+  "icon": "lighthouse",
+  "name_sv": "Fyr",
+  "osm": "man_made=lighthouse",
+  "subject": "A lighthouse: a red and white tower with a lantern room, on a rocky islet."
+ },
+ {
+  "key": "water_tap",
+  "icon": "water_tap",
+  "name_sv": "Vattenkran",
+  "osm": "man_made=water_tap",
+  "subject": "A water tap on a post, with one falling drop."
+ },
+ {
+  "key": "windmill",
+  "icon": "windmill",
+  "name_sv": "Väderkvarn",
+  "osm": "man_made=windmill",
+  "subject": "A Swedish wooden post windmill (stubbkvarn), as on Öland, with four sails."
+ },
+ {
+  "key": "water_well",
+  "icon": "water_well",
+  "name_sv": "Brunn",
+  "osm": "man_made=water_well",
+  "subject": "A cast-iron hand pump on a wooden well cover."
+ },
+ {
+  "key": "beacon",
+  "icon": "beacon",
+  "name_sv": "Båk",
+  "osm": "man_made=beacon",
+  "subject": "A sea mark (båk): a tall wooden pyramid, painted red and white, on a skerry."
+ },
+ {
+  "key": "watermill",
+  "icon": "watermill",
+  "name_sv": "Vattenkvarn",
+  "osm": "man_made=watermill",
+  "subject": "A watermill: a small timber mill house with a water wheel beside a stream."
+ },
+ {
+  "key": "maypole",
+  "icon": "maypole",
+  "name_sv": "Midsommarstång",
+  "osm": "man_made=maypole",
+  "subject": "A Swedish midsummer pole (midsommarstång): a cross-shaped pole covered with leaves, with two wreath rings."
+ },
+ {
+  "key": "cross",
+  "icon": "cross",
+  "name_sv": "Kors",
+  "osm": "man_made=cross",
+  "subject": "A wayside cross: a tall stone cross on a small mound."
+ },
+ {
+  "key": "tar_kiln",
+  "icon": "tar_kiln",
+  "name_sv": "Tjärdal",
+  "osm": "man_made=tar_kiln",
+  "subject": "A tjärdal: a funnel-shaped pit lined with logs on a slope, with a spout and tar that drips into a barrel."
+ },
+ {
+  "key": "telescope",
+  "icon": "telescope",
+  "name_sv": "Teleskop",
+  "osm": "man_made=telescope",
+  "subject": "A large telescope on a tripod, aimed at the sky."
+ },
+ {
+  "key": "insect_hotel",
+  "icon": "insect_hotel",
+  "name_sv": "Insektshotell",
+  "osm": "man_made=insect_hotel",
+  "subject": "An insect hotel: a small wooden house frame filled with drilled logs, cones and reeds."
+ },
+ {
+  "key": "playground",
+  "icon": "playground",
+  "name_sv": "Lekplats",
+  "osm": "leisure=playground",
+  "subject": "A playground: a slide and a swing set in a sand pit."
+ },
+ {
+  "key": "picnic_table",
+  "icon": "picnic_table",
+  "name_sv": "Picknickbord",
+  "osm": "leisure=picnic_table",
+  "subject": "A wooden picnic table with attached benches."
+ },
+ {
+  "key": "firepit",
+  "icon": "firepit",
+  "name_sv": "Eldplats",
+  "osm": "leisure=firepit",
+  "subject": "A fire pit: a ring of stones with burning logs, and log seats around it."
+ },
+ {
+  "key": "bathing_place",
+  "icon": "bathing_place",
+  "name_sv": "Badplats",
+  "osm": "leisure=bathing_place",
+  "subject": "A bathing place: a wooden jetty with a ladder into a lake, and a life ring on a post."
+ },
+ {
+  "key": "slipway",
+  "icon": "slipway",
+  "name_sv": "Båtramp",
+  "osm": "leisure=slipway",
+  "subject": "A boat slipway: a concrete ramp into the water, with a small boat on a trailer."
+ },
+ {
+  "key": "bird_hide",
+  "icon": "bird_hide",
+  "name_sv": "Fågelgömsle",
+  "osm": "leisure=bird_hide",
+  "subject": "A bird hide: a small wooden hut on stilts with a narrow viewing slit, in reeds."
+ },
+ {
+  "key": "sauna",
+  "icon": "sauna",
+  "name_sv": "Bastu",
+  "osm": "leisure=sauna",
+  "subject": "A wood-fired sauna hut beside a lake, with steam from its chimney."
+ },
+ {
+  "key": "fitness_station",
+  "icon": "fitness_station",
+  "name_sv": "Utegym",
+  "osm": "leisure=fitness_station",
+  "subject": "An outdoor gym: wooden pull-up bars and a balance beam."
+ },
+ {
+  "key": "bandstand",
+  "icon": "bandstand",
+  "name_sv": "Musikpaviljong",
+  "osm": "leisure=bandstand",
+  "subject": "A bandstand: an open eight-sided pavilion with a pointed roof."
+ },
+ {
+  "key": "disc_golf_course",
+  "icon": "disc_golf_course",
+  "name_sv": "Discgolfbana",
+  "osm": "leisure=disc_golf_course",
+  "subject": "A disc golf basket: a metal pole with a basket and hanging chains, and a disc that flies towards it."
+ },
+ {
+  "key": "swimming_area",
+  "icon": "swimming_area",
+  "name_sv": "Badområde",
+  "osm": "leisure=swimming_area",
+  "subject": "A swimming area: a floating bathing platform with a ladder and a low diving tower, inside a rope with floats."
+ },
+ {
+  "key": "park",
+  "icon": "park",
+  "name_sv": "Park",
+  "osm": "leisure=park",
+  "subject": "A park: a large broadleaf tree, a gravel path and a lamp post."
+ },
+ {
+  "key": "nature_reserve",
+  "icon": "nature_reserve",
+  "name_sv": "Naturreservat",
+  "osm": "leisure=nature_reserve",
+  "subject": "A nature reserve: tall spruces and a post with a blue sign that shows a white six-pointed star."
+ },
+ {
+  "key": "dog_park",
+  "icon": "dog_park",
+  "name_sv": "Hundrastgård",
+  "osm": "leisure=dog_park",
+  "subject": "A dog park: a fenced yard with a gate, and a happy dog."
+ },
+ {
+  "key": "waterfall",
+  "icon": "waterfall",
+  "name_sv": "Vattenfall",
+  "osm": "waterway=waterfall",
+  "subject": "A waterfall over a rock ledge into a pool."
+ },
+ {
+  "key": "dam",
+  "icon": "dam",
+  "name_sv": "Damm",
+  "osm": "waterway=dam",
+  "subject": "A dam: a concrete wall that holds back a lake, with water through one gate."
+ },
+ {
+  "key": "weir",
+  "icon": "weir",
+  "name_sv": "Dämme",
+  "osm": "waterway=weir",
+  "subject": "A weir: a low stone step across a stream, with water over it."
+ },
+ {
+  "key": "lock_gate",
+  "icon": "lock_gate",
+  "name_sv": "Slussport",
+  "osm": "waterway=lock_gate",
+  "subject": "A canal lock: wooden lock gates with balance beams between stone walls."
+ },
+ {
+  "key": "rapids",
+  "icon": "rapids",
+  "name_sv": "Fors",
+  "osm": "waterway=rapids",
+  "subject": "Rapids: white water between boulders."
+ },
+ {
+  "key": "fish_pass",
+  "icon": "fish_pass",
+  "name_sv": "Fisktrappa",
+  "osm": "waterway=fish_pass",
+  "subject": "A fish ladder: a row of stepped pools beside a weir, with one salmon that leaps."
+ },
+ {
+  "key": "giants_kettle",
+  "icon": "giants_kettle",
+  "name_sv": "Jättegryta",
+  "osm": "geological=giants_kettle",
+  "subject": "A jättegryta: a smooth round pothole in bedrock, with water and one round stone inside."
+ },
+ {
+  "key": "glacial_erratic",
+  "icon": "glacial_erratic",
+  "name_sv": "Flyttblock",
+  "osm": "geological=glacial_erratic",
+  "subject": "A flyttblock: a very large boulder that rests on small stones in a forest."
+ },
+ {
+  "key": "bus_stop",
+  "icon": "bus_stop",
+  "name_sv": "Busshållplats",
+  "osm": "highway=bus_stop",
+  "subject": "A bus stop: a pole with a round sign that shows a bus pictogram, beside a small glass shelter."
+ },
+ {
+  "key": "pitch",
+  "icon": "pitch",
+  "name_sv": "Bollplan",
+  "osm": "leisure=pitch",
+  "subject": "A sports pitch: a small football goal with a net on grass with white lines, and a ball."
+ },
+ {
+  "key": "legendary",
+  "icon": "legendary",
+  "name_sv": "Legendarisk plats",
+  "osm": "",
+  "subject": "A golden star medallion between two laurel branches: the mark of a legendary place."
+ },
+ {
+  "key": "shop",
+  "icon": "shop",
+  "name_sv": "Butik",
+  "osm": "shop=*",
+  "subject": "A small independent Swedish shop front seen from the street: a wooden shop front with a large display window, a door with a bell, an awning in falu red stripes, a hanging sign board without letters, and a few goods in the window (books, records, jars)."
+ },
+ {
+  "key": "restaurant",
+  "icon": "restaurant",
+  "name_sv": "Mat & dryck",
+  "osm": "amenity=restaurant/cafe/pub/bar",
+  "subject": "A small Swedish café or restaurant front: a door and window, a chalkboard sign with marks that look like writing but say nothing, a round bistro table and two chairs on the pavement, a coffee cup and a plate on the table, a potted plant."
+ },
+ {
+  "key": "skateboard",
+  "icon": "skateboard",
+  "name_sv": "Skatepark",
+  "osm": "sport=skateboard",
+  "subject": "An outdoor concrete skatepark: a bowl and a quarter pipe with coping, a grind rail, a skateboard lying on the edge, no people."
+ }
 ]

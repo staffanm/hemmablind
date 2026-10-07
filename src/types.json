@@ -87,5 +87,8 @@
   {"k": "geological", "v": "giants_kettle", "name": "Jättegryta", "def": "jättegrytan", "icon": "giants_kettle"},
   {"k": "geological", "v": "glacial_erratic", "name": "Flyttblock", "def": "flyttblocket", "icon": "glacial_erratic"},
   {"k": "highway", "v": "bus_stop", "name": "Busshållplats", "def": "busshållplatsen", "icon": "bus_stop"},
-  {"k": "leisure", "v": "pitch", "name": "Bollplan", "def": "bollplanen", "icon": "pitch"}
+  {"k": "leisure", "v": "pitch", "name": "Bollplan", "def": "bollplanen", "icon": "pitch"},
+  {"k": "sport", "v": "skateboard", "name": "Skatepark", "def": "skateparken", "icon": "skateboard"},
+  {"k": "shop", "v": "*", "name": "Butik", "def": "butiken", "icon": "shop", "notable": true},
+  {"k": "amenity", "v": "restaurant|cafe|pub|bar|biergarten|ice_cream", "name": "Mat & dryck", "def": "matstället", "icon": "restaurant", "notable": true}
 ]

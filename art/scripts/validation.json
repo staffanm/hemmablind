@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "pillow_version": "12.1.1",
-  "expected_count": 93,
-  "actual_count": 93,
-  "passed_count": 93,
+  "expected_count": 96,
+  "actual_count": 96,
+  "passed_count": 96,
   "unexpected_files": [],
   "all_passed": true,
   "rune_inscription": {
@@ -5994,6 +5994,200 @@
       ],
       "span_fraction": 0.859375,
       "half_transparent_pixels": 23422,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "shop",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 475968,
+      "opaque_fraction": 0.45391845703125,
+      "nonzero_fraction": 0.46279430389404297,
+      "bounding_box": [
+        72,
+        172,
+        952,
+        852
+      ],
+      "nonzero_bounding_box": [
+        72,
+        172,
+        952,
+        852
+      ],
+      "sha256": "b1703efb13f4b6c78ce16821271e18704c1651628926a300095c9e4063ddd336",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "79c7d8",
+        "9a9a94",
+        "9c3b2a",
+        "a0673a",
+        "cfe3a2",
+        "dcc9a1",
+        "e8b021",
+        "f7f3e6"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        172,
+        72,
+        172
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 9307,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "restaurant",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 458613,
+      "opaque_fraction": 0.43736743927001953,
+      "nonzero_fraction": 0.4440803527832031,
+      "bounding_box": [
+        72,
+        174,
+        952,
+        850
+      ],
+      "nonzero_bounding_box": [
+        72,
+        174,
+        952,
+        850
+      ],
+      "sha256": "ef2f2742cc85485fc1b353079e934260cfd8590ed33394250810124a433af257",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "79c7d8",
+        "9a9a94",
+        "9c3b2a",
+        "a0673a",
+        "cfe3a2",
+        "dcc9a1",
+        "f7f3e6"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        72,
+        174,
+        72,
+        174
+      ],
+      "span_fraction": 0.859375,
+      "half_transparent_pixels": 7039,
+      "half_transparent_outside_3px_band": 0,
+      "checks": {
+        "png": true,
+        "size": true,
+        "rgba": true,
+        "transparent_corners": true,
+        "opaque_coverage": true,
+        "minimum_margin": true,
+        "minimum_span": true,
+        "alpha_edge_band": true,
+        "maximum_span": true,
+        "shared_palette": true
+      },
+      "passed": true
+    },
+    {
+      "key": "skateboard",
+      "exists": true,
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels": 266172,
+      "opaque_fraction": 0.2538414001464844,
+      "nonzero_fraction": 0.26080989837646484,
+      "bounding_box": [
+        54,
+        284,
+        970,
+        739
+      ],
+      "nonzero_bounding_box": [
+        54,
+        284,
+        970,
+        739
+      ],
+      "sha256": "bf7b1d9f948784d9fd1121328ceb3ba3fe57e46664771fb208833cd9736aa9d8",
+      "visible_ink_colours": [
+        "16302b",
+        "4a3b22",
+        "9a9a94",
+        "a0673a",
+        "cfe3a2",
+        "dcc9a1",
+        "f7f3e6"
+      ],
+      "shared_palette_only": true,
+      "margins": [
+        54,
+        284,
+        54,
+        285
+      ],
+      "span_fraction": 0.89453125,
+      "half_transparent_pixels": 7307,
       "half_transparent_outside_3px_band": 0,
       "checks": {
         "png": true,

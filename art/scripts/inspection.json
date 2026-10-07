@@ -1,6 +1,6 @@
 {
-  "inspected_at_utc": "2026-10-06T13:21:19.978173+00:00",
-  "card_count": 93,
+  "inspected_at_utc": "2026-10-07T09:21:05.275612+00:00",
+  "card_count": 96,
   "after_last_card_change": true,
   "criteria": [
     "common warm outline and line weight",
@@ -15,7 +15,7 @@
   "sheets": [
     {
       "file": "cards-check.png",
-      "sha256": "0b09720a5dd61d1909743a2f13909f161147774b8450aa9cf88df0603ff29b84",
+      "sha256": "61b4d0ef6770e15e3516f92f2e94e8b63a1e7fe80aca73686f089a1502728aad",
       "size": [
         1908,
         2530
@@ -25,7 +25,7 @@
     },
     {
       "file": "cards-small-check.png",
-      "sha256": "e1cf1894d2974718bb9338724b99039824d631ca05eea3df7f69b07591f9d327",
+      "sha256": "90c6f41f64ffc8268cd8528b9d51fb7ac8c94cf401a38063119c53db92af0697",
       "size": [
         1152,
         1606
@@ -137,7 +137,30 @@
     "glacial_erratic",
     "bus_stop",
     "pitch",
-    "legendary"
+    "legendary",
+    "shop",
+    "restaurant",
+    "skateboard"
   ],
-  "outcome": "Accepted. No further image changes required."
+  "outcome": "Accepted all 96 cards after restaurant and skateboard retries. Both complete sheets and the pilot sheet inspected after the final selected rebuild.",
+  "new_card_inspections": [
+    {
+      "key": "shop",
+      "source_opened_and_visually_inspected": true,
+      "card_opened_and_visually_inspected": true,
+      "generations": 1
+    },
+    {
+      "key": "restaurant",
+      "source_opened_and_visually_inspected": true,
+      "card_opened_and_visually_inspected": true,
+      "generations": 2
+    },
+    {
+      "key": "skateboard",
+      "source_opened_and_visually_inspected": true,
+      "card_opened_and_visually_inspected": true,
+      "generations": 2
+    }
+  ]
 }

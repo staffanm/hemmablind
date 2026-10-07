@@ -95,11 +95,12 @@ def audit(key):
 def main():
     types=json.loads((ROOT/'reference/types.json').read_text())
     results=[audit(t['key']) for t in types]
+    expected_count=len(types)
     passed=sum(r['passed'] for r in results)
     expected={t['key']+'.png' for t in types}
     unexpected=sorted(p.name for p in (ROOT/'cards').glob('*.png') if p.name not in expected)
     inscription=audit_inscription()
-    report={'schema_version':1,'pillow_version':PILLOW_VERSION,'expected_count':93,'actual_count':sum(r['exists'] for r in results),'passed_count':passed,'unexpected_files':unexpected,'all_passed':len(results)==93 and passed==93 and not unexpected and inscription['passed'],'rune_inscription':inscription,'alpha_band_definition':'Euclidean radius 3 around the alpha >=128 silhouette boundary; opaque means alpha=255. Bounding box uses alpha=255; minimum margins also check every nonzero-alpha pixel.','images':results}
+    report={'schema_version':1,'pillow_version':PILLOW_VERSION,'expected_count':expected_count,'actual_count':sum(r['exists'] for r in results),'passed_count':passed,'unexpected_files':unexpected,'all_passed':passed==expected_count and not unexpected and inscription['passed'],'rune_inscription':inscription,'alpha_band_definition':'Euclidean radius 3 around the alpha >=128 silhouette boundary; opaque means alpha=255. Bounding box uses alpha=255; minimum margins also check every nonzero-alpha pixel.','images':results}
     (ROOT/'scripts/validation.json').write_text(json.dumps(report,indent=2)+'\n')
     print(f'{passed}/{len(results)} pass')
     print('Rune inscription:', 'pass' if inscription['passed'] else inscription)

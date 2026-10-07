@@ -7,17 +7,24 @@ The UI is in Swedish. The card text comes from Swedish Wikipedia, or from Englis
 
 ## Rules
 
-- 88 card types in four levels, from the count of the tag in Sweden: common (more than 10,000), uncommon (2,000 to 10,000), rare (300 to 2,000), epic (fewer than 300).
+- 91 card types in four levels, from the count of the tag in Sweden: common (more than 10,000), uncommon (2,000 to 10,000), rare (300 to 2,000), epic (fewer than 300).
 - 25 legendary places, one in each province (`src/legendary.json`). The collect radius is 100 m.
-- Common and uncommon places show within 300 m. A hint for a rare card costs 5 common cards. A hint for an epic card costs 15.
-- No collection above 25 km/h. A card counts double when the last 500 m of the track are below 25 km/h.
+- Common and uncommon places show within 300 m. A common card gives one point. A hint for a rare card costs 5 points. A hint for an epic card costs 15.
+- No collection above 25 km/h. A common card gives two points when the last 500 m of the walk are below 25 km/h. The walk is the track since the last long pause. It is kept in `localStorage`, so a reload keeps it, and it is deleted at each new day. A pause of more than 30 s (a locked phone) counts as walked when the straight line from the last position is below 25 km/h. A pause of more than one hour starts the walk again.
+- The map shows the walk: green below 10 km/h, blue up to 25 km/h, grey above. A dotted line is a pause.
+- The HUD counts the cards and the metres below 25 km/h of the day, with the record day.
 - A set is three card types. A complete set unlocks a perk. The deck holds three perks.
-- A card with a `wikidata` tag shows the text and photo from Wikipedia.
+- A card with a `wikidata` tag shows the text from Wikipedia, and the Wikipedia photo takes the place of the illustration. The card keeps the address of the photo. A card from a source with `image` has the photo of the source.
+- A place without a name is numbered among the cards of its type: "Bänk #4711". Cards of one type with the same name within 2 km are numbered: "Häradsvägen #1" and "Häradsvägen #2".
+- The album shows the cards as small cards in two columns, the newest first, or by type.
+- 108 achievements in four tiers (brons, silver, guld, platina): one for each card type ("Pendlare: Du har 10 busshållplatser") and 20 general ones (cards, distance, streaks, sets, time of day, season). The platina tier of a type needs half of all cards of the type in Sweden (`meta.json` `kept`). The tiers are in `src/achievements.js`.
+- A level from points: a card gives 10 to 500 points by level, 100 m on foot or bike gives 1, a complete set 200, an achievement tier 50 to 1,500, a day with a card 20 plus 10 per day of the longest streak. Level n needs 100 × (n − 1)^1.5 points. The HUD shows the level and a bar; the Bedrifter tab of the album shows the points and the achievements.
 - A place in reach gives a vibration, a sound and a prompt. The camera opens in the page (`getUserMedia`). Without a camera in the page, a file input opens the camera app.
 - A photo is a JPEG of at most 1024 pixels. A card turns over to show its photo.
 - A place to collect is a marker in the colour of its level. A collected card is a grey icon. A tap on the grey icon opens the card.
-- A player can discard a card and collect it again at the same place. The second time gives no cards to spend. A perk goes away when its set is no longer complete.
+- A player can discard a card and collect it again at the same place. The second time gives no points. A perk goes away when its set is no longer complete.
 - The title screen shows at the first visit only. The About tab of the album has the same text.
+- Shops (`shop=*`, "Butik") and food and drink (restaurants, cafés, pubs, bars, "Mat & dryck") are cards when they are not a chain: no `brand` tag, a name that fewer than 5 such places share, not a shopping mall, and a name at all. A card of these types without a `wikidata` tag gets the Swedish Wikipedia page with the same title, when the page is not a disambiguation page and lies within 3 km of the place, or has no coordinates and names a shop, restaurant or café in its first paragraph. The build keeps the answers in `build/data/svwiki-names.json`.
 - A legendary place is not also a normal card. The cell build leaves out the feature with the same OSM id.
 - The density rule: a card has at most N cards of its type within a distance, itself included. Common: 3 within 300 m. Uncommon: 2 within 500 m. Rare: 1 within 1,000 m. Epic: 1 of all epic types within 2,000 m. In a crowd, the build keeps the card with a Wikipedia article, then the card with a name.
 - The map uses the game's own style (`src/map-style.json`) on the vector tiles of OpenFreeMap. The view is tilted and the buildings have height. The 2D button gives a flat view from above.
@@ -45,7 +52,8 @@ Get the extract first:
     curl -L -o build/data/sweden-latest.osm.pbf https://download.geofabrik.de/europe/sweden-latest.osm.pbf
 
 A cell is 0.1 degrees of longitude by 0.05 degrees of latitude, about 5.5 km. The game loads the cell of the player and its 8 neighbours.
-`public/cells/meta.json` holds the count of each type in the extract. The game computes the levels from these counts.
+A row is `[id, lat, lon, type index, name, wikidata id, radius, link, variant, image]`, with the trailing zeros left out. The name is a number when the place has no name.
+`public/cells/meta.json` holds the count of each type in the extract (`counts`) and in the game after the density rule (`kept`). The game computes the levels from `counts`.
 The build asks Wikidata which cards have a Wikipedia article. It keeps the answers in `build/data/sitelinks.json`.
 
 ## Deploy
@@ -72,17 +80,22 @@ The logo is `art/logo/logo-7-mirror.png`: a hand of three cards, with the hill a
 
 ## Extra sources
 
-`src/sources.json` lists open data of municipalities and agencies. The cell build downloads each source as GeoJSON and merges it with the OSM cards.
-A source place within `match` metres of an OSM card of the same type gives its name and link to that card. A source place without an OSM card becomes a new card.
+`src/sources.json` lists open data of municipalities and agencies. The cell build downloads each source and merges it with the OSM cards.
+A source place within `match` metres of an OSM card of the same type gives its name, link and image to that card. A source place without an OSM card becomes a new card.
+The sources came from a search on dataportal.se (the scripts and the search results are in `build/data/dataportal/`, git-ignored).
 
 A source has these fields:
 
 - `id`: the prefix of the card ids, and the file name in `build/data/sources/`
-- `label` and `about`: the name and the page of the publisher, for the card and the About tab
-- `url`: a request that returns GeoJSON in EPSG:4326, for example a WFS `GetFeature` request
+- `label` and `about`: the name of the publisher and the page of the dataset, for the card and the About tab
+- `url`: the download. A rowstore URL ends with `/json?_limit=1000`.
+- `format`: `geojson` (default, also ArcGIS JSON), `zip` (a zip with one GeoJSON), `rowstore` (EntryScape rowstore JSON), `json` (a list of rows), `csv`, `stockholm` (the Hitta Service API of Stockholms stad) or `jsonld` (web pages with schema.org JSON-LD, as goteborg.se: `url` has `{page}` for the page number from 1 and `link` is a regular expression for the links to the place pages)
 - `type`: the OSM tag of the card type
-- `fields`: the properties that hold the id, the name and the link of a place
-- `match`: the largest distance in metres to an OSM card of the same place
+- `crs`: the EPSG code of the positions when they are not WGS84, for example 3006 (SWEREF99 TM), 3011 (SWEREF99 18 00) or 3007 (SWEREF99 12 00)
+- `fields` (optional): the columns `id`, `name`, `link`, `image` (a URL), `lat`, `lon`, `x`, `y` and `geom` (WKB hex). The defaults are `id` or `place_id`, `name`, `visit_url`, `latitude` and `longitude`, as in the national specifications. A GeoJSON geometry is used when the row has no latitude and longitude. `-` turns a default off.
+- `filter` (optional): column values that a row must have
+- `match`: the distance in metres to an OSM card of the same type that counts as the same place
+- `image` (optional): the name of a meta tag on the page that the link points to, for example `og:image`. Its content is the photo of the card. The build keeps the answers in `build/data/sources/<id>-images.json`.
 
 Remove a file in `build/data/sources/` to download that source again.
 
@@ -91,7 +104,7 @@ Remove a file in `build/data/sources/` to download that source again.
 - `index.html`: page markup
 - `src/main.js`: game logic, map and screens
 - `src/style.css`: styles
-- `src/types.json`: the 88 card types (OSM tag, Swedish name, definite form, icon). Add a new type at the end, because an album stores the index of the type. A type can have `variants`: the value of one more tag gives the card a more exact name, as `religion` does for a place of worship. Add a new variant at the end of its list.
+- `src/types.json`: the 91 card types (OSM tag, Swedish name, definite form, icon). The tag value can be several values with `|` between them, or `*` for any value. A type with `notable: true` leaves out chains. Add a new type at the end, because an album stores the index of the type. A type can have `variants`: the value of one more tag gives the card a more exact name, as `religion` does for a place of worship. Add a new variant at the end of its list.
 - `src/legendary.json`: the 25 legendary places
 - `src/map-style.json`: the MapLibre style of the map
 - `src/sources.json`: the extra sources of the cell build

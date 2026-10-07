@@ -20,9 +20,14 @@
 
 <div id="hud" class="hidden">
   <div id="hud-top">
-    <span class="chip" id="hud-coins" title="Vanliga kort att spendera på ledtrådar"></span>
-    <span class="chip" id="hud-cards" title="Kort i albumet"></span>
+    <span class="chip" id="hud-coins" title="Poäng att köpa ledtrådar för. Ett vanligt kort ger en poäng, eller två till fots eller cykel."></span>
+    <span class="chip" id="hud-cards"></span>
     <span class="chip" id="hud-speed"></span>
+  </div>
+  <div id="hud-day">
+    <span class="chip" id="hud-day-cards"></span>
+    <span class="chip" id="hud-day-m" title="Meter till fots eller cykel"></span>
+    <button class="chip" id="hud-level" title="Nivå och bedrifter"></button>
   </div>
   <div id="hud-hints"></div>
   <div id="toasts"></div>
@@ -36,7 +41,8 @@
     <div><span>Tryck för att</span>
       <button data-move="5" class="on">Gå</button><button data-move="18">Cykla</button><button data-move="50">Köra bil</button><button data-move="0">Hoppa</button></div>
     <div><span id="dev-note">Visa</span>
-      <button data-reveal="0">Vanliga</button><button data-reveal="1">Ovanliga</button><button data-reveal="2">Sällsynta</button><button data-reveal="3">Episka</button></div>
+      <button data-reveal="0">Vanliga</button><button data-reveal="1">Ovanliga</button><button data-reveal="2">Sällsynta</button><button data-reveal="3">Episka</button>
+      <details id="dev-types" class="hidden"><summary>Typer</summary><div id="dev-type-list"></div></details></div>
   </div>
   <div id="bar">
     <button id="btn-hint">Ledtråd</button>
@@ -74,6 +80,7 @@
       <button data-tab="cards" class="on">Kort</button>
       <button data-tab="sets">Set</button>
       <button data-tab="legendary">Legendariska</button>
+      <button data-tab="feats">Bedrifter</button>
       <button data-tab="about">Om</button>
       <button class="close" aria-label="Stäng">✕</button>
     </div>
@@ -104,6 +111,7 @@
 </div>
 
 <div id="reveal" class="screen"></div>
+<div id="peek"></div>
 
 <script type="module" src="/src/main.js"></script>
 </body>
